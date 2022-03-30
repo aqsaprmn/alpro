@@ -1,10 +1,11 @@
-{include file="sections/header.tpl"}
+{include file="sections/header-new.tpl"}
 
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="panel panel-hovered mb20 panel-default">
-								<div class="panel-heading">{$_L['Prepaid_Vouchers']}</div>
+								<div class="panel-heading">VOUCHER PINTER</div>
 								<div class="panel-body">
+								{if $_admin['user_type'] eq 'Admin'}
 									<div class="md-whiteframe-z1 mb20 text-center" style="padding: 15px">
 										<div class="col-md-8">
 											<form id="site-search" method="post" action="{$_url}prepaid/voucher/">
@@ -30,34 +31,31 @@
 											</div>
 										</div>&nbsp;
 									</div>
+								{/if}
 						<div class="table-responsive">
 						<table id="datatable" class="table table-striped table-bordered">
 							<thead>
 								<tr> 
-									<th>ID</th>
-									<th>{$_L['Type']}</th>
-									<th>{$_L['Routers']}</th>
-									<th>{$_L['Plan_Name']}</th>
-									<th>{$_L['Code_Voucher']}</th>
-									<th>{$_L['Status_Voucher']}</th>
-									<th>{$_L['Customers']}</th>
-									<th>{$_L['Manage']}</th>
+									<th>Paket</th>
+									<th>Kode</th>
+									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
 							{foreach $d as $ds}
+								{if $ds['status'] eq '0' || $ds['status'] eq '1'}
 								<tr>
-									<td>{$ds['id']}</td> 
-									<td>{$ds['type']}</td>
-									<td>{$ds['routers']}</td>
 									<td>{$ds['name_plan']}</td>
 									<td>{$ds['code']}</td>
-									<td align="center">{if $ds['status'] eq '0'} <label class="btn-tag btn-tag-success">Not Use</label> {else} <label class="btn-tag btn-tag-danger">Used</label> {/if}</td>
-									<td align="center">{if $ds['user'] eq '0'} - {else} {$ds['user']} {/if}</td>
 									<td>
-										<a href="{$_url}prepaid/voucher-delete/{$ds['id']}" id="{$ds['id']}" class="btn btn-danger btn-sm cdelete">{$_L['Delete']}</a>
+										{if $ds['status'] eq '0'}
+										<a href="{$_url}prepaid/voucher-refill/{$ds['id']}" id="{$ds['id']}" class="btn btn-primary btn-sm">Aktifkan</a>
+										{else}
+										<a href="{$_url}prepaid/voucher-refill/{$ds['id']}" id="{$ds['id']}" class="btn btn-danger btn-sm" disabled>Terjual</a>
+										{/if}
 									</td>
 								</tr>
+								{/if}
 							{/foreach}
 							</tbody>
 						</table>
@@ -67,6 +65,4 @@
 							</div>
 						</div>
 					</div>
-
-
 {include file="sections/footer.tpl"}

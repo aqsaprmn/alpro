@@ -29,7 +29,9 @@
 											<tr>
 												<th>{$_L['Username']}</th>
 												<th>{$_L['Full_Name']}</th>
+												<th>Phone</th>
 												<th>{$_L['Type']}</th>
+												<th>Status</th>
 												<th>{$_L['Last_Login']}</th>
 												<th>{$_L['Manage']}</th>
 											</tr>
@@ -39,12 +41,19 @@
 											<tr>
 												<td>{$ds['username']}</td>
 												<td>{$ds['fullname']}</td>
+												<td>{$ds['phonenumber']}</td>
 												<td>{$ds['user_type']}</td>
+												<td>{$ds['status']}</td>
 												<td>{$ds['last_login']}</td>
 												<td>
 													<a href="{$_url}settings/users-edit/{$ds['id']}" class="btn btn-warning btn-sm">{$_L['Edit']}</a>
 													{if ($_admin['username']) neq ($ds['username'])}
 														<a href="{$_url}settings/users-delete/{$ds['id']}" id="{$ds['id']}" class="btn btn-danger btn-sm cdelete">{$_L['Delete']}</a>
+														{if ($ds['status']) eq ('Inactive')}
+														<a href="{$_url}settings/users-activate/{$ds['id']}" class="btn btn-primary btn-sm">Activate</a>
+														{else}
+														<a href="{$_url}settings/users-deactivate/{$ds['id']}" class="btn btn-primary btn-sm">Deactivate</a>
+														{/if}
 													{/if}
 												</td>
 											</tr>

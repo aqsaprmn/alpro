@@ -21,7 +21,7 @@
 											</form>
 										</div>
 										<div class="col-md-4">
-											<a href="{$_url}pool/add" class="btn btn-primary btn-block waves-effect"><i class="ion ion-android-add"> </i> {$_L['New_Pool']}</a>
+											<a href="{$_url}prepaid/deactivate-vouchers" class="btn btn-primary btn-block waves-effect"><i class="ion ion-android-add"> </i> {$_L['New_Pool']}</a>
 										</div>&nbsp;
 									</div>
 									<table class="table table-striped table-bordered">

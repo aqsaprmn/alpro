@@ -8,6 +8,7 @@
 								<p>{$_L['Welcome_Text_User']}</p>
 									<ul>
 										<li> {$_L['Account_Information']}</li>
+										<li> <a href="{$_url}voucher/buyonline">Buy Voucher Online</a></li>
 										<li> <a href="{$_url}voucher/activation">{$_L['Voucher_Activation']}</a></li>
 										<li> <a href="{$_url}voucher/list-activated">{$_L['List_Activated_Voucher']}</a></li>
 										<li> <a href="{$_url}accounts/change-password">{$_L['Change_Password']}</a></li>

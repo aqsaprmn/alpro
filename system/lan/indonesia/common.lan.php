@@ -3,16 +3,16 @@
 -----------------------------------
 Language Name: Indonesia
 Contributor: Ismail Marzuqi
-Web: www.phpmixbill.com
+Web: www.API PINTER VOUCHER.com
 Email: iesien22@yahoo.com
 
 2017
-Contributor: Ibnu Maksum (@ibnux)
+Contributor: Ibnu Maksum (@akses-prima.co.id)
 
 ------------------------------------
 */
 
-$_L['Login'] = 'Masuk'; 
+$_L['Login'] = 'Masuk';
 $_L['Register'] = 'Daftar';
 $_L['Announcement'] = 'Pengumuman';
 $_L['Registration_Info'] = 'Info Pendaftaran';
@@ -21,7 +21,7 @@ $_L['Register_Success'] = 'Pendaftaran sukses!<br>silahkan masuk';
 $_L['Sign_In_Member'] = 'Masuk ke Member Panel';
 $_L['Register_Member'] = 'Mendaftar sebagai pelanggan<br>pastikan anda sudah membeli voucher';
 $_L['Sign_In_Admin'] = 'Masuk ke Admin Panel';
-$_L['Logo'] = 'PHPMixBill';
+$_L['Logo'] = 'API PINTER VOUCHER';
 $_L['Username'] = 'Username';
 $_L['Password'] = 'Password';
 $_L['PasswordsNotMatch'] = 'Sandi tidak sama';
@@ -140,7 +140,7 @@ $_L['Size'] = 'Size';
 $_L['Customers'] = 'Kontak Member';
 $_L['Add_Contact'] = 'Tambah Kontak Baru';
 $_L['Edit_Contact'] = 'Edit Kontak';
-$_L['List_Contact'] = 'List Kontak';
+$_L['List_Customer'] = 'List Pelanggan';
 $_L['Manage_Accounts'] = 'Kelola Kontak';
 
 $_L['Reports'] = 'Laporan';
@@ -216,7 +216,7 @@ $_L['Title'] = 'Title';
 $_L['Message'] = 'Message';
 $_L['Account_Information'] = 'Informasi Akun Anda';
 $_L['Welcome_Text_User'] = 'Selamat datang di Member Panel, disini Anda dapat mengetahui:';
-$_L['Welcome_Text_Admin'] = '<b>PHPMixBill</b> adalah sebuah aplikasi billing Hotspot dan PPPOE untuk Mikrotik dengan menggunakan bahasa pemograman PHP dan menggunakan API Mikrotik sebagai komunikasi dengan router. Jika aplikasi ini sangat berguna bagi bisnis Anda silahkan Anda donasi berapapun.<br>Pantau proyek <a href="https://github.com/ibnux/phpmixbill" target="_blank">disini</a>';
+$_L['Welcome_Text_Admin'] = '<b>API PINTER VOUCHER</b> adalah sebuah aplikasi billing Hotspot dan PPPOE untuk Mikrotik dengan menggunakan bahasa pemograman PHP dan menggunakan API Mikrotik sebagai komunikasi dengan router. Jika aplikasi ini sangat berguna bagi bisnis Anda silahkan Anda donasi berapapun.<br>Pantau proyek <a href="https://akses-prima.co.id" target="_blank">disini</a>';
 
 //update
 $_L['Invalid_Username_or_Password'] = 'Username atau Password Salah';

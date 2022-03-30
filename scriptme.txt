@@ -1,0 +1,25 @@
+// COLLAPSE
+<tr style="font-size:1.2rem;">
+													<td class="text-center">{$odpa['id']}</td>
+													<td>{$odpa['nama']}</td>
+													<td class="text-center">10</td>
+													<td class="text-center">
+														<a href="" class="btn btn-primary btn-sm" id="triggerCollapse" data-id="{$odpa['id']}"><i class="fa fa-eye" aria-hidden="true"></i> {$_L['View']}</a>
+													</td>
+												</tr>
+<tr class="dnone" id="collapseTable" data-id="{$odpa['id']}">
+													<td colspan="4">
+														<span class="text-bold">{$odpa['nama']}
+														</span>
+														<table>
+														<tr>
+														<td class="text-bold">ID</td>
+														<td> : {$odpa['id']}</td>
+														</tr>
+														<tr>
+														<td class="text-bold">Nama</td>
+														<td> : {$odpa['nama']}</td>
+														</tr>
+														</table>
+													</td>
+												</tr>

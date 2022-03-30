@@ -100,8 +100,8 @@
 												<td>{$stok['unused']}</td>
 												<td>{$stok['used']}</td>
 											</tr>
-										</tbody>
 										{/foreach}
+										</tbody>
 											<tr>
 												<td>Total</td>
 												<td>{$stocks['unused']}</td>
@@ -154,13 +154,12 @@
 								</div>
 							</div>
 							<div class="panel panel-default panel-hovered mb20 activities">
-								<div class="panel-heading">PHPMIXBILL</div>
+								<div class="panel-heading">Pinter Voucher</div>
 								<div class="panel-body">
 									{$_L['Welcome_Text_Admin']}
 								</div>
 							</div>
-						</div>
-						
+						</div>						
 					</div>
 {else}
 					<div class="row">

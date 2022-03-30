@@ -8,12 +8,12 @@
 									<div id="disqus_thread"></div>
 										<script>
 											var disqus_config = function () {
-											this.page.url = "https://ibnux.github.io/phpmixbill/diskusi.html";  // Replace PAGE_URL with your page's canonical URL variable
-											this.page.identifier = "phpmixbill"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+											this.page.url = "https://akses-prima.co.id/API PINTER VOUCHER/diskusi.html";  // Replace PAGE_URL with your page's canonical URL variable
+											this.page.identifier = "API PINTER VOUCHER"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 											};
 											(function() { // DON'T EDIT BELOW THIS LINE
 											var d = document, s = d.createElement('script');
-											s.src = 'https://phpmixbill.disqus.com/embed.js';
+											s.src = 'https://API PINTER VOUCHER.disqus.com/embed.js';
 											s.setAttribute('data-timestamp', +new Date());
 											(d.head || d.body).appendChild(s);
 											})();

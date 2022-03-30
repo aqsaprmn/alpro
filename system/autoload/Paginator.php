@@ -1,35 +1,93 @@
 <?php
-/**
-* PHP Mikrotik Billing (https://ibnux.github.io/phpmixbill/)
 
-
-* @copyright	Copyright (C) 2014-2015 PHP Mikrotik Billing
-* @license		GNU General Public License version 2 or later; see LICENSE.txt
-
-**/
-
-Class Paginator
+class Paginator
 {
-    public static function bootstrap($table, $w1='',$c1='', $w2='', $c2= '', $w3='',$c3='', $w4='', $c4= '', $per_page = '10')
+    public static function bootstrap($table, $w1 = '', $c1 = '', $w2 = '', $c2 = '', $w3 = '', $c3 = '', $w4 = '', $c4 = '', $per_page = '10')
     {
-		global $routes;
+        global $routes;
         global $_L;
-        $url = U.$routes['0'].'/'.$routes['1'].'/';
-        $adjacents = "2";
+
+        $url = U . $routes['0'] . '/' . $routes['1'] . '/';
         $page = (int)(!isset($routes['2']) ? 1 : $routes['2']);
+
+        $adjacents = "2";
         $pagination = "";
 
-        if($w1 != ''){
-            $totalReq = ORM::for_table($table)->where($w1,$c1)->count();
-        }elseif($w2 != ''){
-            $totalReq = ORM::for_table($table)->where($w1,$c1)->where($w2,$c2)->count();
-        }elseif($w3 != ''){
-            $totalReq = ORM::for_table($table)->where($w1,$c1)->where($w2,$c2)->where($w3,$c3)->count();
-        }elseif($w4 != ''){
-            $totalReq = ORM::for_table($table)->where($w1,$c1)->where($w2,$c2)->where($w3,$c3)->where($w4,$c4)->count();
-        }else{
-            $totalReq = ORM::for_table($table)->count();
+        $arrc1 = strpos($c1, '%');
+        $arrc2 = strpos($c2, '%');
+        $arrc3 = strpos($c3, '%');
+        $arrc4 = strpos($c4, '%');
+
+        if ($arrc1 !== false) {
+            $nc1 = $c1;
+
+            if ($w4 != '') {
+                $totalReq = ORM::for_table($table)->where_like($w1, $nc1)->where($w2, $c2)->where($w3, $c3)->where($w4, $c4)->count();
+            } elseif ($w3 != '') {
+                $totalReq = ORM::for_table($table)->where_like($w1, $nc1)->where($w2, $c2)->where($w3, $c3)->count();
+            } elseif ($w2 != '') {
+                $totalReq = ORM::for_table($table)->where_like($w1, $nc1)->where($w2, $c2)->count();
+            } elseif ($w1 != '') {
+                $totalReq = ORM::for_table($table)->where_like($w1, $nc1)->count();
+            } else {
+                $totalReq = ORM::for_table($table)->count();
+            }
+        } else if ($arrc2 !== false) {
+            $nc2 = $c2;
+
+            if ($w4 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where_like($w2, $nc2)->where($w3, $c3)->where($w4, $c4)->count();
+            } elseif ($w3 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where_like($w2, $nc2)->where($w3, $c3)->count();
+            } elseif ($w2 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where_like($w2, $nc2)->count();
+            } elseif ($w1 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->count();
+            } else {
+                $totalReq = ORM::for_table($table)->count();
+            }
+        } else if ($arrc3 !== false) {
+            $nc3 = $c3;
+
+            if ($w4 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where_like($w3, $nc3)->where($w4, $c4)->count();
+            } elseif ($w3 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where_like($w3, $nc3)->count();
+            } elseif ($w2 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->count();
+            } elseif ($w1 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->count();
+            } else {
+                $totalReq = ORM::for_table($table)->count();
+            }
+        } else if ($arrc4 !== false) {
+            $nc4 = $c4;
+
+            if ($w4 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where($w3, $c3)->where_like($w4, $nc4)->count();
+            } elseif ($w3 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where($w3, $c3)->count();
+            } elseif ($w2 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->count();
+            } elseif ($w1 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->count();
+            } else {
+                $totalReq = ORM::for_table($table)->count();
+            }
+        } else {
+            if ($w4 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where($w3, $c3)->where($w4, $c4)->count();
+            } elseif ($w3 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->where($w3, $c3)->count();
+            } elseif ($w2 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->where($w2, $c2)->count();
+            } elseif ($w1 != '') {
+                $totalReq = ORM::for_table($table)->where($w1, $c1)->count();
+            } else {
+                $totalReq = ORM::for_table($table)->count();
+            }
         }
+
 
         $i = 0;
         $page = ($page == 0 ? 1 : $page);
@@ -90,15 +148,16 @@ Class Paginator
             }
 
             if ($page < $counter - 1) {
-                $pagination .= "<li><a href='{$url}$next'>".$_L['Next']."</a></li>";
-                $pagination .= "<li><a href='{$url}$lastpage'>".$_L['Last']."</a></li>";
+                $pagination .= "<li><a href='{$url}$next'>" . $_L['Next'] . "</a></li>";
+                $pagination .= "<li><a href='{$url}$lastpage'>" . $_L['Last'] . "</a></li>";
             } else {
-                $pagination .= "<li class='disabled'><a class='disabled'>".$_L['Next']."</a></li>";
-                $pagination .= "<li class='disabled'><a class='disabled'>".$_L['Last']."</a></li>";
+                $pagination .= "<li class='disabled'><a class='disabled'>" . $_L['Next'] . "</a></li>";
+                $pagination .= "<li class='disabled'><a class='disabled'>" . $_L['Last'] . "</a></li>";
             }
             $pagination .= "</ul>";
-			
+
             $gen = array("startpoint" => $startpoint, "limit" => $limit, "found" => $totalReq, "page" => $page, "lastpage" => $lastpage, "contents" => $pagination);
+
             return $gen;
         }
     }

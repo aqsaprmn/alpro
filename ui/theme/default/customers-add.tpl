@@ -1,49 +1,56 @@
-{include file="sections/header.tpl"}
+{include file="sections/header-new.tpl"}
 	
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
 				<div class="panel panel-default panel-hovered panel-stacked mb30">
-					<div class="panel-heading">{$_L['Add_Contact']}</div>
+					<div class="panel-heading">{$_L['Add_Customer']}</div>
 						<div class="panel-body">
 						
 						<form class="form-horizontal" method="post" role="form" action="{$_url}customers/add-post" >            
 							<div class="form-group">
-								<label class="col-md-2 control-label">{$_L['Username']}</label>
+								<label class="col-md-2 control-label">{$_L['Witel']}</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="username" name="username">
+									<input type="text" class="form-control" id="witel" name="witel">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-2 control-label">{$_L['Full_Name']}</label>
+								<label class="col-md-2 control-label">{$_L['Site']}</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="fullname" name="fullname">
+									<input type="text" class="form-control" id="Site" name="Site">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-2 control-label">{$_L['Password']}</label>
+								<label class="col-md-2 control-label">{$_L['Name']}</label>
 								<div class="col-md-6">
-									<input type="password" class="form-control" id="password" name="password">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-2 control-label">{$_L['Confirm_Password']}</label>
-								<div class="col-md-6">
-									<input type="password" class="form-control" id="cpassword" name="cpassword">
+									<input type="password" class="form-control" id="Site" name="Site">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-2 control-label">{$_L['Address']}</label>
 								<div class="col-md-6">
-									<textarea name="address" id="address"  class="form-control"></textarea>
+									<input type="password" class="form-control" id="Address" name="Address">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-2 control-label">{$_L['Phone_Number']}</label>
+								<label class="col-md-2 control-label">{$_L['SC_Number']}</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="phonenumber" name="phonenumber">
+									<input name="scnumber" 
+									type="text"
+									id="scnumber"  class="form-control"></input>
 								</div>
 							</div>
-										
+							<div class="form-group">
+								<label class="col-md-2 control-label">{$_L['Internet_Number']}</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" id="internetnumber" name="internetnumber">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">{$_L['Installation']}</label>
+								<div class="col-md-6">
+									<input type="date" class="form-control" id="installation" name="installation">
+								</div>
+							</div>
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button class="btn btn-primary waves-effect waves-light" type="submit">{$_L['Save']}</button>

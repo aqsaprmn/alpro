@@ -1,4 +1,4 @@
-{include file="sections/header.tpl"}
+{include file="sections/header-new.tpl"}
 
 					<div class="row">
 						<div class="col-sm-12">
@@ -20,19 +20,22 @@
 											</form>
 										</div>
 										<div class="col-md-4">
-											<a href="{$_url}customers/add" class="btn btn-primary btn-block waves-effect"><i class="ion ion-android-add"> </i> {$_L['Add_Contact']}</a>
+											<a href="{$_url}customers/add" class="btn btn-primary btn-block waves-effect"><i class="ion ion-android-add"> </i> {$_L['Add_Customer']}</a>
 										</div>&nbsp;
 									</div>
 	
 									<table class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th>{$_L['Username']}</th>
-												<th>{$_L['Full_Name']}</th>
-												<th>{$_L['Phone_Number']}</th>
-												<th>{$_L['Created_On']}</th>
-												<th>{$_L['Recharge']}</th>
-												<th>{$_L['Manage']}</th>
+												<th>{$_L['Witel']}</th>
+												<th>{$_L['Site']}</th>
+												<th>{$_L['Name']}</th>
+												<th>{$_L['Address']}</th>
+												<th>{$_L['SC_Number']}</th>
+												<th>{$_L['Internet_Number']}</th>
+												<th>{$_L['Installation']}</th>	
+												<th>Status</th>	
+												<th>{$_L['Update_Delete']}</th>	
 											</tr>
 										</thead>
 										<tbody>
@@ -42,7 +45,11 @@
 												<td>{$ds['fullname']}</td>
 												<td>{$ds['phonenumber']}</td>
 												<td>{$ds['created_at']}</td>
-												<td align="center"><a href="{$_url}prepaid/recharge-user/{$ds['id']}" id="{$ds['id']}" class="btn btn-primary btn-sm">{$_L['Recharge']}</a></td>
+												<td>{$ds['created_at']}</td>
+												<td>{$ds['created_at']}</td>
+												<td>{$ds['created_at']}</td>
+												<td>{$ds['created_at']}</td>
+												
 												<td align="center">
 													<a href="{$_url}customers/edit/{$ds['id']}" class="btn btn-warning btn-sm">{$_L['Edit']}</a>
 													<a href="{$_url}customers/delete/{$ds['id']}" id="{$ds['id']}" class="btn btn-danger btn-sm cdelete">{$_L['Delete']}</a>

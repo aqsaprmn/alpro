@@ -53,10 +53,14 @@
 	<script src="ui/lib/js/bootbox.min.js"></script>
 	<script src="{$_theme}/scripts/app.js"></script>
 	<script src="{$_theme}/scripts/custom.js"></script>
+	<script src="{$_theme}/scripts/customAqsha.js"></script>
 	<script src="{$_theme}/scripts/form-elements.init.js"></script>
-
+	<script src="{$_theme}/scripts/plugins/chart.min.js"></script>
 {if isset($xfooter)}
 	{$xfooter}
+{/if}
+{if isset($fetchApi)}
+	{$fetchApi}
 {/if}
 		
 </body>

@@ -1,12 +1,4 @@
 <?php
-/**
-* PHP Mikrotik Billing (https://ibnux.github.io/phpmixbill/)
-
-
-* @copyright	Copyright (C) 2014-2015 PHP Mikrotik Billing
-* @license		GNU General Public License version 2 or later; see LICENSE.txt
-
-**/
 _admin();
 $ui->assign('_title', $_L['Reports'].'- '. $config['CompanyName']);
 $ui->assign('_sysfrm_menu', 'reports');
@@ -351,5 +343,5 @@ EOF;
         break;
 		
     default:
-        echo 'action not defined';
+        echo 'Fitur belum tersedia';
 }

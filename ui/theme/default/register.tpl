@@ -54,7 +54,7 @@
 					<div class="panel-body">
 						<div class="form-container">
 							<div class="md-input-container md-float-label">
-								<input type="text" required class="md-input" id="username" value="{$username}" placeholder="{$_L['Phone_Number']}" name="username">
+								<input type="text" required class="md-input" id="username" value="{$username}" placeholder="{$_L['Username']}" name="username">
 								<label>{$_L['Username']}</label>
 							</div>
 							<div class="md-input-container md-float-label">
@@ -87,10 +87,6 @@
 								<label>{$_L['Confirm_Password']}</label>
 							</div>
 							<hr>
-							<div class="md-input-container md-float-label">
-								<input type="text" required class="md-input" id="kodevoucher" name="kodevoucher">
-								<label>{$_L['Code_Voucher']}</label>
-							</div>
 							<div class="btn-group btn-group-justified mb15">
 								<div class="btn-group">
 									<button class="btn btn-primary waves-effect waves-light" type="submit">{$_L['Register']}</button>

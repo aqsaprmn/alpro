@@ -280,8 +280,8 @@ class Client
         $request->setArgument('password', $password);
         $request->send($com);
         $response = new Response($com, false, $timeout);
-       return $response->getType() === Response::TYPE_FINAL
-       null === $response->getProperty('ret');
+       return $response->getType() === Response::TYPE_FINAL;
+       //null === $response->getProperty('ret');
  }
     
     /**

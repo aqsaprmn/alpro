@@ -1,12 +1,4 @@
 <?php
-/**
-* PHP Mikrotik Billing (https://ibnux.github.io/phpmixbill/)
-
-
-* @copyright	Copyright (C) 2014-2015 PHP Mikrotik Billing
-* @license		GNU General Public License version 2 or later; see LICENSE.txt
-
-**/
 _admin();
 $ui->assign('_title', $_L['Network'].' - '. $config['CompanyName']);
 $ui->assign('_system_menu', 'network');
@@ -181,5 +173,5 @@ switch ($action) {
         break;
 
     default:
-        echo 'action not defined';
+        echo 'Fitur belum tersedia';
 }

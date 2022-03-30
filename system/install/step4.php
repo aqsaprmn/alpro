@@ -1,12 +1,4 @@
 <?php
-/**
-* PHP Mikrotik Billing (https://ibnux.github.io/phpmixbill/)
-
-
-* @copyright	Copyright (C) 2014-2015 PHP Mikrotik Billing
-* @license		GNU General Public License version 2 or later; see LICENSE.txt
-
-**/
 //error_reporting (0);
 $appurl = $_POST['appurl'];
 $db_host = $_POST['dbhost'];
@@ -40,7 +32,7 @@ if ($cn == '1') {
     fwrite($fh, $input);
     fclose($fh);
 
-    $sql = file_get_contents('phpmixbill.sql');
+    $sql = file_get_contents('API PINTER VOUCHER.sql');
 
     $qr = $dbh->exec($sql);
 
@@ -53,7 +45,7 @@ if ($cn == '1') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PHPMixBill  Installer</title>
+    <title>API PINTER VOUCHER  Installer</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -74,7 +66,7 @@ if ($cn == '1') {
 		</div>
 
 		<div class="span12">
-			<h4> PHPMixBill  Installer </h4>
+			<h4> API PINTER VOUCHER  Installer </h4>
 			<?php
 			if ($cn == '1') {
 			?>
@@ -89,7 +81,7 @@ if ($cn == '1') {
 			} elseif ($cn == '2') {
 			?>
 				<p> MySQL Connection was successfull. An error occured while adding data on MySQL. Unsuccessfull
-					Installation. Please refer manual installation in the website phpmixbill.com or Contact iesien22@yahoo.com for
+					Installation. Please refer manual installation in the website API PINTER VOUCHER.com or Contact iesien22@yahoo.com for
 					helping on installation</p>
 			<?php
 			} else {
@@ -101,7 +93,7 @@ if ($cn == '1') {
 		</div>
 	</div>
 
-	<div class="footer">Copyright &copy; 2021 PHPMixBill. All Rights Reserved<br/><br/></div>
+	<div class="footer">Copyright &copy; 2021 API PINTER VOUCHER. All Rights Reserved<br/><br/></div>
 </body>
 </html>
 

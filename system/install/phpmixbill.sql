@@ -1,6 +1,6 @@
 
 --
--- Database: `phpmixbill`
+-- Database: `API PINTER VOUCHER`
 --
 
 -- --------------------------------------------------------
@@ -21,7 +21,7 @@ CREATE TABLE `tbl_appconfig` (
 --
 
 INSERT INTO `tbl_appconfig` (`id`, `setting`, `value`) VALUES
-(1, 'CompanyName', 'PHPMixBill'),
+(1, 'CompanyName', 'API PINTER VOUCHER'),
 (2, 'theme', 'default'),
 (3, 'currency_code', 'Rp.'),
 (4, 'language', 'english'),

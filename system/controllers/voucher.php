@@ -1,12 +1,4 @@
 <?php
-/**
-* PHP Mikrotik Billing (https://ibnux.github.io/phpmixbill/)
-
-
-* @copyright	Copyright (C) 2014-2015 PHP Mikrotik Billing
-* @license		GNU General Public License version 2 or later; see LICENSE.txt
-
-**/
 _auth();
 $ui->assign('_title', $_L['Voucher'].'- '. $config['CompanyName']);
 $ui->assign('_system_menu', 'voucher');
@@ -57,7 +49,7 @@ switch ($action) {
 					$setRequest->setArgument('numbers', $id);
 					$client->sendSync($setRequest);
 					
-					/* iBNuX Added:
+					/* akses-prima.co.id Added:
 					* 	Time limit to Mikrotik
 					*	'Time_Limit', 'Data_Limit', 'Both_Limit'
 					*/
@@ -143,7 +135,7 @@ switch ($action) {
 					} catch (Exception $e) {
 						die('Unable to connect to the router.');
 					}
-					/* iBNuX Added:
+					/* akses-prima.co.id Added:
 					* 	Time limit to Mikrotik
 					*	'Time_Limit', 'Data_Limit', 'Both_Limit'
 					*/

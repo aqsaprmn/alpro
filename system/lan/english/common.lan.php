@@ -3,11 +3,11 @@
 -----------------------------------
 Language Name: English
 Contributor: Ismail Marzuqi
-Web: www.phpmixbill.com
+Web: www.API PINTER VOUCHER.com
 Email: iesien22@yahoo.com
 
 2017
-Contributor: Ibnu Maksum (@ibnux)
+Contributor: Ibnu Maksum (@akses-prima.co.id)
 
 ------------------------------------
 */
@@ -15,13 +15,13 @@ Contributor: Ibnu Maksum (@ibnux)
 $_L['Login'] = 'Log-in';
 $_L['Register'] = 'Register';
 $_L['Announcement'] = 'Announcement';
-$_L['Registration_Info'] = 'Registration Info';
+$_L['Registration_Info'] = 'Info Pendaftaran';
 $_L['Register_Voucher_Failed'] = 'Voucher not found, please buy voucher befor register';
-$_L['Register_Success'] = 'Register Success! You can login now';
+$_L['Register_Success'] = 'Pendaftaran berhasil! Silakan hubungi sales Pinter untuk mengaktifkan Anda.';
 $_L['Sign_In_Member'] = 'Log in to Member Panel';
-$_L['Register_Member'] = 'Register as Member';
+$_L['Register_Member'] = 'Pendaftaran Agen';
 $_L['Sign_In_Admin'] = 'Masuk ke Admin Panel';
-$_L['Logo'] = 'PHPMixBill';
+$_L['Logo'] = 'ALPRO';
 $_L['Username'] = 'Username';
 $_L['Password'] = 'Password';
 $_L['PasswordsNotMatch'] = 'Passwords does not match';
@@ -83,7 +83,7 @@ $_L['user_type_help'] = 'Choose User Type Sales to disable access to Settings';
 $_L['Current_Password'] = 'Current Password';
 $_L['New_Password'] = 'New Password';
 $_L['Administrator'] = 'Administrator';
-$_L['Sales'] = 'Sales';
+$_L['Sales'] = 'Agen Pinter';
 $_L['Member'] = 'Member';
 $_L['Confirm_New_Password'] = 'Confirm New Password';
 $_L['Confirm_Password'] = 'Confirm Password';
@@ -138,10 +138,18 @@ $_L['Rows'] = 'Rows';
 $_L['Size'] = 'Size';
 
 $_L['Customers'] = 'Customer';
-$_L['Add_Contact'] = 'Add New Contact';
+$_L['Add_Customer'] = 'Add New Customer';
 $_L['Edit_Contact'] = 'Edit Contact';
-$_L['List_Contact'] = 'List Contact';
+$_L['List_Customer'] = 'List Customer';
 $_L['Manage_Accounts'] = 'Manage Contact';
+$_L['Manage_Accounts'] = 'Manage Contact';
+
+$_L['Witel'] = 'Witel';
+$_L['Site'] = 'Site';
+$_L['Name'] = 'Name';
+$_L['SC_Number'] = 'SC Number';
+$_L['Internet_Number'] = 'Internet Number';
+$_L['Installation'] = 'Installation';
 
 $_L['Reports'] = 'Reports';
 $_L['Daily_Report'] = 'Daily Reports';
@@ -217,10 +225,10 @@ $_L['Title'] = 'Title';
 $_L['Message'] = 'Message';
 $_L['Account_Information'] = 'Your Account Information';
 $_L['Welcome_Text_User'] = 'Welcome to the Panel Members page, on this page you can:';
-$_L['Welcome_Text_Admin'] = '<b>PHPMixBill</b> is a billing Hotspot and PPPOE for Mikrotik using PHP and Mikrotik API to comunicate with router. If you get more profit with this application, please donate us.<br>Watch project <a href="https://github.com/ibnux/phpmixbill" target="_blank">in here</a>';
+$_L['Welcome_Text_Admin'] = '<b>Pinter Voucher</b> is a billing Hotspot and PPPOE for Mikrotik using PHP and Mikrotik API to comunicate with router. <br>Developed by Digital BU  <a href="https://akses-prima.co.id" target="_blank">PT. Akses Prima Indonesia</a>';
 
 //update 
-$_L['Invalid_Username_or_Password'] = 'Invalid Username or Password';
+$_L['Invalid_Username_or_Password'] = 'Username atau password SALAH';
 $_L['Do_Not_Access'] = 'You do not have permission to access this page';
 $_L['Incorrect_Current_Password'] = 'Incorrect Current Password';
 $_L['Password_Changed_Successfully'] = 'Password changed successfully, Please login again';
@@ -240,6 +248,7 @@ $_L['Hrs'] = 'Hrs';
 $_L['Mins'] = 'Mins';
 $_L['Days'] = 'Days';
 $_L['Months'] = 'Months';
+$_L['Inactive'] = 'Inactive';
 
 $_L['Add_Language'] = 'Add Language';
 $_L['Name_Lang'] = 'Language Name';
@@ -247,3 +256,82 @@ $_L['Folder_Lang'] = 'Folder Name';
 $_L['Translator'] = 'Translator';
 $_L['Lang_already_exist'] = 'Language Name Already Exist';
 
+$_L['All_Pro'] = 'Allpro';
+$_L['Add_Loc_Success'] = 'Add Location Successfull!';
+$_L['Add_SubLoc_Success'] = 'Add Sub Location Successfull!';
+$_L['Add_ODC_Success'] = 'Add ODC Successfull!';
+$_L['Add_ODP_Success'] = 'Add ODP Successfull!';
+$_L['Add_Region_Success'] = 'Add Region Successfull!';
+$_L['Add_Customer_Success'] = 'Add Customer Successfull!';
+$_L['Add_Port_Success'] = 'Add Port Successfull!';
+$_L['Add'] = 'Add';
+$_L['Edit'] = 'Edit';
+$_L['Edit_Loc_Success'] = 'Edit Location Successfull!';
+$_L['Edit_Loc'] = 'Edit Location';
+$_L['Edit_SubLoc_Success'] = 'Edit Sub Location Successfull!';
+$_L['Edit_SubLoc'] = 'Edit Sub Location';
+$_L['Edit_ODC_Success'] = 'Edit ODC Successfull!';
+$_L['Edit_ODC'] = 'Edit ODC';
+$_L['Edit_ODP_Success'] = 'Edit ODP Successfull!';
+$_L['Edit_ODP'] = 'Edit ODP';
+$_L['Edit_Region_Success'] = 'Edit Region Successfull!';
+$_L['Edit_Region'] = 'Edit Region';
+$_L['Edit_Customer_Success'] = 'Edit Customer Successfull!';
+$_L['Edit_Customer'] = 'Edit Customer';
+$_L['Edit_Port_Success'] = 'Edit Port Successfull!';
+$_L['Delete'] = 'Delete';
+$_L['Delete_Loc_Success'] = 'Delete Location Successfull!';
+$_L['Delete_SubLoc_Success'] = 'Delete Sub Location Successfull!';
+$_L['Delete_ODC_Success'] = 'Delete ODC Successfull!';
+$_L['Delete_ODP_Success'] = 'Delete ODP Successfull!';
+$_L['Delete_Region_Success'] = 'Delete Region Successfull!';
+$_L['Delete_Customer_Success'] = 'Delete Customer Successfull!';
+$_L['Delete_Port_Success'] = 'Delete Port Successfull!';
+$_L['Delete_Loc_Failed'] = 'Delete Location Failed!';
+$_L['Delete_SubLoc_Failed'] = 'Delete Sub Location Failed!';
+$_L['Delete_ODC_Failed'] = 'Delete ODC Failed!';
+$_L['Delete_ODP_Failed'] = 'Delete ODP Failed!';
+$_L['Delete_Region_Failed'] = 'Delete Region Failed!';
+$_L['Delete_Customer_Failed'] = 'Delete Customer Failed!';
+$_L['Delete_Port_Failed'] = 'Delete Port Failed!';
+$_L['Main'] = 'Main';
+$_L['Main_Location'] = 'Main Location';
+$_L['Main_SubLoc'] = 'Main Sub Location';
+$_L['Main_Region'] = 'Main Region';
+$_L['Main_Customers'] = 'Main Customers';
+$_L['Home_Pass'] = 'HomePass';
+$_L['Occupancy'] = 'Occupancy';
+$_L['Name_Already_Exist'] = 'Name Already Exist';
+$_L['Asset_Not_Found'] = 'Asset Not Found';
+$_L['Map'] = 'Map';
+$_L['Location'] = 'Location';
+$_L['SubLoc'] = 'Sub Location';
+$_L['Success'] = 'Successfull!';
+$_L['Failed'] = 'Failed!';
+$_L['NF'] = 'Not Found';
+$_L['ID_Loc_Not_Regist'] = 'Location ID Not Registered';
+$_L['ID_ODC_Not_Regist'] = 'ODC ID Not Registered';
+$_L['ID_SubLoc_Not_Regist'] = 'Sub Location ID Not Registered';
+$_L['ID_ODP_Not_Regist'] = 'ODP ID Not Registered';
+$_L['ID_Customer_Not_Regist'] = 'Customer ID Not Registered';
+$_L['Number_Of_Splitter'] = 'Number Of Splitter';
+$_L['With'] = 'With';
+$_L['Already_Registered'] = 'Already Registered';
+$_L['Number_Of'] = 'Number Of';
+$_L['Customers'] = 'Customers';
+$_L['Telp_Numb'] = 'Telephone Number';
+$_L['Action'] = 'Action';
+$_L['Region'] = 'Region';
+$_L['View'] = 'View';
+$_L['Data_NA'] = 'Data Not Available';
+$_L['Subscribe'] = 'Subscribe';
+$_L['Capacity'] = 'Capacity';
+$_L['Internet_Numb'] = 'Internet Number';
+$_L['Port_Used'] = 'Port has been Used';
+$_L['Port_Already'] = 'Port Already Exist In';
+$_L['No_Inet_Already_Exist'] = 'Internet Number Already Exist';
+$_L['Search_Data'] = 'Search Data';
+$_L['Region_Not_Register'] = 'Region Not Register';
+$_L['Cust_Name'] = 'Customer Name';
+$_L['Cust_Address'] = 'Customer Address';
+$_L['Over'] = 'Over';

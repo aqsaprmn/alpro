@@ -131,6 +131,19 @@
 							<span class="text">{$_L['Dashboard']}</span>
 						</a>
 					</li>
+					<li {if $_system_menu eq 'prepaid'}class="active"{/if}>
+						<a href="{$_url}prepaid/voucher" >
+							<i class="ion ion-card"></i>
+							<span class="text">Voucher</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="{$_url}payment/agent" >
+							<i class="ion ion-forward"></i>
+							<span class="text">Pembayaran</span>
+						</a>
+					</li>
+
 					<!-- Message on progress, hide it  -->
 					<li class="hidden {if $_system_menu eq 'message'}open{/if}">
 						<a href="#" onClick="toggleDropdownMobile(this)">
@@ -144,7 +157,7 @@
 							<li {if $_system_menu eq 'message'}class="active"{/if}><a href="{$_url}message/compose">{$_L['Compose']}</a></li>
 						</ul>
 					</li>
-				{if $_admin['user_type'] eq 'Admin' || $_admin['user_type'] eq 'Sales'}
+				{if $_admin['user_type'] eq 'Admin'}
 					<li {if $_system_menu eq 'customers'}class="open"{/if}>
 						<a href="#" onClick="toggleDropdownMobile(this)">
 							<i class="ion ion-android-contacts"></i>
@@ -193,35 +206,6 @@
 						</ul>
 					</li>
 				{else}
-					<li {if $_system_menu eq 'voucher'}class="open"{/if}>
-						<a href="#" onClick="toggleDropdownMobile(this)">
-							<i class="ion ion-card"></i>
-							<span class="text">{$_L['Voucher']}</span>
-							<i class="arrow ion-chevron-left"></i>
-						</a>
-						<ul class="inner-drop list-unstyled">
-							<li {if $_system_menu eq 'voucher'}class="active"{/if}><a href="{$_url}voucher/activation">{$_L['Voucher_Activation']}</a></li>
-							<li {if $_system_menu eq 'voucher'}class="active"{/if}><a href="{$_url}voucher/list-activated">{$_L['List_Activated_Voucher']}</a></li>
-						</ul>
-					</li>
-					<li {if $_system_menu eq 'order'}class="active"{/if}>
-						<a href="{$_url}order">
-							<i class="ion ion-ios-cart"></i>
-							<span class="text">{$_L['Order_Voucher']}</span>
-						</a>
-					</li>
-					<li {if $_system_menu eq 'accounts'}class="open"{/if}>
-						<a href="#" onClick="toggleDropdownMobile(this)">
-							<i class="ion ion-gear-a"></i>
-							<span class="text">{$_L['My_Account']}</span>
-							<i class="arrow ion-chevron-left"></i>
-						</a>
-						<ul class="inner-drop list-unstyled">
-							<li {if $_system_menu eq 'accounts'}class="active"{/if}><a href="{$_url}accounts/profile">{$_L['My_Profile']}</a></li>
-							<li {if $_system_menu eq 'accounts'}class="active"{/if}><a href="{$_url}accounts/change-password">{$_L['Change_Password']}</a></li>
-							<li>&nbsp;</li>
-						</ul>
-					</li>
 				{/if}
 				{if $_admin['user_type'] eq 'Admin'}
 					<li {if $_system_menu eq 'network'}class="open"{/if}>
@@ -265,7 +249,7 @@
 					<li {if $_system_menu eq 'disquss'}class="active"{/if}>
 						<a href="{$_url}disquss">
 							<i class="ion ion-chatbubbles"></i>
-							<span class="text">Disquss</span>
+							<span class="text">Discussion</span>
 						</a>
 					</li>
 				{/if}

@@ -1,17 +1,14 @@
-# PHP Mikrotik Billing 
+# Mikrotik Billing 
 ----
 
-![N|phpmixbill](http://4.bp.blogspot.com/-3OWL5OI7pqU/VjocUDdzMDI/AAAAAAAAAiA/s_XJN0_mDlk/s640/Screenshot_8.png)
-
 ----
 
-This project maintained by [@ibnux](https://twitter.com/ibnux)
+This project maintained by 
 
-Aplikasi ini dikelola oleh [@ibnux](https://twitter.com/ibnux)
+Aplikasi ini dikelola oleh )
 
 ---- 
 
-Download [Mikrotik Login Template](https://github.com/ibnux/phpmixbill-mikrotik-login-template)
 
 
 
@@ -33,13 +30,10 @@ TODOS:
 
 Installation
 ----
-See [WIKI](https://github.com/ibnux/phpmixbill/wiki/Instalation)
-
-baca [WIKI](https://github.com/ibnux/phpmixbill/wiki/Instalation)
 
 System Requirements
 ----
-Most current web servers with PHP & MySQL installed will be capable of running PHPMixBill
+Most current web servers with PHP & MySQL installed will be capable of running API PINTER
 
 Minimum Requirements
 - Linux or Windows OS
@@ -53,7 +47,7 @@ can be Installed in Raspberry Pi Device.
 JASA
 ----
 
-Terima jasa instalasi PHPMIXBILL beserta mikrotiknya.
+Terima jasa instalasi API PINTER beserta mikrotiknya.
 
 Via Team Viewer maupun Barang dibeli dari saya dan tinggal pakai.
 
@@ -62,7 +56,7 @@ Via Team Viewer maupun Barang dibeli dari saya dan tinggal pakai.
 
 Jasa kurang lebih Rp. 500.000, belum termasuk ongkir dan harga perangkat, Gratis Tanya Jawab via Messenger (Jika lagi senggang).
 
-hubungi ibnux di [Twitter](https://twitter.com/ibnux) atau di [facebook](https://facebook.com/ibnumaksum)
+hubungi 
 
 
 License
@@ -72,21 +66,3 @@ GNU General Public License version 2 or later
 
 see LICENSE file
 
-
-Donate to ibnux
-----
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6RBNGRJMZVV7C)
-
-BCA: 5410454825
-
-Mandiri: 163-000-1855-793
-
-a.n Ibnu Maksum
-
-Donate to first Developer
-----
-
-PayPal: iesien22@yahoo.com 
-
-Bank Mandiri: 130.00.1024957.4
