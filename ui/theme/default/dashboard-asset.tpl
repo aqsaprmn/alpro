@@ -16,6 +16,7 @@
                     <h4 class="mt0 text-primary text-bold">{$lok}</h4>
                     <h5 class="text-light mb0">{$_L['Number_Of']} {$_L['Location']}</h5>
                   </div>
+
                   <div class="right ion ion-ios-pricetags-outline icon"></div>
                 </div>
               </div>
@@ -74,86 +75,68 @@
           </div>
         </div>
       </div>
-      <div class="row ml0 mr0">
-        <div style="height: 450px" class="col-md-6 col-sm-6">
+      <div class="row ml0 mr0" id="dataTotal">
+        <div class="col-md-12 col-sm-12">
           <div class="h-100 panel panel-default mini-box panel-hovered">
             <div class="panel-body">
               <div class="clearfix">
-                <div class="row ml0 mr0">
+                <div class="row ml0 mr0 mb20">
                   <div class="col-lg-6 col-xs-6 p-0">
                     <h3 class="text-bold mt0 mb0 text-left">Asset Location</h3>
                   </div>
-                  <div class="col-lg-6 col-xs-6 text-right">
-                    <a href="">Show All List</a>
-                  </div>
                 </div>
-                <div class="text-center">
-                  <img width="80%" src="{$_theme}/images/gambar1.jpg" alt="" />
+                <div class="row mb20">
+                 <div class="col-lg-4">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label class="control-label mt5">Region</label>
+                      </div>
+                      <div class="col-lg-8 p-0">
+                      <select class="form-select form-select-lg" name="region" id="region">
+                        
+                      </select>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label class="control-label mt5">Location</label>
+                      </div>
+                      <div class="col-lg-8 p-0">
+                      <select class="form-select form-select-lg" name="location" id="location">
+                        
+                      </select>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label class="control-label mt5">Sub Location</label>
+                      </div>
+                      <div class="col-lg-8 p-0">
+                      <select class="form-select form-select-lg" name="subloc" id="subloc">
+                       
+                      </select>
+                       </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-lg-6 col-xs-6">
-                    <h6 class="text-bold text-uppercase">Location</h6>
-                    <p>Jakarta</p>
-                  </div>
-                  <div class="col-lg-6 col-xs-6 text-right">
-                    <h6 class="text-bold text-uppercase">Number of Assets</h6>
-                    <p>140</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="height: 450px" class="col-md-6 col-sm-6">
-          <div class="h-100 panel panel-default mini-box panel-hovered">
-            <div class="panel-body">
-              <div class="clearfix">
-                <div class="row ml0 mr0">
-                  <div class="col-lg-6 col-xs-6 p-0">
-                    <h3 class="text-bold mt0 mb0 text-left">
-                      Port Status
-                    </h3>
-                  </div>
-                  <div class="col-lg-6 col-xs-6 text-right">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Indonesia
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="row mr0 ml0 py-4">
-                  <div class="col-lg-12 col-xs-12">
-                    <div class="dropdown mb15">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Indonesia
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-6">
-                      <canvas id="myChart"></canvas>
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-header col-12 text-center pb-4"><b>Total Data Asset</b></div>
+                      <div class="row">
+                        <div class="col-lg-6 chart-area">
+                          <canvas id="myBarChart"></canvas>
+                        </div>
+                        <div class="col-lg-6 pt-3">
+                          <table class="table table-stripped table-bordered" id="assetTotal">
+                              
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

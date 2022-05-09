@@ -200,6 +200,67 @@ switch ($action) {
 
         break;
 
+    case 'region':
+
+        $data['reg'] = ORM::for_table('tbl_region')->find_array();
+
+        $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->find_array();
+
+        echo json_encode($data);
+
+        break;
+
+    case 'location':
+
+        $reg = _post('name');
+
+        if ($reg != 'all') {
+            $data['loc'] = ORM::for_table('v_reg_loc')->where('nama_reg', $reg)->find_array();
+
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->find_array();
+        } else {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->find_array();
+        }
+
+        echo json_encode($data);
+
+        break;
+
+    case 'subloc':
+
+
+        $reg = _post('reg');
+        $loc = _post('lok');
+
+        if ($loc != "all") {
+            $data['subloc'] = ORM::for_table('v_loc_subloc')->where('nama_loc', $loc)->find_array();
+
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->where('nama_lok', $loc)->find_array();
+        } else {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->find_array();
+        }
+
+
+        echo json_encode($data);
+
+        break;
+
+    case 'subloc_end':
+        $reg = _post('region');
+        $loc = _post('location');
+        $subloc = _post('subloc');
+
+        if ($subloc != 'all') {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->where('nama_lok', $loc)->where('nama_sub_lok', $subloc)->find_array();
+        } else {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->where('nama_lok', $loc)->find_array();
+        }
+
+
+
+        echo json_encode($data);
+        break;
+
     default:
         echo 'Data Not Found';
         break;

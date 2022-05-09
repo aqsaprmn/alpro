@@ -72,6 +72,11 @@ $odc = ORM::for_table('tbl_odc')->find_many()->count();
 $odp = ORM::for_table('tbl_odp')->find_many()->count();
 $cus = ORM::for_table('tbl_pelanggan')->find_many()->count();
 
+// Region
+$reg = ORM::for_table('tbl_region')->find_many();
+
+$ui->assign('fetchApi', '<script src="' . $_theme . '/scripts/dashAqsha.js"></script><script src="ui/lib/js/chart/package/dist/chart.min.js"');
+$ui->assign('reg', $reg);
 $ui->assign('lok', $loc);
 $ui->assign('odc', $odc);
 $ui->assign('odp', $odp);
