@@ -76,6 +76,12 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label class="col-md-2 control-label">Revenue</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" id="revenue" name="revenue" autocomplete="off">
+								</div>
+							</div>
+							<div class="form-group">
 								<label class="col-md-2 control-label">LAT</label>
 								<div class="col-md-6">
 									<input type="text" class="form-control decimal" id="lat" name="lat" autocomplete="off">

@@ -78,6 +78,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
             $idcustomer = _post('idcustomer');
             $internetnumb = _post('internetnumb');
             $status = _post('status');
+            $revenue = (float)_post('revenue');
             $lat = (float)_post('lat');
             $lon = (float)_post('lon');
 
@@ -112,6 +113,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
                 }
             }
 
+            if ($revenue == '') $revenue = 0.00;
             if ($portodp == '') $portodp = null;
             if ($idcustomer == '') $idcustomer = null;
             if ($internetnumb == '') $internetnumb = null;
@@ -127,6 +129,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
                 $d->status_port_odp = $status;
                 $d->lat = $lat;
                 $d->lon = $lon;
+                $d->revenue = $revenue;
                 $d->save();
                 r2(U . 'region/' . $idreg . '/' . $idloc . '/' . $idodp, 's', $_L['Add_Port_Success']);
             } else {
@@ -150,6 +153,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
             $idcustomer = _post('idcustomer');
             $internetnumb = _post('internetnumb');
             $status = _post('status');
+            $revenue = (float)_post('revenue');
             $lat = _post('lat');
             $lon = _post('lon');
 
@@ -176,6 +180,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
 
             if ($idcustomer == '') $idcustomer = null;
             if ($internetnumb == '') $internetnumb = null;
+            if ($revenue == '') $revenue = 0.00;
             if ($lat == '') $lat = null;
             if ($lon == '') $lon = null;
 
@@ -187,6 +192,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
                 $d->status_port_odp = $status;
                 $d->lat = $lat;
                 $d->lon = $lon;
+                $d->revenue = $revenue;
                 $d->save();
                 r2(U . 'region/' . $idreg . '/' . $idloc . '/' . $idodp, 's', $_L['Edit_Port_Success']);
             } else {

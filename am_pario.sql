@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Mar 2022 pada 02.23
+-- Waktu pembuatan: 10 Bulan Mei 2022 pada 10.04
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -106,7 +106,16 @@ INSERT INTO `tbl_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VAL
 (61, '2022-03-04 21:27:44', 'Admin', 'admin Login Successful', 1, '::1'),
 (62, '2022-03-07 10:14:07', 'Admin', 'admin Login Successful', 1, '::1'),
 (63, '2022-03-15 20:08:41', 'Admin', 'admin Login Successful', 1, '::1'),
-(64, '2022-03-15 20:29:40', 'Admin', 'admin Login Successful', 1, '::1');
+(64, '2022-03-15 20:29:40', 'Admin', 'admin Login Successful', 1, '::1'),
+(65, '2022-03-28 11:54:00', 'Admin', 'admin Failed Login', 0, '::1'),
+(66, '2022-03-28 11:54:06', 'Admin', 'admin Login Successful', 1, '::1'),
+(67, '2022-04-07 12:02:11', 'Admin', 'admin Failed Login', 0, '::1'),
+(68, '2022-04-07 12:02:16', 'Admin', 'admin Login Successful', 1, '::1'),
+(69, '2022-04-13 08:07:46', 'Admin', 'admin Failed Login', 0, '::1'),
+(70, '2022-04-13 08:07:52', 'Admin', 'Admin Login Successful', 1, '::1'),
+(71, '2022-04-13 21:32:01', 'Admin', 'admin Login Successful', 1, '::1'),
+(72, '2022-04-16 09:52:17', 'Admin', 'admin Login Successful', 1, '::1'),
+(73, '2022-05-09 10:16:51', 'Admin', 'admin Login Successful', 1, '::1');
 
 -- --------------------------------------------------------
 
@@ -206,7 +215,8 @@ CREATE TABLE `tbl_odc` (
 INSERT INTO `tbl_odc` (`id`, `nama`, `lat`, `lon`, `jumlah_splitter`, `kapasitas`) VALUES
 (1, 'ODC-CPA-FMA', NULL, NULL, 4, 8),
 (4, 'ODC-RCK-FCA', NULL, NULL, 4, 32),
-(6, 'ODC-TES-LGI', '123.456000', '1.100000', 2, 8);
+(6, 'ODC-TES-LGI', '123.456000', '1.100000', 2, 8),
+(7, 'ODC-YAA-YAA', NULL, NULL, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -227,7 +237,8 @@ CREATE TABLE `tbl_odc_lokasi` (
 INSERT INTO `tbl_odc_lokasi` (`id`, `id_odc`, `id_lokasi`) VALUES
 (2, 1, 28),
 (3, 4, 55),
-(4, 6, 108);
+(4, 6, 108),
+(5, 7, 10);
 
 -- --------------------------------------------------------
 
@@ -524,149 +535,150 @@ CREATE TABLE `tbl_port_odp` (
   `no_inet` mediumtext DEFAULT NULL,
   `status_port_odp` mediumtext DEFAULT 'UNUSED',
   `lat` decimal(12,6) DEFAULT NULL,
-  `lon` decimal(12,6) DEFAULT NULL
+  `lon` decimal(12,6) DEFAULT NULL,
+  `revenue` decimal(16,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tbl_port_odp`
 --
 
-INSERT INTO `tbl_port_odp` (`id`, `id_odp`, `port_odp`, `id_pelanggan`, `no_inet`, `status_port_odp`, `lat`, `lon`) VALUES
-(5, 1, 3, 4, '232', 'ACTIVE', '2.533430', '234.233400'),
-(7, 1, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(9, 1, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(11, 1, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(13, 1, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(15, 1, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(17, 2, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(19, 2, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(21, 2, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(23, 2, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(25, 2, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(27, 2, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(29, 2, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(31, 2, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(33, 3, 1, 2, '3242342423', 'ACTIVE', '100.110000', '300.222000'),
-(35, 3, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(37, 3, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(39, 3, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(43, 3, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(45, 3, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(47, 3, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(49, 4, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(51, 4, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(53, 4, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(55, 4, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(57, 4, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(59, 4, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(61, 4, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(63, 4, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(65, 5, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(67, 5, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(69, 5, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(71, 5, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(73, 5, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(75, 5, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(77, 5, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(79, 5, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(81, 6, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(83, 6, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(87, 6, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(89, 6, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(91, 6, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(93, 6, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(97, 18, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(99, 18, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(101, 18, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(103, 18, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(105, 18, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(107, 18, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(109, 18, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(111, 18, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(113, 19, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(115, 19, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(117, 19, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(119, 19, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(121, 19, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(123, 19, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(125, 19, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(127, 19, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(129, 20, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(131, 20, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(133, 20, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(135, 20, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(137, 20, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(139, 20, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(141, 20, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(143, 20, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(145, 21, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(147, 21, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(149, 21, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(151, 21, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(153, 21, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(155, 21, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(157, 21, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(159, 21, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(161, 22, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(163, 22, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(165, 22, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(167, 22, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(169, 22, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(171, 22, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(173, 22, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(175, 22, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(177, 23, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(179, 23, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(181, 23, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(183, 23, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(185, 23, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(187, 23, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(189, 23, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(191, 23, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(193, 24, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(195, 24, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(197, 24, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(199, 24, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(201, 24, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(203, 24, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(205, 24, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(207, 24, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(208, 36, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(209, 36, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(210, 36, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(211, 36, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(212, 36, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(213, 36, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(214, 36, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(215, 36, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(222, 1, 2, 4, '2', 'ACTIVE', NULL, NULL),
-(225, 1, 1, 6, NULL, 'ACTIVE', '111234.456633', '1123.120000'),
-(226, 3, 5, 8, '5345345', 'ACTIVE', '123.000000', '233.233333'),
-(227, 37, 1, NULL, NULL, 'IDLE', NULL, NULL),
-(228, 37, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(229, 37, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(230, 37, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(231, 37, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(232, 37, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(233, 37, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(234, 37, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(235, 37, 9, NULL, NULL, 'IDLE', NULL, NULL),
-(236, 37, 10, NULL, NULL, 'IDLE', NULL, NULL),
-(237, 37, 11, NULL, NULL, 'IDLE', NULL, NULL),
-(238, 37, 12, NULL, NULL, 'IDLE', NULL, NULL),
-(239, 37, 13, NULL, NULL, 'IDLE', NULL, NULL),
-(240, 37, 14, NULL, NULL, 'IDLE', NULL, NULL),
-(241, 37, 15, NULL, NULL, 'IDLE', NULL, NULL),
-(242, 37, 16, NULL, NULL, 'IDLE', NULL, NULL),
-(243, 38, 1, 11, '1231', 'ACTIVE', '12.343242', '34.000000'),
-(244, 38, 2, NULL, NULL, 'IDLE', NULL, NULL),
-(245, 38, 3, NULL, NULL, 'IDLE', NULL, NULL),
-(246, 38, 4, NULL, NULL, 'IDLE', NULL, NULL),
-(247, 38, 5, NULL, NULL, 'IDLE', NULL, NULL),
-(248, 38, 6, NULL, NULL, 'IDLE', NULL, NULL),
-(249, 38, 7, NULL, NULL, 'IDLE', NULL, NULL),
-(251, 38, 8, NULL, NULL, 'IDLE', NULL, NULL),
-(252, 7, 3, NULL, NULL, 'IDLE', NULL, NULL);
+INSERT INTO `tbl_port_odp` (`id`, `id_odp`, `port_odp`, `id_pelanggan`, `no_inet`, `status_port_odp`, `lat`, `lon`, `revenue`) VALUES
+(5, 1, 3, 4, '232', 'ACTIVE', '2.533430', '234.233400', '100.00'),
+(7, 1, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(9, 1, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(11, 1, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(13, 1, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(15, 1, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(17, 2, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(19, 2, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(21, 2, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(23, 2, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(25, 2, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(27, 2, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(29, 2, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(31, 2, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(33, 3, 1, 2, '3242342423', 'ACTIVE', '100.110000', '300.222000', '0.00'),
+(35, 3, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(37, 3, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(39, 3, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(43, 3, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(45, 3, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(47, 3, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(49, 4, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(51, 4, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(53, 4, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(55, 4, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(57, 4, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(59, 4, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(61, 4, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(63, 4, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(65, 5, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(67, 5, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(69, 5, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(71, 5, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(73, 5, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(75, 5, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(77, 5, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(79, 5, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(81, 6, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(83, 6, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(87, 6, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(89, 6, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(91, 6, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(93, 6, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(97, 18, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(99, 18, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(101, 18, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(103, 18, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(105, 18, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(107, 18, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(109, 18, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(111, 18, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(113, 19, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(115, 19, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(117, 19, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(119, 19, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(121, 19, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(123, 19, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(125, 19, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(127, 19, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(129, 20, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(131, 20, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(133, 20, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(135, 20, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(137, 20, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(139, 20, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(141, 20, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(143, 20, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(145, 21, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(147, 21, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(149, 21, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(151, 21, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(153, 21, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(155, 21, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(157, 21, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(159, 21, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(161, 22, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(163, 22, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(165, 22, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(167, 22, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(169, 22, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(171, 22, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(173, 22, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(175, 22, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(177, 23, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(179, 23, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(181, 23, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(183, 23, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(185, 23, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(187, 23, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(189, 23, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(191, 23, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(193, 24, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(195, 24, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(197, 24, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(199, 24, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(201, 24, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(203, 24, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(205, 24, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(207, 24, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(208, 36, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(209, 36, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(210, 36, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(211, 36, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(212, 36, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(213, 36, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(214, 36, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(215, 36, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(222, 1, 2, 4, '2', 'ACTIVE', NULL, NULL, '0.00'),
+(225, 1, 1, 6, NULL, 'ACTIVE', '111234.456633', '1123.120000', '100.00'),
+(226, 3, 5, 8, '5345345', 'ACTIVE', '123.000000', '233.233333', '0.00'),
+(227, 37, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(228, 37, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(229, 37, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(230, 37, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(231, 37, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(232, 37, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(233, 37, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(234, 37, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(235, 37, 9, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(236, 37, 10, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(237, 37, 11, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(238, 37, 12, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(239, 37, 13, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(240, 37, 14, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(241, 37, 15, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(242, 37, 16, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(243, 38, 1, 11, '1231', 'ACTIVE', '12.343242', '34.000000', '0.00'),
+(244, 38, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(245, 38, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(246, 38, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(247, 38, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(248, 38, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(249, 38, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(251, 38, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(252, 7, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00');
 
 -- --------------------------------------------------------
 
@@ -751,7 +763,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `fullname`, `password`, `user_type`, `status`, `last_login`, `creationdate`) VALUES
-(1, 'admin', 'Administrator', '$1$QxwXAsJO$fVc7H06d/LkRlVTxxZx70/', 'Admin', 'Active', '2022-03-15 20:29:40', '2014-06-23 01:43:07'),
+(1, 'admin', 'Administrator', '$1$QxwXAsJO$fVc7H06d/LkRlVTxxZx70/', 'Admin', 'Active', '2022-05-09 10:16:50', '2014-06-23 01:43:07'),
 (2, 'amirhamzah', 'Amir Hamzah', '$1$wzOOTJ8D$mqaP0/h3evW8yc82sM5ev1', 'Sales', 'Active', '2021-09-17 12:29:31', '2021-09-17 11:36:47');
 
 -- --------------------------------------------------------
@@ -767,10 +779,52 @@ CREATE TABLE `v_002_port_odp` (
 ,`id_pelanggan` int(11)
 ,`no_inet` mediumtext
 ,`status_port_odp` mediumtext
+,`revenue` decimal(16,2)
 ,`lat` decimal(12,6)
 ,`lon` decimal(12,6)
 ,`nama` mediumtext
 ,`alamat` mediumtext
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `v_loc_subloc`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `v_loc_subloc` (
+`id_lokasi` int(11)
+,`nama_sub_loc` mediumtext
+,`id` int(11) unsigned
+,`nama_loc` mediumtext
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `v_reg_loc`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `v_reg_loc` (
+`id_region` int(11)
+,`nama_loc` mediumtext
+,`id` int(11) unsigned
+,`nama_reg` mediumtext
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `v_reg_loc_subloc`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `v_reg_loc_subloc` (
+`id_sub_loc` int(11) unsigned
+,`nama_sub_loc` mediumtext
+,`id_loc` int(11) unsigned
+,`nama_loc` mediumtext
+,`id_reg` int(11) unsigned
+,`nama_reg` mediumtext
 );
 
 -- --------------------------------------------------------
@@ -814,11 +868,54 @@ CREATE TABLE `v_tipe_tbl_lokasi` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in struktur untuk tampilan `v_total_data_bf`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `v_total_data_bf` (
+`nama_reg` mediumtext
+,`nama_lok` mediumtext
+,`nama_sub_lok` mediumtext
+,`id_odc` int(11)
+,`id_odp` int(11)
+,`port_odp` int(11)
+,`nama` mediumtext
+);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur untuk view `v_002_port_odp`
 --
 DROP TABLE IF EXISTS `v_002_port_odp`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_002_port_odp`  AS SELECT `a`.`id` AS `id`, `a`.`id_odp` AS `id_odp`, `a`.`port_odp` AS `port_odp`, `a`.`id_pelanggan` AS `id_pelanggan`, `a`.`no_inet` AS `no_inet`, `a`.`status_port_odp` AS `status_port_odp`, `a`.`lat` AS `lat`, `a`.`lon` AS `lon`, `b`.`nama` AS `nama`, `b`.`alamat` AS `alamat` FROM (`tbl_port_odp` `a` left join `tbl_pelanggan` `b` on(`a`.`id_pelanggan` = `b`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_002_port_odp`  AS SELECT `a`.`id` AS `id`, `a`.`id_odp` AS `id_odp`, `a`.`port_odp` AS `port_odp`, `a`.`id_pelanggan` AS `id_pelanggan`, `a`.`no_inet` AS `no_inet`, `a`.`status_port_odp` AS `status_port_odp`, `a`.`revenue` AS `revenue`, `a`.`lat` AS `lat`, `a`.`lon` AS `lon`, `b`.`nama` AS `nama`, `b`.`alamat` AS `alamat` FROM (`tbl_port_odp` `a` left join `tbl_pelanggan` `b` on(`a`.`id_pelanggan` = `b`.`id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_loc_subloc`
+--
+DROP TABLE IF EXISTS `v_loc_subloc`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loc_subloc`  AS SELECT `a`.`id_lokasi` AS `id_lokasi`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_loc` FROM (`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_reg_loc`
+--
+DROP TABLE IF EXISTS `v_reg_loc`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc`  AS SELECT `a`.`id_region` AS `id_region`, `a`.`nama` AS `nama_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_reg` FROM (`tbl_lokasi` `a` join `tbl_region` `b` on(`a`.`id_region` = `b`.`id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_reg_loc_subloc`
+--
+DROP TABLE IF EXISTS `v_reg_loc_subloc`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc_subloc`  AS SELECT `a`.`id` AS `id_sub_loc`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id_loc`, `b`.`nama` AS `nama_loc`, `c`.`id` AS `id_reg`, `c`.`nama` AS `nama_reg` FROM ((`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`)) join `tbl_region` `c` on(`b`.`id_region` = `c`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -846,6 +943,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `v_tipe_tbl_lokasi`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tipe_tbl_lokasi`  AS SELECT DISTINCT `tbl_lokasi`.`tipe` AS `tipe` FROM `tbl_lokasi` ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_total_data_bf`
+--
+DROP TABLE IF EXISTS `v_total_data_bf`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_total_data_bf`  AS SELECT `a`.`nama` AS `nama_reg`, `b`.`nama` AS `nama_lok`, `c`.`nama` AS `nama_sub_lok`, `d`.`id_odc` AS `id_odc`, `e`.`id_odp` AS `id_odp`, `f`.`port_odp` AS `port_odp`, `g`.`nama` AS `nama` FROM ((((((`tbl_region` `a` join `tbl_lokasi` `b` on(`a`.`id` = `b`.`id_region`)) left join `tbl_sub_lokasi` `c` on(`b`.`id` = `c`.`id_lokasi`)) join `tbl_odc_lokasi` `d` on(`b`.`id` = `d`.`id_lokasi`)) left join `tbl_odp_sub_lokasi` `e` on(`c`.`id` = `e`.`id_sub_lokasi`)) left join `tbl_port_odp` `f` on(`e`.`id_odp` = `f`.`id_odp`)) left join `tbl_pelanggan` `g` on(`f`.`id_pelanggan` = `g`.`id`)) ;
 
 --
 -- Indexes for dumped tables
@@ -966,7 +1072,7 @@ ALTER TABLE `tbl_language`
 -- AUTO_INCREMENT untuk tabel `tbl_logs`
 --
 ALTER TABLE `tbl_logs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_lokasi`
@@ -984,13 +1090,13 @@ ALTER TABLE `tbl_message`
 -- AUTO_INCREMENT untuk tabel `tbl_odc`
 --
 ALTER TABLE `tbl_odc`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_odc_lokasi`
 --
 ALTER TABLE `tbl_odc_lokasi`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_odp`

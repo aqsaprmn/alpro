@@ -38,6 +38,7 @@
 												<th class="text-center">{$_L['Cust_Address']}</th>
 												<th class="text-center">{$_L['Internet_Numb']}</th>
 												<th class="text-center">Status Port ODP</th>
+												<th class="text-center">Revenue</th>
 												<th class="text-center hidden">LAT</th>
 												<th class="text-center hidden">LON</th>
 												<th class="text-center">{$_L['Action']}</th>
@@ -52,6 +53,7 @@
 													<td class="">{$po['alamat']}</td>
 													<td class="text-center">{$po['no_inet']}</td>
 													<td class="text-center">{$po['status_port_odp']}</td>
+													<td class="text-center">{$po['revenue']}</td>
 													<td class="text-center hidden">{$po['lat']}</td>
 													<td class="text-center hidden">{$po['lon']}</td>
 													<td style="width:160px;" class="text-center">
