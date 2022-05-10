@@ -126,7 +126,7 @@ INSERT INTO `tbl_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VAL
 CREATE TABLE `tbl_lokasi` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_region` int(11) NOT NULL,
-  `nama` mediumtext NOT NULL,
+  `nama` VARCHAR(255) NOT NULL,
   `tipe` mediumtext DEFAULT NULL,
   `alamat` mediumtext DEFAULT NULL,
   `status` mediumtext DEFAULT NULL,
