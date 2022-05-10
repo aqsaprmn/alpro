@@ -979,8 +979,7 @@ ALTER TABLE `tbl_logs`
 -- Indeks untuk tabel `tbl_lokasi`
 --
 ALTER TABLE `tbl_lokasi`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`nama`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_message`
@@ -992,59 +991,49 @@ ALTER TABLE `tbl_message`
 -- Indeks untuk tabel `tbl_odc`
 --
 ALTER TABLE `tbl_odc`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`nama`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_odc_lokasi`
 --
 ALTER TABLE `tbl_odc_lokasi`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`id_lokasi`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_odp`
 --
 ALTER TABLE `tbl_odp`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`id_odc`,`port_odc`),
-  ADD UNIQUE (`id_odc`,`nama`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_odp_sub_lokasi`
 --
 ALTER TABLE `tbl_odp_sub_lokasi`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`id_odp`,`id_sub_lokasi`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`nama`,`no_telp`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_port_odp`
 --
 ALTER TABLE `tbl_port_odp`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`id_odp`,`port_odp`),
-  ADD UNIQUE (`no_inet`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_region`
 --
 ALTER TABLE `tbl_region`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`nama`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_sub_lokasi`
 --
 ALTER TABLE `tbl_sub_lokasi`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE (`id_lokasi`,`nama`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tbl_users`
