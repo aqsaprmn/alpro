@@ -189,7 +189,7 @@ CREATE TABLE `tbl_message` (
   `to_user` varchar(32) NOT NULL,
   `title` varchar(60) NOT NULL,
   `message` mediumtext NOT NULL,
-  `status` enum('0','1') NOT NULL DEFAULT '0',
+  `status` enum('0','1') NOT NULL DEFAULT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -205,7 +205,7 @@ CREATE TABLE `tbl_odc` (
   `lat` decimal(12,6) DEFAULT NULL,
   `lon` decimal(12,6) DEFAULT NULL,
   `jumlah_splitter` int(11) DEFAULT NULL,
-  `kapasitas` int(11) NOT NULL DEFAULT 8
+  `kapasitas` int(11) NOT NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -251,7 +251,7 @@ CREATE TABLE `tbl_odp` (
   `nama` mediumtext DEFAULT NULL,
   `id_odc` int(11) NOT NULL,
   `port_odc` int(11) NOT NULL,
-  `status_port_odc` mediumtext DEFAULT 'UNUSED',
+  `status_port_odc` mediumtext DEFAULT NULL,
   `kapasitas` int(11) NOT NULL,
   `lat` decimal(12,6) DEFAULT NULL,
   `lon` decimal(12,6) DEFAULT NULL
@@ -342,7 +342,7 @@ CREATE TABLE `tbl_pelanggan` (
   `nama` mediumtext DEFAULT NULL,
   `alamat` mediumtext DEFAULT NULL,
   `no_telp` mediumtext DEFAULT NULL,
-  `status` mediumtext DEFAULT 'BELUM BERLANGGANAN'
+  `status` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -533,7 +533,7 @@ CREATE TABLE `tbl_port_odp` (
   `port_odp` int(11) NOT NULL,
   `id_pelanggan` int(11) DEFAULT NULL,
   `no_inet` mediumtext DEFAULT NULL,
-  `status_port_odp` mediumtext DEFAULT 'UNUSED',
+  `status_port_odp` mediumtext DEFAULT NULL,
   `lat` decimal(12,6) DEFAULT NULL,
   `lon` decimal(12,6) DEFAULT NULL,
   `revenue` decimal(16,2) NOT NULL
@@ -749,11 +749,11 @@ INSERT INTO `tbl_sub_lokasi` (`id`, `id_lokasi`, `nama`, `status`, `homepass`, `
 
 CREATE TABLE `tbl_users` (
   `id` int(11) UNSIGNED NOT NULL,
-  `username` varchar(45) NOT NULL DEFAULT '',
-  `fullname` varchar(45) NOT NULL DEFAULT '',
+  `username` varchar(45) NOT NULL DEFAULT NUll,
+  `fullname` varchar(45) NOT NULL DEFAULT NUll,
   `password` mediumtext NOT NULL,
   `user_type` enum('Admin','Sales') NOT NULL,
-  `status` enum('Active','INACTIVE') NOT NULL DEFAULT 'Active',
+  `status` enum('Active','INACTIVE') NOT NULL DEFAULT NUll,
   `last_login` datetime DEFAULT NULL,
   `creationdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
