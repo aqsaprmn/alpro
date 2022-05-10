@@ -126,7 +126,7 @@ INSERT INTO `tbl_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VAL
 CREATE TABLE `tbl_lokasi` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_region` int(11) NOT NULL,
-  `nama` VARCHAR(255) NOT NULL,
+  `nama` VARCHAR(250) NOT NULL,
   `tipe` mediumtext DEFAULT NULL,
   `alamat` mediumtext DEFAULT NULL,
   `status` mediumtext DEFAULT NULL,
@@ -980,7 +980,7 @@ ALTER TABLE `tbl_logs`
 --
 ALTER TABLE `tbl_lokasi`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama` (`nama`);
+  ADD UNIQUE (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_message`
@@ -993,58 +993,58 @@ ALTER TABLE `tbl_message`
 --
 ALTER TABLE `tbl_odc`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_odc` (`nama`);
+  ADD UNIQUE (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_odc_lokasi`
 --
 ALTER TABLE `tbl_odc_lokasi`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_lokasi` (`id_lokasi`);
+  ADD UNIQUE (`id_lokasi`);
 
 --
 -- Indeks untuk tabel `tbl_odp`
 --
 ALTER TABLE `tbl_odp`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_port_odc` (`id_odc`,`port_odc`),
-  ADD UNIQUE KEY `unique_nama_odp` (`id_odc`,`nama`);
+  ADD UNIQUE (`id_odc`,`port_odc`),
+  ADD UNIQUE (`id_odc`,`nama`);
 
 --
 -- Indeks untuk tabel `tbl_odp_sub_lokasi`
 --
 ALTER TABLE `tbl_odp_sub_lokasi`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_odp` (`id_odp`,`id_sub_lokasi`);
+  ADD UNIQUE (`id_odp`,`id_sub_lokasi`);
 
 --
 -- Indeks untuk tabel `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_pelanggan` (`nama`,`no_telp`);
+  ADD UNIQUE (`nama`,`no_telp`);
 
 --
 -- Indeks untuk tabel `tbl_port_odp`
 --
 ALTER TABLE `tbl_port_odp`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_port_odp` (`id_odp`,`port_odp`),
-  ADD UNIQUE KEY `unique_no_inet` (`no_inet`);
+  ADD UNIQUE (`id_odp`,`port_odp`),
+  ADD UNIQUE (`no_inet`);
 
 --
 -- Indeks untuk tabel `tbl_region`
 --
 ALTER TABLE `tbl_region`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama` (`nama`);
+  ADD UNIQUE (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_sub_lokasi`
 --
 ALTER TABLE `tbl_sub_lokasi`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_sub_lokasi` (`id_lokasi`,`nama`);
+  ADD UNIQUE (`id_lokasi`,`nama`);
 
 --
 -- Indeks untuk tabel `tbl_users`
