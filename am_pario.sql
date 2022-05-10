@@ -980,7 +980,7 @@ ALTER TABLE `tbl_logs`
 --
 ALTER TABLE `tbl_lokasi`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama` (`nama`)
+  ADD UNIQUE KEY `nama` (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_message`
@@ -993,7 +993,7 @@ ALTER TABLE `tbl_message`
 --
 ALTER TABLE `tbl_odc`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique_odc` (`nama`)
+  ADD UNIQUE KEY `unique_odc` (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_odc_lokasi`
@@ -1037,7 +1037,7 @@ ALTER TABLE `tbl_port_odp`
 --
 ALTER TABLE `tbl_region`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama` (`nama`) ;
+  ADD UNIQUE KEY `nama` (`nama`);
 
 --
 -- Indeks untuk tabel `tbl_sub_lokasi`
