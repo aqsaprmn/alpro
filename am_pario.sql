@@ -189,7 +189,7 @@ CREATE TABLE `tbl_message` (
   `to_user` varchar(32) NOT NULL,
   `title` varchar(60) NOT NULL,
   `message` mediumtext NOT NULL,
-  `status` enum('0','1') NOT NULL DEFAULT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '0',
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -753,7 +753,7 @@ CREATE TABLE `tbl_users` (
   `fullname` varchar(45) NOT NULL DEFAULT NUll,
   `password` mediumtext NOT NULL,
   `user_type` enum('Admin','Sales') NOT NULL,
-  `status` enum('Active','INACTIVE') NOT NULL DEFAULT NUll,
+  `status` enum('Active','INACTIVE') NOT NULL DEFAULT 'INACTIVE',
   `last_login` datetime DEFAULT NULL,
   `creationdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
