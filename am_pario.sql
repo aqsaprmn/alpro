@@ -205,7 +205,7 @@ CREATE TABLE `tbl_odc` (
   `lat` decimal(12,6) DEFAULT NULL,
   `lon` decimal(12,6) DEFAULT NULL,
   `jumlah_splitter` int(11) DEFAULT NULL,
-  `kapasitas` int(11) NOT NULL DEFAULT NULL
+  `kapasitas` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -749,8 +749,8 @@ INSERT INTO `tbl_sub_lokasi` (`id`, `id_lokasi`, `nama`, `status`, `homepass`, `
 
 CREATE TABLE `tbl_users` (
   `id` int(11) UNSIGNED NOT NULL,
-  `username` varchar(45) NOT NULL DEFAULT NUll,
-  `fullname` varchar(45) NOT NULL DEFAULT NUll,
+  `username` varchar(45) DEFAULT NUll,
+  `fullname` varchar(45) DEFAULT NUll,
   `password` mediumtext NOT NULL,
   `user_type` enum('Admin','Sales') NOT NULL,
   `status` enum('Active','INACTIVE') NOT NULL DEFAULT 'INACTIVE',
