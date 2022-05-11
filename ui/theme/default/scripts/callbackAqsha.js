@@ -58,7 +58,7 @@ for (let i = 0; i < divInput.length; i++) {
        
 
         // fetch('http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn)
-        fetch('https://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn)
+        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn)
             .then( response => {
                 response.json().then( (response) => {
 
@@ -103,7 +103,7 @@ for (let i = 0; i < divInput.length; i++) {
                                         }
                         
                                         // xhttp.open('GET' , 'http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
-                                        xhttp.open('GET' , 'https://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
+                                        xhttp.open('GET' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
                                         xhttp.send();
                                     }
                                 }
@@ -147,7 +147,7 @@ for (let j = 0; j < divInput.length; j++) {
                 const valInputDiv = inputDivIn.value;
                 if (valInputDiv != '') {
                         // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
-                        fetch('https://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
                         .then(response => { 
                             response.json().then(response => {
                                 let option = ``;
@@ -163,7 +163,7 @@ for (let j = 0; j < divInput.length; j++) {
                     const valInputDivIn = inputDivIn.value;
                     if (valInputDivIn != '') {
                         // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
-                        fetch('https://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
+                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
                             .then(response => {
                                 response.json().then(response => {
                                     let option = ``;
