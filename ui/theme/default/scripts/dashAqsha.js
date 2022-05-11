@@ -9,7 +9,7 @@ const xhr = new XMLHttpRequest;
 var myChart = ``;
 
 // xhr.open('POST' , 'http://localhost/alpro/index.php?_route=datacall/'+region.id);
-xhr.open('POST' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+region.id);
+xhr.open('POST' , 'https://103.242.181.10/alpro/index.php?_route=datacall/'+region.id);
 xhr.send();
 xhr.addEventListener('load' , function () { 
     if (xhr.status == 200) {
@@ -104,7 +104,7 @@ region.addEventListener('change' , function () {
     const xhr = new XMLHttpRequest;
 
     // xhr.open('POST' , 'http://localhost/alpro/index.php?_route=datacall/'+loc.id);
-    xhr.open('POST' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+loc.id);
+    xhr.open('POST' , 'https://103.242.181.10/alpro/index.php?_route=datacall/'+loc.id);
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 
@@ -168,7 +168,7 @@ region.addEventListener('change' , function () {
     const val = this.value;
     const xhr = new XMLHttpRequest;
     // xhr.open('POST' , 'http://localhost/alpro/index.php?_route=datacall/'+subloc.id);
-    xhr.open('POST' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+subloc.id);
+    xhr.open('POST' , 'https://103.242.181.10/alpro/index.php?_route=datacall/'+subloc.id);
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
     xhr.send('reg='+regVal+'&lok='+val);
     xhr.addEventListener('load' , function () { 
@@ -230,7 +230,7 @@ region.addEventListener('change' , function () {
     const xhr = new XMLHttpRequest;
 
     // xhr.open('POST' , 'http://localhost/alpro/index.php?_route=datacall/subloc_end');
-    xhr.open('POST' , 'http://103.242.181.10/alpro/index.php?_route=datacall/subloc_end');
+    xhr.open('POST' , 'https://103.242.181.10/alpro/index.php?_route=datacall/subloc_end');
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 
