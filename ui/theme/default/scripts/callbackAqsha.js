@@ -56,7 +56,9 @@ for (let i = 0; i < divInput.length; i++) {
         const close = divModalTable.querySelector('.close');
         const button = dataTable.querySelector('button');
        
-        fetch('http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn)
+
+        // fetch('http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn)
+        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn)
             .then( response => {
                 response.json().then( (response) => {
 
@@ -100,7 +102,8 @@ for (let i = 0; i < divInput.length; i++) {
                                             }
                                         }
                         
-                                        xhttp.open('GET' , 'http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
+                                        // xhttp.open('GET' , 'http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
+                                        xhttp.open('GET' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
                                         xhttp.send();
                                     }
                                 }
@@ -143,7 +146,8 @@ for (let j = 0; j < divInput.length; j++) {
                 const idSelect = select.id;
                 const valInputDiv = inputDivIn.value;
                 if (valInputDiv != '') {
-                        fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
                         .then(response => { 
                             response.json().then(response => {
                                 let option = ``;
@@ -158,7 +162,8 @@ for (let j = 0; j < divInput.length; j++) {
                 inputDivIn.addEventListener('focusout', function () { 
                     const valInputDivIn = inputDivIn.value;
                     if (valInputDivIn != '') {
-                        fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
+                        // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
+                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
                             .then(response => {
                                 response.json().then(response => {
                                     let option = ``;
