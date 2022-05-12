@@ -78,7 +78,16 @@ if (isset($routes['3']) && $routes['3'] != '') {
             $idcustomer = _post('idcustomer');
             $internetnumb = _post('internetnumb');
             $status = _post('status');
-            $revenue = (float)_post('revenue');
+            $rev = '';
+            $revenue = _post('revenue');
+            $revenue = explode('.', $revenue);
+
+            for ($i = 1; $i < count($revenue); $i++) {
+                $rev .= trim($revenue[$i]);
+            }
+            $rev = explode(',', $rev);
+            $rev = implode('.', $rev);
+
             $lat = (float)_post('lat');
             $lon = (float)_post('lon');
 
@@ -129,7 +138,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
                 $d->status_port_odp = $status;
                 $d->lat = $lat;
                 $d->lon = $lon;
-                $d->revenue = $revenue;
+                $d->revenue = $rev;
                 $d->save();
                 r2(U . 'region/' . $idreg . '/' . $idloc . '/' . $idodp, 's', $_L['Add_Port_Success']);
             } else {
@@ -140,8 +149,25 @@ if (isset($routes['3']) && $routes['3'] != '') {
             $idport = $routes[5];
 
             $d = ORM::for_table('tbl_port_odp')->where_id_is($idport)->find_one();
+
+            $revenue = $d->revenue;
+            $revenue = explode('.', $revenue);
+            $prefix = 'Rp. ';
+            $sisa = strlen($revenue[0]) % 3;
+            $rupiah = substr($revenue[0], 0, $sisa);
+            preg_match_all("/\d{3}/i", substr($revenue[0], 0), $ribuan);
+
+            if (!empty($ribuan[0])) {
+                $separator = ($sisa) ? '.' : '';
+                $rupiah .= $separator . join('.', $ribuan[0]);
+            }
+
+            $rupiah = ($revenue[1] != '' && $rupiah != 0) ? $rupiah . ',' . $revenue[1] : $rupiah;
+            $rupiah = $prefix . $rupiah;
+
             $ui->assign('fetchApi', '<script src="' . $_theme . '/scripts/callbackAqsha.js"></script>');
             $ui->assign('port', $d);
+            $ui->assign('revenue', $rupiah);
             $ui->display('region-edit-odp-port.tpl');
         } else if ($action == 'edit_odp_port_post') {
 
@@ -153,7 +179,17 @@ if (isset($routes['3']) && $routes['3'] != '') {
             $idcustomer = _post('idcustomer');
             $internetnumb = _post('internetnumb');
             $status = _post('status');
-            $revenue = (float)_post('revenue');
+
+            $rev = '';
+            $revenue = _post('revenue');
+            $revenue = explode('.', $revenue);
+            for ($i = 1; $i < count($revenue); $i++) {
+                $rev .= trim($revenue[$i]);
+            }
+
+            $rev = explode(',', $rev);
+            $rev = implode('.', $rev);
+
             $lat = _post('lat');
             $lon = _post('lon');
 
@@ -192,7 +228,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
                 $d->status_port_odp = $status;
                 $d->lat = $lat;
                 $d->lon = $lon;
-                $d->revenue = $revenue;
+                $d->revenue = $rev;
                 $d->save();
                 r2(U . 'region/' . $idreg . '/' . $idloc . '/' . $idodp, 's', $_L['Edit_Port_Success']);
             } else {

@@ -1,3 +1,6 @@
+const hostloc = 'http://localhost/alpro/index.php?_route=datacall/';
+const hostserv = 'http://103.242.181.10/alpro/index.php?_route=datacall/';
+
 function trClickCopas(table , selectItem , input , closeTrigger) {
     const dataTableRow = table.rows;
     for (let i = 0; i < dataTableRow.length; i++) {
@@ -57,8 +60,8 @@ for (let i = 0; i < divInput.length; i++) {
         const button = dataTable.querySelector('button');
        
 
-        // fetch('http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn)
-        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn)
+        fetch(hostloc+idInputDivIn)
+        // fetch(hostserv+idInputDivIn)
             .then( response => {
                 response.json().then( (response) => {
 
@@ -102,8 +105,8 @@ for (let i = 0; i < divInput.length; i++) {
                                             }
                                         }
                         
-                                        // xhttp.open('GET' , 'http://localhost/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
-                                        xhttp.open('GET' , 'http://103.242.181.10/alpro/index.php?_route=datacall/'+idInputDivIn+'/'+val);
+                                        xhttp.open('GET' , hostloc+idInputDivIn+'/'+val);
+                                        // xhttp.open('GET' , hostserv+idInputDivIn+'/'+val);
                                         xhttp.send();
                                     }
                                 }
@@ -146,8 +149,8 @@ for (let j = 0; j < divInput.length; j++) {
                 const idSelect = select.id;
                 const valInputDiv = inputDivIn.value;
                 if (valInputDiv != '') {
-                        // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
-                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        fetch(hostloc + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        // fetch(hostserv + idSelect + '/' + valInputDiv+'/'+ idodp)
                         .then(response => { 
                             response.json().then(response => {
                                 let option = ``;
@@ -162,8 +165,8 @@ for (let j = 0; j < divInput.length; j++) {
                 inputDivIn.addEventListener('focusout', function () { 
                     const valInputDivIn = inputDivIn.value;
                     if (valInputDivIn != '') {
-                        // fetch('http://localhost/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
-                        fetch('http://103.242.181.10/alpro/index.php?_route=datacall/' + idSelect + '/' + valInputDivIn)
+                        fetch(hostloc + idSelect + '/' + valInputDivIn)
+                        // fetch(hostserv + idSelect + '/' + valInputDivIn)
                             .then(response => {
                                 response.json().then(response => {
                                     let option = ``;

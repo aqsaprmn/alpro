@@ -75,7 +75,8 @@
 							<div class="form-group">
 								<label class="col-md-2 control-label">Revenue</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="revenue" name="revenue" autocomplete="off" value="{$port['revenue']}">
+									<input type="text" class="form-control" id="revenue" name="revenue" autocomplete="off" 
+									placeholder="Rp." value="{$revenue}">
 								</div>
 							</div>
 							<div class="form-group">

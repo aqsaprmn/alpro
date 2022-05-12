@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-10 14:27:56
+/* Smarty version 3.1.39, created on 2022-05-12 13:09:20
   from 'C:\xampp\htdocs\alpro\ui\theme\default\region-add-odp-port.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_627a13fc96d666_23221527',
+  'unifunc' => 'content_627ca490a4a950_21899732',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73ff1cd1190ce4828f358eaa7a58febadb4e7777' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\region-add-odp-port.tpl',
-      1 => 1652167670,
+      1 => 1652335759,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_627a13fc96d666_23221527 (Smarty_Internal_Template $_smarty_tpl) {
+function content_627ca490a4a950_21899732 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	
@@ -122,7 +122,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 							<div class="form-group">
 								<label class="col-md-2 control-label">Revenue</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="revenue" name="revenue" autocomplete="off">
+									<input type="text" class="form-control" id="revenue" placeholder="Rp." name="revenue" autocomplete="off">
 								</div>
 							</div>
 							<div class="form-group">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-03-08 10:49:47
+/* Smarty version 3.1.39, created on 2022-05-12 10:06:13
   from 'C:\xampp\htdocs\alpro\ui\theme\default\region-odp-port.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6226d25bac0e49_95424305',
+  'unifunc' => 'content_627c79a50148a2_19887366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c4c3278f73941883849d7ca80ece7f99b81439ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\region-odp-port.tpl',
-      1 => 1646711385,
+      1 => 1652324368,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6226d25bac0e49_95424305 (Smarty_Internal_Template $_smarty_tpl) {
+function content_627c79a50148a2_19887366 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -81,6 +81,7 @@ region/<?php echo $_smarty_tpl->tpl_vars['idreg']->value;?>
 												<th class="text-center"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Internet_Numb'];?>
 </th>
 												<th class="text-center">Status Port ODP</th>
+												<th class="text-center">Revenue</th>
 												<th class="text-center hidden">LAT</th>
 												<th class="text-center hidden">LON</th>
 												<th class="text-center"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Action'];?>
@@ -106,6 +107,8 @@ $_smarty_tpl->tpl_vars['po']->do_else = false;
 													<td class="text-center"><?php echo $_smarty_tpl->tpl_vars['po']->value['no_inet'];?>
 </td>
 													<td class="text-center"><?php echo $_smarty_tpl->tpl_vars['po']->value['status_port_odp'];?>
+</td>
+													<td class="">Rp. <?php echo $_smarty_tpl->tpl_vars['po']->value['revenue'];?>
 </td>
 													<td class="text-center hidden"><?php echo $_smarty_tpl->tpl_vars['po']->value['lat'];?>
 </td>

@@ -53,7 +53,7 @@
 													<td class="">{$po['alamat']}</td>
 													<td class="text-center">{$po['no_inet']}</td>
 													<td class="text-center">{$po['status_port_odp']}</td>
-													<td class="text-center">{$po['revenue']}</td>
+													<td class="">Rp. {$po['revenue']}</td>
 													<td class="text-center hidden">{$po['lat']}</td>
 													<td class="text-center hidden">{$po['lon']}</td>
 													<td style="width:160px;" class="text-center">
