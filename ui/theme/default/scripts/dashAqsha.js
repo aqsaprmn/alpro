@@ -12,8 +12,8 @@ const tabelData = divData.querySelector('table#assetTotal');
 const xhr = new XMLHttpRequest;
 var myChart = ``;
 
-xhr.open('POST' , hostloc+region.id);
-// xhr.open('POST' , hostserv+region.id);
+// xhr.open('POST' , hostloc+region.id);
+xhr.open('POST' , hostserv+region.id);
 xhr.send();
 xhr.addEventListener('load' , function () { 
     if (xhr.status == 200) {
@@ -107,8 +107,8 @@ region.addEventListener('change' , function () {
     const val = this.value;
     const xhr = new XMLHttpRequest;
 
-    xhr.open('POST' , hostloc+loc.id);
-    // xhr.open('POST' , hostserv+loc.id);
+    // xhr.open('POST' , hostloc+loc.id);
+    xhr.open('POST' , hostserv+loc.id);
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 
@@ -171,8 +171,8 @@ region.addEventListener('change' , function () {
     const regVal = region.value;
     const val = this.value;
     const xhr = new XMLHttpRequest;
-    xhr.open('POST' , hostloc+subloc.id);
-    xhr.open('POST' , hostserv+subloc.id);
+    // xhr.open('POST' , hostloc+subloc.id);
+    // xhr.open('POST' , hostserv+subloc.id);
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
     xhr.send('reg='+regVal+'&lok='+val);
     xhr.addEventListener('load' , function () { 
@@ -233,8 +233,8 @@ region.addEventListener('change' , function () {
 
     const xhr = new XMLHttpRequest;
 
-    xhr.open('POST' , hostloc+'subloc_end');
-    // xhr.open('POST' , hostserv+'subloc_end');
+    // xhr.open('POST' , hostloc+'subloc_end');
+    xhr.open('POST' , hostserv+'subloc_end');
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 

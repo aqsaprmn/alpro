@@ -60,8 +60,8 @@ for (let i = 0; i < divInput.length; i++) {
         const button = dataTable.querySelector('button');
        
 
-        fetch(hostloc+idInputDivIn)
-        // fetch(hostserv+idInputDivIn)
+        // fetch(hostloc+idInputDivIn)
+        fetch(hostserv+idInputDivIn)
             .then( response => {
                 response.json().then( (response) => {
 
@@ -105,8 +105,8 @@ for (let i = 0; i < divInput.length; i++) {
                                             }
                                         }
                         
-                                        xhttp.open('GET' , hostloc+idInputDivIn+'/'+val);
-                                        // xhttp.open('GET' , hostserv+idInputDivIn+'/'+val);
+                                        // xhttp.open('GET' , hostloc+idInputDivIn+'/'+val);
+                                        xhttp.open('GET' , hostserv+idInputDivIn+'/'+val);
                                         xhttp.send();
                                     }
                                 }
@@ -149,8 +149,8 @@ for (let j = 0; j < divInput.length; j++) {
                 const idSelect = select.id;
                 const valInputDiv = inputDivIn.value;
                 if (valInputDiv != '') {
-                        fetch(hostloc + idSelect + '/' + valInputDiv+'/'+ idodp)
-                        // fetch(hostserv + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        // fetch(hostloc + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        fetch(hostserv + idSelect + '/' + valInputDiv+'/'+ idodp)
                         .then(response => { 
                             response.json().then(response => {
                                 let option = ``;
@@ -165,8 +165,8 @@ for (let j = 0; j < divInput.length; j++) {
                 inputDivIn.addEventListener('focusout', function () { 
                     const valInputDivIn = inputDivIn.value;
                     if (valInputDivIn != '') {
-                        fetch(hostloc + idSelect + '/' + valInputDivIn)
-                        // fetch(hostserv + idSelect + '/' + valInputDivIn)
+                        // fetch(hostloc + idSelect + '/' + valInputDivIn)
+                        fetch(hostserv + idSelect + '/' + valInputDivIn)
                             .then(response => {
                                 response.json().then(response => {
                                     let option = ``;
