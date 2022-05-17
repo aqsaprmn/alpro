@@ -7,7 +7,7 @@
 								<div class="panel-body">
 									<div class="md-whiteframe-z1 mb20 text-center" style="padding: 15px">
 										<div class="col-md-8">
-											<form id="site-search" method="post" action="{$_url}master/customers/">
+											<form id="site-search" class="keyword" method="post" action="{$_url}master/customers/">
 											<div class="input-group">
 												<div class="input-group-addon">
 													<span class="fa fa-search"></span>
@@ -51,10 +51,14 @@
 										</tbody>
 									</table>
 									</div>
-									{if $paginator eq !null}
-									{$paginator['contents']}
+									{if isset($msg)}
+										<div class="mb10 text-center">
+											<span class="">{$msg}</span>
+										</div>
 									{/if}
-									
+									{if isset($paginator)}
+										{$paginator['contents']}
+									{/if}
 								</div>
 							</div>
 						</div>

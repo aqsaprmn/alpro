@@ -186,6 +186,7 @@ $_L['User_Updated_Successfully'] = 'User Updated Successfully';
 $_L['User_Expired_Today'] = 'User Expired, Today';
 $_L['Activity_Log'] = 'Activity Log';
 $_L['View_Reports'] = 'View Reports';
+$_L['View_Details'] = 'View Details';
 $_L['View_All'] = 'View All';
 $_L['Number_of_Vouchers'] = 'Number of Vouchers';
 $_L['Length_Code'] = 'Length Code';

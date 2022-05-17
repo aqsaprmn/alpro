@@ -13,15 +13,14 @@
               <div class="panel-body">
                 <div class="clearfix">
                   <div class="info left">
-                    <h4 class="mt0 text-primary text-bold">{$lok}</h4>
-                    <h5 class="text-light mb0">{$_L['Number_Of']} {$_L['Location']}</h5>
+                    <h4 class="mt0 text-primary text-bold">Rp. 1.400.000.000.000</h4>
+                    <h5 class="text-light mb0">Total Revenue</h5>
                   </div>
-
                   <div class="right ion ion-ios-pricetags-outline icon"></div>
                 </div>
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
-                <p class="mt0 mb0 right"><a class="text-putih" href="{$_url}reports/by-date">{$_L['View_Reports']}</a></p>
+                <p class="mt0 mb0 right"><a class="text-putih" href="{$_url}revenue/treg">{$_L['View_Details']}</a></p>
               </div>
             </div>
           </div>
@@ -126,15 +125,13 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Total Data Asset</b></div>
+                      <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
                       <div class="row">
                         <div class="col-lg-6 chart-area">
                           <canvas id="myBarChart"></canvas>
                         </div>
-                        <div class="col-lg-6 pt-3">
-                          <table class="table table-stripped table-bordered" id="assetTotal">
-                              
-                          </table>
+                        <div class="col-lg-6 chart-area pt-3">
+                          <canvas id="myLineChart"></canvas>
                         </div>
                       </div>
                     </div>

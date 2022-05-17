@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-04-18 15:07:24
+/* Smarty version 3.1.39, created on 2022-05-17 11:49:07
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_625d1c3ce19118_60255624',
+  'unifunc' => 'content_62832943d00fc3_75925919',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1650269244,
+      1 => 1652762946,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_625d1c3ce19118_60255624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62832943d00fc3_75925919 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -39,19 +39,15 @@ $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->c
               <div class="panel-body">
                 <div class="clearfix">
                   <div class="info left">
-                    <h4 class="mt0 text-primary text-bold"><?php echo $_smarty_tpl->tpl_vars['lok']->value;?>
-</h4>
-                    <h5 class="text-light mb0"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Number_Of'];?>
- <?php echo $_smarty_tpl->tpl_vars['_L']->value['Location'];?>
-</h5>
+                    <h4 class="mt0 text-primary text-bold">Rp. 1.400.000.000.000</h4>
+                    <h5 class="text-light mb0">Total Revenue</h5>
                   </div>
-
                   <div class="right ion ion-ios-pricetags-outline icon"></div>
                 </div>
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
                 <p class="mt0 mb0 right"><a class="text-putih" href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-reports/by-date"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Reports'];?>
+revenue/treg"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Details'];?>
 </a></p>
               </div>
             </div>
@@ -170,15 +166,13 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Total Data Asset</b></div>
+                      <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
                       <div class="row">
                         <div class="col-lg-6 chart-area">
                           <canvas id="myBarChart"></canvas>
                         </div>
-                        <div class="col-lg-6 pt-3">
-                          <table class="table table-stripped table-bordered" id="assetTotal">
-                              
-                          </table>
+                        <div class="col-lg-6 chart-area pt-3">
+                          <canvas id="myLineChart"></canvas>
                         </div>
                       </div>
                     </div>

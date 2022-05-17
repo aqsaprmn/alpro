@@ -7,16 +7,24 @@ $admin = Admin::_info();
 $ui->assign('_admin', $admin);
 
 $reg = ORM::for_table('tbl_region')->find_many();
+
 $countReg = count($reg);
 
 $loc = ORM::for_table('tbl_lokasi')->find_many();
 $countLoc = count($loc);
 
+
 if (strpos($act, ' ') !== false) {
     $actionNew = explode(' ', $act);
 
-    $action = $actionNew[0];
-    $keyword = $actionNew[1];
+    $keyword = '';
+    for ($i = 0; $i < count($actionNew); $i++) {
+        if ($i == 0) {
+            $action = $actionNew[$i];
+        } else {
+            $keyword .= ($i !== count($actionNew) - 1) ? $actionNew[$i] . ' ' : $actionNew[$i];
+        }
+    }
 
     for ($i = 0; $i < $countReg; $i++) {
         if ($action === 'vloc_region' . $reg[$i]['id']) {
@@ -243,7 +251,6 @@ if (strpos($act, ' ') !== false) {
 
             $ui->assign('xfooter', '<script type="text/javascript" src="ui/lib/c/master.js"></script>');
 
-
             $paginator = Paginator::bootstrap('tbl_pelanggan', 'nama', '%' . $keyword . '%');
 
             if ($paginator == null) {
@@ -258,12 +265,11 @@ if (strpos($act, ' ') !== false) {
                     ->offset($paginator['startpoint'])
                     ->limit($paginator['limit'])->order_by_asc('id')
                     ->find_many();
-
-                $ui->display('master-customers.tpl');
+                $ui->assign('paginator', $paginator);
             }
 
             $ui->assign('d', $d);
-            $ui->assign('paginator', $paginator);
+            $ui->display('master-customers.tpl');
             break;
     }
 } else {

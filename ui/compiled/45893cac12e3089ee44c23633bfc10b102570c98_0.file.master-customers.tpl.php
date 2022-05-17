@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-02-22 12:21:11
+/* Smarty version 3.1.39, created on 2022-05-13 17:34:08
   from 'C:\xampp\htdocs\alpro\ui\theme\default\master-customers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_621472c78b0711_96982833',
+  'unifunc' => 'content_627e342082c634_21726613',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45893cac12e3089ee44c23633bfc10b102570c98' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\master-customers.tpl',
-      1 => 1645507270,
+      1 => 1652438017,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_621472c78b0711_96982833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_627e342082c634_21726613 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -34,7 +34,7 @@ $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->c
 								<div class="panel-body">
 									<div class="md-whiteframe-z1 mb20 text-center" style="padding: 15px">
 										<div class="col-md-8">
-											<form id="site-search" method="post" action="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
+											<form id="site-search" class="keyword" method="post" action="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
 master/customers/">
 											<div class="input-group">
 												<div class="input-group-addon">
@@ -104,11 +104,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 										</tbody>
 									</table>
 									</div>
-									<?php if ($_smarty_tpl->tpl_vars['paginator']->value == !null) {?>
-									<?php echo $_smarty_tpl->tpl_vars['paginator']->value['contents'];?>
+									<?php if ((isset($_smarty_tpl->tpl_vars['msg']->value))) {?>
+										<div class="mb10 text-center">
+											<span class=""><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</span>
+										</div>
+									<?php }?>
+									<?php if ((isset($_smarty_tpl->tpl_vars['paginator']->value))) {?>
+										<?php echo $_smarty_tpl->tpl_vars['paginator']->value['contents'];?>
 
 									<?php }?>
-									
 								</div>
 							</div>
 						</div>

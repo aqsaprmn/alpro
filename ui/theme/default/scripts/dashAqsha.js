@@ -11,9 +11,10 @@ const tabelData = divData.querySelector('table#assetTotal');
 
 const xhr = new XMLHttpRequest;
 var myChart = ``;
+var myLineChart = ``;
 
-// xhr.open('POST' , hostloc+region.id);
-xhr.open('POST' , hostserv+region.id);
+xhr.open('POST' , hostloc+region.id);
+// xhr.open('POST' , hostserv+region.id);
 xhr.send();
 xhr.addEventListener('load' , function () { 
     if (xhr.status == 200) {
@@ -29,31 +30,64 @@ xhr.addEventListener('load' , function () {
             });
         } 
 
-        jsonTotal.forEach(e => {
-            dataTotal += `<tr>
-                                <th>Total ODC</th>
-                                <td class="text-center">${e['total_odc']}</td>            
-                            </tr>
-                            <tr>
-                                <th>Total ODP</th>
-                                <td class="text-center">${e['total_odp']}</td>            
-                            </tr>
-                            <tr>
-                                <th>Total Port</th>
-                                <td class="text-center">${e['total_port']}</td>            
-                            </tr>
-                            <tr>
-                                <th>Total Pelanggan</th>
-                                <td class="text-center">${e['total_pelanggan']}</td>            
-                            </tr>`
-                            ;
-        });
+        // jsonTotal.forEach(e => {
+        //     dataTotal += `<tr>
+        //                         <th>Total ODC</th>
+        //                         <td class="text-center">${e['total_odc']}</td>            
+        //                     </tr>
+        //                     <tr>
+        //                         <th>Total ODP</th>
+        //                         <td class="text-center">${e['total_odp']}</td>            
+        //                     </tr>
+        //                     <tr>
+        //                         <th>Total Port</th>
+        //                         <td class="text-center">${e['total_port']}</td>            
+        //                     </tr>
+        //                     <tr>
+        //                         <th>Total Pelanggan</th>
+        //                         <td class="text-center">${e['total_pelanggan']}</td>            
+        //                     </tr>`
+        //                     ;
+        // });
 
 
         regAll();
 
         region.innerHTML = optionLoc;
-        tabelData.innerHTML = dataTotal;
+        // tabelData.innerHTML = dataTotal;
+
+        myLineChart = new Chart(document.getElementById('myLineChart'),{
+            type: 'line',
+            data: data = {
+                labels: [
+                    'ODC',
+                    'ODP',
+                    'Port',
+                    'Pelanggan'
+                    ],
+                datasets: [{
+                    label: 'Total',
+                    borderColor: [
+                    'rgb(50, 118, 191)'
+                    ],
+                    fill: false,
+                    // borderWidth: 1,
+                    tension: 0.1,
+                    data: [jsonTotal[0]['total_odc'],jsonTotal[0]['total_odp'],jsonTotal[0]['total_port'],jsonTotal[0]['total_pelanggan']]
+                }]
+                },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Total Data Asset'
+                    // }
+            }
+        }
+        })
 
         myChart = new Chart(document.getElementById('myBarChart'),
         {
@@ -66,18 +100,12 @@ xhr.addEventListener('load' , function () {
                     'Pelanggan'
                     ],
                 datasets: [{
-                    label: 'My First dataset',
+                    label: 'Total',
                     backgroundColor: [
-                    'rgba(255, 23, 23, 0.2)',
-                    'rgba(255, 255, 0, 0.2)',
-                    'rgba(0, 255, 81, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
+                    'rgba(50, 118, 191)'
                     ],
                     borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 255, 0)',
-                    'rgb(0, 255, 81)',
-                    'rgb(153, 102, 255)'
+                    'rgb(50, 118, 191)'
                     ],
                     borderWidth: 1,
                     data: [jsonTotal[0]['total_odc'],jsonTotal[0]['total_odp'],jsonTotal[0]['total_port'],jsonTotal[0]['total_pelanggan']]
@@ -93,13 +121,13 @@ xhr.addEventListener('load' , function () {
                     //     text: 'Total Data Asset'
                     // }
             },
-            indexAxis: 'y'
+            indexAxis: 'x'
         }
     }
 );} 
-else {
-    console.log(xhr.response);
-    alert(xhr.response);
+    else {
+        console.log(xhr.response);
+        alert(xhr.response);
     }
 })
 
@@ -107,8 +135,8 @@ region.addEventListener('change' , function () {
     const val = this.value;
     const xhr = new XMLHttpRequest;
 
-    // xhr.open('POST' , hostloc+loc.id);
-    xhr.open('POST' , hostserv+loc.id);
+    xhr.open('POST' , hostloc+loc.id);
+    // xhr.open('POST' , hostserv+loc.id);
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 
@@ -136,29 +164,30 @@ region.addEventListener('change' , function () {
                 loc.innerHTML = optionLoc;
             }
 
-            jsonTotal.forEach(e => {
-                liData += `<tr>
-                <th>Total ODC</th>
-                <td class="text-center">${e['total_odc']}</td>            
-            </tr>
-            <tr>
-                <th>Total ODP</th>
-                <td class="text-center">${e['total_odp']}</td>            
-            </tr>
-            <tr>
-                <th>Total Port</th>
-                <td class="text-center">${e['total_port']}</td>            
-            </tr>
-            <tr>
-                <th>Total Pelanggan</th>
-                <td class="text-center">${e['total_pelanggan']}</td>            
-            </tr>`;
+            // jsonTotal.forEach(e => {
+            //     liData += `<tr>
+            //     <th>Total ODC</th>
+            //     <td class="text-center">${e['total_odc']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total ODP</th>
+            //     <td class="text-center">${e['total_odp']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Port</th>
+            //     <td class="text-center">${e['total_port']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Pelanggan</th>
+            //     <td class="text-center">${e['total_pelanggan']}</td>            
+            // </tr>`;
                 
-            });
+            // });
             
-            tabelData.innerHTML = liData;
+            // tabelData.innerHTML = liData;
 
             updateChart(myChart , jsonTotal);
+            updateChart(myLineChart , jsonTotal);
 
         } else {
             console.log(xhr.response);
@@ -171,7 +200,7 @@ region.addEventListener('change' , function () {
     const regVal = region.value;
     const val = this.value;
     const xhr = new XMLHttpRequest;
-    // xhr.open('POST' , hostloc+subloc.id);
+    xhr.open('POST' , hostloc+subloc.id);
     // xhr.open('POST' , hostserv+subloc.id);
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
     xhr.send('reg='+regVal+'&lok='+val);
@@ -196,28 +225,29 @@ region.addEventListener('change' , function () {
                 subloc.innerHTML = all;
             }
 
-            jsonTotal.forEach(e => {
-                liData += `<tr>
-                <th>Total ODC</th>
-                <td class="text-center">${e['total_odc']}</td>            
-            </tr>
-            <tr>
-                <th>Total ODP</th>
-                <td class="text-center">${e['total_odp']}</td>            
-            </tr>
-            <tr>
-                <th>Total Port</th>
-                <td class="text-center">${e['total_port']}</td>            
-            </tr>
-            <tr>
-                <th>Total Pelanggan</th>
-                <td class="text-center">${e['total_pelanggan']}</td>            
-            </tr>`;
+            // jsonTotal.forEach(e => {
+            //     liData += `<tr>
+            //     <th>Total ODC</th>
+            //     <td class="text-center">${e['total_odc']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total ODP</th>
+            //     <td class="text-center">${e['total_odp']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Port</th>
+            //     <td class="text-center">${e['total_port']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Pelanggan</th>
+            //     <td class="text-center">${e['total_pelanggan']}</td>            
+            // </tr>`;
                 
-            });
+            // });
 
-            tabelData.innerHTML = liData;
+            // tabelData.innerHTML = liData;
             updateChart(myChart , jsonTotal);
+            updateChart(myLineChart , jsonTotal);
 
         } else {
             console.log(xhr.response);
@@ -233,8 +263,8 @@ region.addEventListener('change' , function () {
 
     const xhr = new XMLHttpRequest;
 
-    // xhr.open('POST' , hostloc+'subloc_end');
-    xhr.open('POST' , hostserv+'subloc_end');
+    xhr.open('POST' , hostloc+'subloc_end');
+    // xhr.open('POST' , hostserv+'subloc_end');
 
     xhr.setRequestHeader('Content-Type' , "application/x-www-form-urlencoded");
 
@@ -245,28 +275,29 @@ region.addEventListener('change' , function () {
             const jsonRes = JSON.parse(xhr.response)['total'];
             let liData = ``;
 
-            jsonRes.forEach(e => {
-                liData += `<tr>
-                <th>Total ODC</th>
-                <td class="text-center">${e['total_odc']}</td>            
-            </tr>
-            <tr>
-                <th>Total ODP</th>
-                <td class="text-center">${e['total_odp']}</td>            
-            </tr>
-            <tr>
-                <th>Total Port</th>
-                <td class="text-center">${e['total_port']}</td>            
-            </tr>
-            <tr>
-                <th>Total Pelanggan</th>
-                <td class="text-center">${e['total_pelanggan']}</td>            
-            </tr>`;
-            });
+            // jsonRes.forEach(e => {
+            //     liData += `<tr>
+            //     <th>Total ODC</th>
+            //     <td class="text-center">${e['total_odc']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total ODP</th>
+            //     <td class="text-center">${e['total_odp']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Port</th>
+            //     <td class="text-center">${e['total_port']}</td>            
+            // </tr>
+            // <tr>
+            //     <th>Total Pelanggan</th>
+            //     <td class="text-center">${e['total_pelanggan']}</td>            
+            // </tr>`;
+            // });
 
             
-            tabelData.innerHTML = liData;
+            // tabelData.innerHTML = liData;
             updateChart(myChart , jsonRes);
+            updateChart(myLineChart , jsonRes);
 
 
         } else {
