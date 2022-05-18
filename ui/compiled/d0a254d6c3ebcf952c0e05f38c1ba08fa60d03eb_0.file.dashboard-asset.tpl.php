@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-18 11:46:10
+/* Smarty version 3.1.39, created on 2022-05-18 13:39:12
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62847a12909e04_16159654',
+  'unifunc' => 'content_6284949019aa51_64923705',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1652847955,
+      1 => 1652855901,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_62847a12909e04_16159654 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6284949019aa51_64923705 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -167,7 +167,8 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                   <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
-                      <div class="row">
+                      <div class=
+                      "row">
                         <div class="col-lg-6 chart-areas">
                           <canvas id="myBarChart"></canvas>
                         </div>
