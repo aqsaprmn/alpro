@@ -127,10 +127,10 @@
                     <div class="card">
                       <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
                       <div class="row">
-                        <div class="col-lg-6 chart-area">
+                        <div class="col-lg-6 chart-areas">
                           <canvas id="myBarChart"></canvas>
                         </div>
-                        <div class="col-lg-6 chart-area pt-3">
+                        <div class="col-lg-6 chart-area">
                           <canvas id="myLineChart"></canvas>
                         </div>
                       </div>
@@ -139,6 +139,8 @@
                 </div>
               </div>
             </div>
+
+            
           </div>
         </div>
       </div>

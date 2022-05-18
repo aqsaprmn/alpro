@@ -34,9 +34,6 @@ switch ($act) {
 
         $paginator = Paginator::bootstrap('tbl_lokasi', 'id_region', $idTreg);
 
-        var_dump($paginator);
-        die;
-
         $loc = ORM::for_table('tbl_lokasi')->offset($paginator['startpoint'])->limit($paginator['limit'])->order_by_asc('id')->find_many();
 
         $ui->assign('paginator', $paginator);
