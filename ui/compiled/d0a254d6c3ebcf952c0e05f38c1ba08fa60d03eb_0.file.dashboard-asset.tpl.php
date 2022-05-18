@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-18 13:39:12
+/* Smarty version 3.1.39, created on 2022-05-18 15:17:31
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6284949019aa51_64923705',
+  'unifunc' => 'content_6284ab9b122ea7_00520243',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1652855901,
+      1 => 1652861850,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6284949019aa51_64923705 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6284ab9b122ea7_00520243 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -47,7 +47,7 @@ $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->c
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
                 <p class="mt0 mb0 right"><a class="text-putih" href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-revenue/treg"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Details'];?>
+revenue/treg_"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Details'];?>
 </a></p>
               </div>
             </div>
@@ -166,10 +166,10 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
+                      <div class="card-header col-12 text-center pb-4"><b>Data Asset</b></div>
                       <div class=
                       "row">
-                        <div class="col-lg-6 chart-areas">
+                        <div class="col-lg-6 chart-areas mb30">
                           <canvas id="myBarChart"></canvas>
                         </div>
                         <div class="col-lg-6 chart-area">

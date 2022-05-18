@@ -20,7 +20,7 @@
                 </div>
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
-                <p class="mt0 mb0 right"><a class="text-putih" href="{$_url}revenue/treg">{$_L['View_Details']}</a></p>
+                <p class="mt0 mb0 right"><a class="text-putih" href="{$_url}revenue/treg_">{$_L['View_Details']}</a></p>
               </div>
             </div>
           </div>
@@ -125,10 +125,10 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Chart Data Asset</b></div>
+                      <div class="card-header col-12 text-center pb-4"><b>Data Asset</b></div>
                       <div class=
                       "row">
-                        <div class="col-lg-6 chart-areas">
+                        <div class="col-lg-6 chart-areas mb30">
                           <canvas id="myBarChart"></canvas>
                         </div>
                         <div class="col-lg-6 chart-area">
