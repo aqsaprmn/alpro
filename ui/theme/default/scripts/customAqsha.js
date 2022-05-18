@@ -1,128 +1,154 @@
 // COLLPASE
 
-const triggerCollapse = document.querySelectorAll('#triggerCollapse');
+const triggerCollapse = document.querySelectorAll("#triggerCollapse");
 
 for (let i = 0; i < triggerCollapse.length; i++) {
-    const triggerCollapseI = triggerCollapse[i];
-    
-    triggerCollapseI.addEventListener('click' , function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+  const triggerCollapseI = triggerCollapse[i];
 
-        const collapseTable = document.querySelectorAll('#collapseTable');
-        const idodp = this.dataset.id;
-        for (let j = 0; j < collapseTable.length; j++) {
-            const collapseTableJ = collapseTable[j];
+  triggerCollapseI.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-            const idodpCollapse = collapseTableJ.dataset.id;
+    const collapseTable = document.querySelectorAll("#collapseTable");
+    const idodp = this.dataset.id;
+    for (let j = 0; j < collapseTable.length; j++) {
+      const collapseTableJ = collapseTable[j];
 
-            if ( idodpCollapse == idodp ) {
-                collapseTableJ.classList.toggle('dnone');
-            }
-            else {
-                collapseTableJ.classList.add('dnone');
-            }
-        }
-     })
+      const idodpCollapse = collapseTableJ.dataset.id;
+
+      if (idodpCollapse == idodp) {
+        collapseTableJ.classList.toggle("dnone");
+      } else {
+        collapseTableJ.classList.add("dnone");
+      }
+    }
+  });
 }
 
 // DECIMAL
-const inputDecimal = document.querySelectorAll('.decimal');
+const inputDecimal = document.querySelectorAll(".decimal");
 
 for (let i = 0; i < inputDecimal.length; i++) {
-    const inputDecimalI = inputDecimal[i];
-    
-    inputDecimalI.addEventListener('keyup' , function (e) { 
-        const alp = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "];
-        var key = String.fromCharCode(e.keyCode);
-        // console.log(key);
-        const valid = /(?=[^\0])(?=^([0-9]{0,6})(\.[0-9]{0,6}){0,1}$)/.test(this.value);
-        // console.log(valid);
-        let decVal = this.value;
-        if (alp.includes(key)) {
-            // console.log("Input Number!");
-            this.value = "";
-        }
+  const inputDecimalI = inputDecimal[i];
 
-        if(!valid){
-            // console.log("Invalid Input!");
-            this.value = decVal.substring(0, decVal.length - 1);
-        }
-     })
+  inputDecimalI.addEventListener("keyup", function (e) {
+    const alp = [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+      " ",
+    ];
+    var key = String.fromCharCode(e.keyCode);
+    // console.log(key);
+    const valid = /(?=[^\0])(?=^([0-9]{0,6})(\.[0-9]{0,6}){0,1}$)/.test(
+      this.value
+    );
+    // console.log(valid);
+    let decVal = this.value;
+    if (alp.includes(key)) {
+      // console.log("Input Number!");
+      this.value = "";
+    }
+
+    if (!valid) {
+      // console.log("Invalid Input!");
+      this.value = decVal.substring(0, decVal.length - 1);
+    }
+  });
 }
 
 // SEARCH URL PAGIN
 
-const formAll = document.getElementsByTagName('form');
+const formAll = document.getElementsByTagName("form");
 
 for (let i = 0; i < formAll.length; i++) {
-    const formAllI = formAll[i];
+  const formAllI = formAll[i];
 
-    const formKeyword = document.querySelector('form.keyword');
-    if (formAllI === formKeyword) {
-        const input = formAllI.querySelector('input');
-        let formAct = formKeyword.action;
-        let forAct = ``;
-        let tempFormAct = ``;
-        
-        if (formAct.endsWith('/') === true) {
-            forAct = formAct.slice(0,-1);
-        }else {
-            forAct = formAct;
-        }
+  const formKeyword = document.querySelector("form.keyword");
+  if (formAllI === formKeyword) {
+    const input = formAllI.querySelector("input");
+    let formAct = formKeyword.action;
+    let forAct = ``;
+    let tempFormAct = ``;
 
-        if (input.value !== "") {
-            tempFormAct = forAct + ' ' + input.value + '/';
-            formKeyword.action = tempFormAct;
-        }
-
-        input.addEventListener('keyup' , function() {
-            if (this.value != "") {    
-                tempFormAct = forAct + ' ' + this.value + '/';
-                formKeyword.action = tempFormAct;
-            } else {
-                tempFormAct = forAct + this.value + '/';
-                formKeyword.action = tempFormAct;
-            }
-        })
+    if (formAct.endsWith("/") === true) {
+      forAct = formAct.slice(0, -1);
+    } else {
+      forAct = formAct;
     }
+
+    if (input.value !== "") {
+      tempFormAct = forAct + " " + input.value + "/";
+      formKeyword.action = tempFormAct;
+    }
+
+    input.addEventListener("keyup", function () {
+      if (this.value != "") {
+        tempFormAct = forAct + " " + this.value + "/";
+        formKeyword.action = tempFormAct;
+      } else {
+        tempFormAct = forAct + this.value + "/";
+        formKeyword.action = tempFormAct;
+      }
+    });
+  }
 }
 
 //Input Rupiah
-const reven = document.getElementById('revenue');
- 
+const reven = document.getElementById("revenue");
+
 if (reven) {
-    /* Dengan Rupiah */
-    reven.addEventListener('keyup', function(e)
-    {
-        reven.value = formatRupiah(this.value, 'Rp. ');
-    });
-    
-    /* Fungsi */
-    function formatRupiah(angka, prefix)
-    {
-        var number_string = angka.replace(/[^,\d]/g, '').toString(),
-            split    = number_string.split(','),
-            sisa     = split[0].length % 3,
-            rupiah     = split[0].substr(0,sisa),
-            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+  /* Dengan Rupiah */
+  reven.addEventListener("keyup", function (e) {
+    reven.value = formatRupiah(this.value, "Rp. ");
+  });
 
-            console.log(rupiah);
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }  
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+  /* Fungsi */
+  function formatRupiah(angka, prefix) {
+    var number_string = angka.replace(/[^,\d]/g, "").toString(),
+      split = number_string.split(","),
+      sisa = split[0].length % 3,
+      rupiah = split[0].substr(0, sisa),
+      ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    console.log(rupiah);
+    if (ribuan) {
+      separator = sisa ? "." : "";
+      rupiah += separator + ribuan.join(".");
     }
-}
- 
-
-//Replace state if Form submission 
-
-if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
+    rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+    return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
   }
+}
+
+//Replace state if Form submission
+
+if (window.history.replaceState) {
+  window.history.replaceState(null, null, window.location.href);
+}
 
 // const form = document.getElementsByTagName('form');
 
@@ -135,7 +161,7 @@ if ( window.history.replaceState ) {
 //         for (let j = 0; j < divInputTable.length; j++) {
 //             const divInputTableJ = divInputTable[j];
 //             const dataTable = divInputTableJ.querySelector('div#dataTable')
-            
+
 //             if (dataTable) {
 
 //                 const prevDivDataTable = dataTable.previousElementSibling;
@@ -145,9 +171,9 @@ if ( window.history.replaceState ) {
 //                 const inputPrevDiv = prevDivDataTable.querySelector('input');
 
 //                 const dataTableInput = dataTable.querySelector('div:last-child');
-                
+
 //                 const tableData = divInputTableJ.querySelector('table#tableInput1');
-                
+
 //                 const tableTemp = divInputTableJ.querySelector('table#tableInput2');
 
 //                 const pagination = tableData.nextElementSibling;
@@ -166,11 +192,11 @@ if ( window.history.replaceState ) {
 
 //                 const adjacents = 2;
 
-//                 inputPrevDiv.addEventListener('focus', function () { 
+//                 inputPrevDiv.addEventListener('focus', function () {
 //                     dataTable.classList.remove('dnone');
 //                  })
 
-//                 btnPrevDiv.addEventListener('click' , function () { 
+//                 btnPrevDiv.addEventListener('click' , function () {
 //                     dataTable.classList.toggle('dnone');
 //                 })
 
@@ -179,7 +205,7 @@ if ( window.history.replaceState ) {
 //                     const datatableRowI = dataTableRow[i];
 //                     let tableCell = datatableRowI.cells;
 
-//                     datatableRowI.onclick = function () { 
+//                     datatableRowI.onclick = function () {
 //                         for (let j = 0; j < dataTableRow.length; j++) {
 //                             const tableRowEl = dataTableRow[j];
 
@@ -187,7 +213,7 @@ if ( window.history.replaceState ) {
 //                                 tableRowEl.setAttribute('class' , '');
 //                                 tableRowEl.classList.add('trActive');
 
-//                                 inputPrevDiv.value = tableCell.item(1).textContent; 
+//                                 inputPrevDiv.value = tableCell.item(1).textContent;
 //                             }
 //                             else {
 //                                 tableRowEl.classList.remove('trActive');
@@ -220,17 +246,17 @@ if ( window.history.replaceState ) {
 
 //                 for (let i = 0; i < paginationLi.length; i++) {
 //                     const paginationLiI = paginationLi[i];
-                    
+
 //                     const aPagin = paginationLiI.querySelector('a');
 
 //                     aPagin.addEventListener('click' , function (e) {
 //                         e.preventDefault();
-//                         e.stopPropagation();    
+//                         e.stopPropagation();
 //                         const paginationLiAct = aPagin.parentElement;
 
 //                         for (let j = 0; j < paginationLi.length; j++) {
 //                             const paginationLiJ = paginationLi[j];
-                            
+
 //                             if (paginationLiJ === paginationLiAct) {
 
 //                                 paginationLiJ.classList.add('active');
@@ -238,11 +264,11 @@ if ( window.history.replaceState ) {
 //                                 const dataIdaPage = aPagin.dataset.id;
 
 //                                 const dataKe = (dataPerHal * dataIdaPage) - dataPerHal;
-                                
+
 //                                 if (tableTemp.innerHTML) {
 //                                     tableTemp.innerHTML = '';
 //                                 }
-                                
+
 //                                 const dataFinis = dataKe+dataPerHal;
 
 //                                 if (j === paginationLi.length-1) {
@@ -257,7 +283,7 @@ if ( window.history.replaceState ) {
 //                                         tableTemp.appendChild(tableRowL);
 //                                     }
 //                                 }
-                                
+
 //                                 // trClickCopas();
 //                             }
 //                             else {
@@ -271,13 +297,6 @@ if ( window.history.replaceState ) {
 //         }
 //     }
 // }
-
-
-
-
-
-
-
 
 // const btnType = document.getElementById('btnType');
 // const dataTableType = document.getElementById('dataTableType');
@@ -310,14 +329,13 @@ if ( window.history.replaceState ) {
 //         6,
 //         'Hutan'
 //     ]
-    
+
 // ]
 
 // const jumlahData = dataTable.length;
 // const jumlahDataPerHal = 8;
 // const jumlahHal = Math.ceil(jumlahData / jumlahDataPerHal);
 // const dataTableLastIndex = dataTable.length-1;
-
 
 // for (let i = 1; i <= jumlahHal; i++) {
 //     const aPag = document.createElement('a');
@@ -329,9 +347,8 @@ if ( window.history.replaceState ) {
 //     divDua.appendChild(aPag);
 // }
 
-
 // const aPagin = document.getElementsByClassName('aPag');
-// aPagin[0].style.background = '#00469e'; 
+// aPagin[0].style.background = '#00469e';
 // aPagin[0].style.color = 'white';
 // aPagin[0].classList.add('disabled');
 // const dataIdaPage = aPagin[0].getAttribute('data-id');
@@ -371,32 +388,32 @@ if ( window.history.replaceState ) {
 // for (let i = 0; i < aPagin.length; i++) {
 //     const aPaginI = aPagin[i];
 
-//     aPaginI.addEventListener('click' , function (e) { 
+//     aPaginI.addEventListener('click' , function (e) {
 //         e.preventDefault();
 //         e.stopPropagation();
 
 //         for (let j = 0; j < aPagin.length; j++) {
 //             const aPaginJ = aPagin[j];
-            
+
 //             if (j === i) {
-//                 aPaginJ.style.background = '#00469e'; 
+//                 aPaginJ.style.background = '#00469e';
 //                 aPaginJ.style.color = 'white';
 //                 aPaginJ.classList.add('disabled');
 //                 const dataIdaPage = aPaginJ.getAttribute('data-id');
 //                 const dataKe = (jumlahDataPerHal * dataIdaPage) - jumlahDataPerHal;
-                
+
 //                 if (tableType.innerHTML) {
 //                     tableType.innerHTML = '';
 //                 }
-                
+
 //                 const dataFinis = dataKe+jumlahDataPerHal;
 //                 if (j === aPagin.length-1) {
 //                     for (let l = dataKe; l <= dataTableLastIndex; l++) {
 //                         const dataTableL = dataTable[l];
-    
+
 //                         const trType = document.createElement('tr');
 //                         tableType.appendChild(trType);
-                   
+
 //                         for (let k = 0; k < dataTableL.length; k++) {
 //                            const dataTableK = dataTableL[k];
 //                            const tdType = document.createElement('td');
@@ -408,10 +425,10 @@ if ( window.history.replaceState ) {
 //                 else {
 //                     for (let l = dataKe; l < dataFinis; l++) {
 //                         const dataTableL = dataTable[l];
-    
+
 //                         const trType = document.createElement('tr');
 //                         tableType.appendChild(trType);
-                   
+
 //                         for (let k = 0; k < dataTableL.length; k++) {
 //                            const dataTableK = dataTableL[k];
 //                            const tdType = document.createElement('td');
@@ -420,7 +437,7 @@ if ( window.history.replaceState ) {
 //                         }
 //                     }
 //                 }
-                
+
 //                 trClickCopas();
 //             }
 //             else {
@@ -431,7 +448,7 @@ if ( window.history.replaceState ) {
 //     })
 // }
 
-// btnType.addEventListener('click' , function () { 
+// btnType.addEventListener('click' , function () {
 //     if (dataTableType.style.display === 'block') {
 //         dataTableType.style.display = 'none';
 //         dataTableType.classList.add('dnone');
@@ -455,18 +472,18 @@ if ( window.history.replaceState ) {
 //      }
 //  }
 
-// dataTable.forEach(function (val , index) { 
+// dataTable.forEach(function (val , index) {
 //     const trType = document.createElement('tr');
 //     tableType.appendChild(trType);
 
-//     val.forEach(function (item) { 
+//     val.forEach(function (item) {
 //         const tdType = document.createElement('td');
 //         tdType.innerText = item;
 //         trType.appendChild(tdType);
 //      })
 //  })
 
-// inputType.onfocus = function () { 
+// inputType.onfocus = function () {
 //     dataTableType.style.display = 'block';
 //     dataTableType.classList.remove('dnone');
 
@@ -474,5 +491,3 @@ if ( window.history.replaceState ) {
 //         trClickCopas();
 //     }
 // }
-
-
