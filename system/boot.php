@@ -18,6 +18,25 @@ if (file_exists('system/config.php')) {
     r2('system/install');
 }
 
+function rupiah($total)
+{
+    $revenue = explode('.', $total);
+    $prefix = 'Rp. ';
+    $sisa = strlen($revenue[0]) % 3;
+    $rupiah = substr($revenue[0], 0, $sisa);
+    preg_match_all("/\d{3}/i", substr($revenue[0], 0), $ribuan);
+
+    if (!empty($ribuan[0])) {
+        $separator = ($sisa) ? '.' : '';
+        $rupiah .= $separator . join('.', $ribuan[0]);
+    }
+
+    $rupiah = ($revenue[1] != '' && $rupiah != 0) ? $rupiah . ',' . $revenue[1] : $rupiah;
+    $rupiah = $prefix . $rupiah;
+
+    return $rupiah;
+}
+
 function safedata($value)
 {
     $value = htmlspecialchars(trim($value));

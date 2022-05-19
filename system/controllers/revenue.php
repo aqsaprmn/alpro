@@ -28,15 +28,15 @@ switch ($act) {
             }
         } else {
             $paginator = Paginator::bootstrap('tbl_region');
-
             if ($paginator == NULL) {
-                $treg = ORM::for_table('tbl_region')->find_many();
+                $treg = ORM::for_table('tbl_region')->group_by('nama_region')->find_many();
                 $msg = 'Data Tidak Ada';
                 $ui->assign('msg', $msg);
             } else {
                 $treg = ORM::for_table('tbl_region')->offset($paginator['startpoint'])->limit($paginator['limit'])->order_by_asc('id')->find_many();
             }
         }
+
         $ui->assign('paginator', $paginator);
         $ui->assign('treg', $treg);
 

@@ -67,7 +67,9 @@ $ui->assign('log', $log);
 // }
 
 //Count Card Dashboard
-$loc = ORM::for_table('tbl_lokasi')->find_many()->count();
+$rev = ORM::for_table('v_revenue_detail')->select_expr('sum(revenue)', 'total_revenue')->find_one();
+$rev = rupiah($rev['total_revenue']);
+
 $odc = ORM::for_table('tbl_odc')->find_many()->count();
 $odp = ORM::for_table('tbl_odp')->find_many()->count();
 $cus = ORM::for_table('tbl_pelanggan')->find_many()->count();
@@ -77,7 +79,7 @@ $reg = ORM::for_table('tbl_region')->find_many();
 
 $ui->assign('fetchApi', '<script src="' . $_theme . '/scripts/dashAqsha.js"></script><script src="ui/lib/js/chart/package/dist/chart.min.js"');
 $ui->assign('reg', $reg);
-$ui->assign('lok', $loc);
+$ui->assign('rev', $rev);
 $ui->assign('odc', $odc);
 $ui->assign('odp', $odp);
 $ui->assign('cus', $cus);

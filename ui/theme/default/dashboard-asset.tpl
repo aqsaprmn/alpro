@@ -13,7 +13,7 @@
               <div class="panel-body">
                 <div class="clearfix">
                   <div class="info left">
-                    <h4 class="mt0 text-primary text-bold">Rp. 1.400.000.000.000</h4>
+                    <h4 class="mt0 text-primary text-bold">{$rev}</h4>
                     <h5 class="text-light mb0">Total Revenue</h5>
                   </div>
                   <div class="right ion ion-ios-pricetags-outline icon"></div>
