@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="row ml0 mr0" id="dataTotal">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-12 mb15">
           <div class="h-100 panel panel-default mini-box panel-hovered">
             <div class="panel-body">
               <div class="clearfix">
@@ -84,25 +84,19 @@
                     <h3 class="text-bold mt0 mb0 text-left">Asset Location</h3>
                   </div>
                 </div>
-                <div class="row mb20">
+                <div class="row mb10">
                  <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Region</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
-                      <select class="form-select form-select-lg" name="region" id="region">
-                        
-                      </select>
+                      <div class="col-lg-12 px-3 mb5">
+                        <select class="form-select form-select-lg" name="region" id="region">
+                          
+                        </select>
                        </div>
                     </div>
                   </div>
                   <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Location</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
+                      <div class="col-lg-12 px-3 mb5">
                       <select class="form-select form-select-lg" name="location" id="location">
                         
                       </select>
@@ -111,10 +105,7 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Sub Location</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
+                      <div class="col-lg-12 px-3 mb5">
                       <select class="form-select form-select-lg" name="subloc" id="subloc">
                        
                       </select>
@@ -123,15 +114,40 @@
                   </div>
                 </div>
                 <div class="row">
+                  <div class="col-lg-12 dflex justify-content-center">
+                    <div class="card">
+                      <div class="card-header col-12 text-center pb-4"></div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                            <div class="chart-areas" style="width:380px">
+                              <canvas id="myBarChart"></canvas>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb15">
+          <div class="h-100 panel panel-default mini-box panel-hovered">
+            <div class="panel-body">
+              <div class="clearfix">
+                <div class="row ml0">
+                  <div class="col-lg-6 col-xs-6 p-0">
+                    <h3 class="text-bold mt0 mb0 text-left">Revenue</h3>
+                  </div>
+                </div>
+                <div class="row mb20">
+                </div>
+                <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Data Asset</b></div>
-                      <div class=
-                      "row">
-                        <div class="col-lg-6 chart-areas mb30">
-                          <canvas id="myBarChart"></canvas>
-                        </div>
-                        <div class="col-lg-6 chart-area">
+                      <div class="card-header col-12 text-center pb-4"></div>
+                      <div class="row">
+                        <div class="col-lg-12 chart-area">
                           <canvas id="myLineChart"></canvas>
                         </div>
                       </div>
@@ -140,8 +156,6 @@
                 </div>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>
