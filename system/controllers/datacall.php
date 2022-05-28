@@ -214,12 +214,12 @@ switch ($action) {
 
         $reg = _post('name');
 
-        if ($reg != 'all') {
+        if ($reg == 'All') {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->find_array();
+        } else {
             $data['loc'] = ORM::for_table('v_reg_loc')->where('nama_reg', $reg)->find_array();
 
             $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->find_array();
-        } else {
-            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->find_array();
         }
 
         echo json_encode($data);
@@ -228,18 +228,16 @@ switch ($action) {
 
     case 'subloc':
 
-
         $reg = _post('reg');
         $loc = _post('lok');
 
-        if ($loc != "all") {
+        if ($loc == "all") {
+            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->find_array();
+        } else {
             $data['subloc'] = ORM::for_table('v_loc_subloc')->where('nama_loc', $loc)->find_array();
 
             $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->where('nama_lok', $loc)->find_array();
-        } else {
-            $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->where('nama_reg', $reg)->find_array();
         }
-
 
         echo json_encode($data);
 

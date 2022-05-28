@@ -21,7 +21,7 @@ xhr.addEventListener("load", function () {
     const jsonReg = jsonRes["reg"];
     const jsonTotal = jsonRes["total"];
 
-    let optionLoc = `<option value="all" selected>All</option>`;
+    let optionLoc = `<option value="All" selected>Region</option>`;
     let dataTotal = ``;
     if (jsonReg.length > 0) {
       jsonReg.forEach((e) => {
@@ -49,47 +49,48 @@ xhr.addEventListener("load", function () {
     //                     ;
     // });
 
-    regAll();
+    loc.innerHTML = `<option value="all" selected>Lokasi</option>`;
+    subloc.innerHTML = `<option value="all" selected>Sub Lokasi</option>`;
 
     region.innerHTML = optionLoc;
     // tabelData.innerHTML = dataTotal;
 
-    myLineChart = new Chart(document.getElementById("myLineChart"), {
-      type: "line",
-      data: (data = {
-        labels: ["ODC", "ODP", "Port", "Pelanggan"],
-        datasets: [
-          {
-            label: "Total",
-            borderColor: ["rgb(50, 118, 191)"],
-            fill: false,
-            // borderWidth: 1,
-            tension: 0.1,
-            data: [
-              jsonTotal[0]["total_odc"],
-              jsonTotal[0]["total_odp"],
-              jsonTotal[0]["total_port"],
-              jsonTotal[0]["total_pelanggan"],
-            ],
-          },
-        ],
-      }),
-      options: {
-        plugins: {
-          legend: {
-            display: false,
-          },
-          // title: {
-          //     display: true,
-          //     text: 'Total Data Asset'
-          // }
-        },
-      },
-    });
+    // myLineChart = new Chart(document.getElementById("myLineChart"), {
+    //   type: "line",
+    //   data: (data = {
+    //     labels: ["ODC", "ODP", "Port", "Pelanggan"],
+    //     datasets: [
+    //       {
+    //         label: "Total",
+    //         borderColor: ["rgb(50, 118, 191)"],
+    //         fill: false,
+    //         // borderWidth: 1,
+    //         tension: 0.1,
+    //         data: [
+    //           jsonTotal[0]["total_odc"],
+    //           jsonTotal[0]["total_odp"],
+    //           jsonTotal[0]["total_port"],
+    //           jsonTotal[0]["total_pelanggan"],
+    //         ],
+    //       },
+    //     ],
+    //   }),
+    //   options: {
+    //     plugins: {
+    //       legend: {
+    //         display: false,
+    //       },
+    //       // title: {
+    //       //     display: true,
+    //       //     text: 'Total Data Asset'
+    //       // }
+    //     },
+    //   },
+    // });
 
     myChart = new Chart(document.getElementById("myBarChart"), {
       type: "pie",
-      data: (data = {
+      data: {
         labels: ["ODC", "ODP", "Port", "Pelanggan"],
         datasets: [
           {
@@ -101,26 +102,30 @@ xhr.addEventListener("load", function () {
               "rgb(54, 162, 235)",
             ],
             borderColor: [
-              "rgb(255, 99, 132)",
-              "rgb(75, 192, 192)",
-              "rgb(255, 205, 86)",
-              "rgb(54, 162, 235)",
+              // "rgb(255, 99, 132)",
+              // "rgb(75, 192, 192)",
+              // "rgb(255, 205, 86)",
+              // "rgb(54, 162, 235)",
             ],
-            // borderWidth: 1,
+            borderWidth: 1,
             data: [
               jsonTotal[0]["total_odc"],
               jsonTotal[0]["total_odp"],
               jsonTotal[0]["total_port"],
               jsonTotal[0]["total_pelanggan"],
             ],
-            hoverOffset: 10,
+            hoverOffset: 15,
           },
         ],
-      }),
+      },
       options: {
+        layout: {
+          padding: 20,
+        },
         plugins: {
           legend: {
-            // display: false,
+            display: false,
+            // position: "right",
           },
           // title: {
           //     display: true,
@@ -138,6 +143,7 @@ xhr.addEventListener("load", function () {
 
 region.addEventListener("change", function () {
   const val = this.value;
+  console.log(this.value);
   const xhr = new XMLHttpRequest();
 
   xhr.open("POST", hostloc + loc.id);
@@ -150,14 +156,17 @@ region.addEventListener("change", function () {
   xhr.addEventListener("load", function () {
     if (xhr.status == 200) {
       const jsonRes = JSON.parse(xhr.response);
-      const jsonLoc = jsonRes["loc"];
+      const jsonLoc = jsonRes["loc"] ? jsonRes["loc"] : [];
       const jsonTotal = jsonRes["total"];
+
+      console.log(jsonRes);
       let liData = ``;
 
       if (val == "all") {
-        regAll();
+        loc.innerHTML = `<option value="all" selected>Lokasi</option>`;
+        subloc.innerHTML = `<option value="all" selected>Sub Lokasi</option>`;
       } else {
-        let optionLoc = `<option value="all" selected>All</option>`;
+        let optionLoc = `<option value="all" selected>Lokasi</option>`;
 
         if (jsonLoc.length > 0) {
           jsonLoc.forEach((e) => {
@@ -191,7 +200,7 @@ region.addEventListener("change", function () {
       // tabelData.innerHTML = liData;
 
       updateChart(myChart, jsonTotal);
-      updateChart(myLineChart, jsonTotal);
+      // updateChart(myLineChart, jsonTotal);
     } else {
       console.log(xhr.response);
       alert(xhr.response);
@@ -210,11 +219,11 @@ loc.addEventListener("change", function () {
   xhr.addEventListener("load", function () {
     if (xhr.status == 200) {
       const jsonRes = JSON.parse(xhr.response);
-      const jsonSubLoc = jsonRes["subloc"];
+      const jsonSubLoc = jsonRes["subloc"] ? jsonRes["subloc"] : [];
       const jsonTotal = jsonRes["total"];
 
       let liData = ``;
-      let all = `<option value="all" selected>All</option>`;
+      let all = `<option value="all" selected>Sub Lokasi</option>`;
 
       if (val == "all") {
         subloc.innerHTML = all;
@@ -250,7 +259,7 @@ loc.addEventListener("change", function () {
 
       // tabelData.innerHTML = liData;
       updateChart(myChart, jsonTotal);
-      updateChart(myLineChart, jsonTotal);
+      // updateChart(myLineChart, jsonTotal);
     } else {
       console.log(xhr.response);
       alert(xhr.response);
@@ -298,20 +307,12 @@ subloc.addEventListener("change", function () {
 
       // tabelData.innerHTML = liData;
       updateChart(myChart, jsonRes);
-      updateChart(myLineChart, jsonRes);
     } else {
       console.log(xhr.response);
       alert(xhr.response);
     }
   });
 });
-
-function regAll() {
-  let all = `<option value="all" selected>All</option>`;
-
-  loc.innerHTML = all;
-  subloc.innerHTML = all;
-}
 
 function updateChart(chart, data) {
   chart.data.datasets.forEach((dataset) => {

@@ -56,6 +56,8 @@
 	<script src="{$_theme}/scripts/customAqsha.js"></script>
 	<script src="{$_theme}/scripts/form-elements.init.js"></script>
 	<script src="{$_theme}/scripts/plugins/chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
 {if isset($xfooter)}
 	{$xfooter}
 {/if}

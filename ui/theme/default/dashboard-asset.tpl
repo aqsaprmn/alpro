@@ -114,14 +114,13 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-lg-12 dflex justify-content-center">
+                  <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header col-12 text-center pb-4"></div>
                       <div class="row">
                         <div class="col-lg-12">
-                            <div class="chart-areas" style="width:380px">
                               <canvas id="myBarChart"></canvas>
-                            </div>
+                            
                         </div>
                       </div>
                     </div>
@@ -138,6 +137,12 @@
                 <div class="row ml0">
                   <div class="col-lg-6 col-xs-6 p-0">
                     <h3 class="text-bold mt0 mb0 text-left">Revenue</h3>
+                  </div>
+                  <div class="col-lg-6 col-xs-6 p-0">
+                  <select class="form-select form-select-lg" name="revTime">
+                    <option value="month">Bulan Ini</option>
+                    <option value="year">Tahun Ini</option>
+                  </select>
                   </div>
                 </div>
                 <div class="row mb20">
