@@ -10,7 +10,7 @@ const tabelData = divData.querySelector("table#assetTotal");
 
 const xhr = new XMLHttpRequest();
 var myChart = ``;
-var myLineChart = ``;
+var myBarChart = ``;
 
 xhr.open("POST", hostloc + region.id);
 // xhr.open('POST' , hostserv+region.id);
@@ -89,7 +89,7 @@ xhr.addEventListener("load", function () {
     // });
 
     myChart = new Chart(document.getElementById("myBarChart"), {
-      type: "pie",
+      type: "doughnut",
       data: {
         labels: ["ODC", "ODP", "Port", "Pelanggan"],
         datasets: [
@@ -102,10 +102,10 @@ xhr.addEventListener("load", function () {
               "rgb(54, 162, 235)",
             ],
             borderColor: [
-              // "rgb(255, 99, 132)",
-              // "rgb(75, 192, 192)",
-              // "rgb(255, 205, 86)",
-              // "rgb(54, 162, 235)",
+              "rgb(255, 99, 132)",
+              "rgb(75, 192, 192)",
+              "rgb(255, 205, 86)",
+              "rgb(54, 162, 235)",
             ],
             borderWidth: 1,
             data: [
@@ -143,7 +143,6 @@ xhr.addEventListener("load", function () {
 
 region.addEventListener("change", function () {
   const val = this.value;
-  console.log(this.value);
   const xhr = new XMLHttpRequest();
 
   xhr.open("POST", hostloc + loc.id);
@@ -159,7 +158,6 @@ region.addEventListener("change", function () {
       const jsonLoc = jsonRes["loc"] ? jsonRes["loc"] : [];
       const jsonTotal = jsonRes["total"];
 
-      console.log(jsonRes);
       let liData = ``;
 
       if (val == "all") {

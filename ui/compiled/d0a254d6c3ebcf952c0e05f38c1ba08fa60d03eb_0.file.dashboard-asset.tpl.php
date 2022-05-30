@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-18 15:17:31
+/* Smarty version 3.1.39, created on 2022-05-30 08:30:22
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6284ab9b122ea7_00520243',
+  'unifunc' => 'content_62941e2e719c98_09940337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1652861850,
+      1 => 1653874221,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6284ab9b122ea7_00520243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62941e2e719c98_09940337 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -39,7 +39,8 @@ $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->c
               <div class="panel-body">
                 <div class="clearfix">
                   <div class="info left">
-                    <h4 class="mt0 text-primary text-bold">Rp. 1.400.000.000.000</h4>
+                    <h4 class="mt0 text-primary text-bold"><?php echo $_smarty_tpl->tpl_vars['rev']->value;?>
+</h4>
                     <h5 class="text-light mb0">Total Revenue</h5>
                   </div>
                   <div class="right ion ion-ios-pricetags-outline icon"></div>
@@ -116,7 +117,7 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
         </div>
       </div>
       <div class="row ml0 mr0" id="dataTotal">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-12 mb15">
           <div class="h-100 panel panel-default mini-box panel-hovered">
             <div class="panel-body">
               <div class="clearfix">
@@ -125,25 +126,19 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                     <h3 class="text-bold mt0 mb0 text-left">Asset Location</h3>
                   </div>
                 </div>
-                <div class="row mb20">
+                <div class="row mb10">
                  <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Region</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
-                      <select class="form-select form-select-lg" name="region" id="region">
-                        
-                      </select>
+                      <div class="col-lg-12 px-3 mb5">
+                        <select class="form-select form-select-lg" name="region" id="region">
+                          
+                        </select>
                        </div>
                     </div>
                   </div>
                   <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Location</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
+                      <div class="col-lg-12 px-3 mb5">
                       <select class="form-select form-select-lg" name="location" id="location">
                         
                       </select>
@@ -152,10 +147,7 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                   </div>
                   <div class="col-lg-4">
                     <div class="row">
-                      <div class="col-lg-4">
-                        <label class="control-label mt5">Sub Location</label>
-                      </div>
-                      <div class="col-lg-8 p-0">
+                      <div class="col-lg-12 px-3 mb5">
                       <select class="form-select form-select-lg" name="subloc" id="subloc">
                        
                       </select>
@@ -166,13 +158,44 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"><b>Data Asset</b></div>
-                      <div class=
-                      "row">
-                        <div class="col-lg-6 chart-areas mb30">
-                          <canvas id="myBarChart"></canvas>
+                      <div class="card-header col-12 text-center pb-4"></div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div style="width:240px">
+                            <canvas id="myBarChart"></canvas>
+                          </div>
                         </div>
-                        <div class="col-lg-6 chart-area">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb15">
+          <div class="h-100 panel panel-default mini-box panel-hovered">
+            <div class="panel-body">
+              <div class="clearfix">
+                <div class="row ml0">
+                  <div class="col-lg-6 col-xs-6 p-0">
+                    <h3 class="text-bold mt0 mb0 text-left">Revenue</h3>
+                  </div>
+                  <div class="col-lg-6 col-xs-6 p-0">
+                  <select class="form-select form-select-lg" name="revTime">
+                    <option value="month">Bulan Ini</option>
+                    <option value="year">Tahun Ini</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="row mb20">
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-header col-12 text-center pb-4"></div>
+                      <div class="row">
+                        <div class="col-lg-12 chart-area">
                           <canvas id="myLineChart"></canvas>
                         </div>
                       </div>
@@ -181,8 +204,6 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                 </div>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>

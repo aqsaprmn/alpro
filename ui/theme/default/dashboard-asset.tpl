@@ -119,8 +119,9 @@
                       <div class="card-header col-12 text-center pb-4"></div>
                       <div class="row">
                         <div class="col-lg-12">
-                              <canvas id="myBarChart"></canvas>
-                            
+                          <div style="width:240px">
+                            <canvas id="myBarChart"></canvas>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -153,7 +154,7 @@
                       <div class="card-header col-12 text-center pb-4"></div>
                       <div class="row">
                         <div class="col-lg-12 chart-area">
-                          <canvas id="myLineChart"></canvas>
+                          <canvas id="myBarChart"></canvas>
                         </div>
                       </div>
                     </div>

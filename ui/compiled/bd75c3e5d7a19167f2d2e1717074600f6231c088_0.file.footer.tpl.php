@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-03-22 13:35:09
+/* Smarty version 3.1.39, created on 2022-05-30 08:15:29
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62396e1dd051f2_80338377',
+  'unifunc' => 'content_62941ab15551d4_29075494',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bd75c3e5d7a19167f2d2e1717074600f6231c088' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\footer.tpl',
-      1 => 1647930891,
+      1 => 1653873312,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62396e1dd051f2_80338377 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62941ab15551d4_29075494 (Smarty_Internal_Template $_smarty_tpl) {
 ?>			</div>
 		</div>
 	</div>
@@ -123,6 +123,7 @@ function content_62396e1dd051f2_80338377 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /scripts/plugins/chart.min.js"><?php echo '</script'; ?>
 >
+
 <?php if ((isset($_smarty_tpl->tpl_vars['xfooter']->value))) {?>
 	<?php echo $_smarty_tpl->tpl_vars['xfooter']->value;?>
 
