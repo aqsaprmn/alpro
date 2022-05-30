@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 10 Bulan Mei 2022 pada 10.04
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.26
+-- Host: localhost
+-- Generation Time: May 30, 2022 at 03:03 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_appconfig`
+-- Table structure for table `tbl_appconfig`
 --
 
 CREATE TABLE `tbl_appconfig` (
@@ -34,7 +34,7 @@ CREATE TABLE `tbl_appconfig` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_appconfig`
+-- Dumping data for table `tbl_appconfig`
 --
 
 INSERT INTO `tbl_appconfig` (`id`, `setting`, `value`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `tbl_appconfig` (`id`, `setting`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_language`
+-- Table structure for table `tbl_language`
 --
 
 CREATE TABLE `tbl_language` (
@@ -67,7 +67,7 @@ CREATE TABLE `tbl_language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_language`
+-- Dumping data for table `tbl_language`
 --
 
 INSERT INTO `tbl_language` (`id`, `name`, `folder`, `author`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `tbl_language` (`id`, `name`, `folder`, `author`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_logs`
+-- Table structure for table `tbl_logs`
 --
 
 CREATE TABLE `tbl_logs` (
@@ -91,7 +91,7 @@ CREATE TABLE `tbl_logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_logs`
+-- Dumping data for table `tbl_logs`
 --
 
 INSERT INTO `tbl_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VALUES
@@ -115,18 +115,29 @@ INSERT INTO `tbl_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VAL
 (70, '2022-04-13 08:07:52', 'Admin', 'Admin Login Successful', 1, '::1'),
 (71, '2022-04-13 21:32:01', 'Admin', 'admin Login Successful', 1, '::1'),
 (72, '2022-04-16 09:52:17', 'Admin', 'admin Login Successful', 1, '::1'),
-(73, '2022-05-09 10:16:51', 'Admin', 'admin Login Successful', 1, '::1');
+(73, '2022-05-09 10:16:51', 'Admin', 'admin Login Successful', 1, '::1'),
+(74, '2022-05-17 15:16:07', 'Admin', 'admin Login Successful', 1, '::1'),
+(75, '2022-05-17 17:00:23', 'Admin', 'admin Login Successful', 1, '::1'),
+(76, '2022-05-18 08:31:39', 'Admin', 'admin Login Successful', 1, '::1'),
+(77, '2022-05-18 13:33:19', 'Admin', 'admin Login Successful', 1, '::1'),
+(78, '2022-05-19 13:22:07', 'Admin', 'admin Login Successful', 1, '::1'),
+(79, '2022-05-19 14:37:22', 'Admin', 'admin Login Successful', 1, '::1'),
+(80, '2022-05-20 08:38:21', 'Admin', 'admin Login Successful', 1, '::1'),
+(81, '2022-05-23 09:19:29', 'Admin', 'admin Login Successful', 1, '::1'),
+(82, '2022-05-23 10:07:25', 'Admin', 'admin Login Successful', 1, '::1'),
+(83, '2022-05-24 08:16:24', 'Admin', 'admin Login Successful', 1, '::1'),
+(84, '2022-05-25 07:53:19', 'Admin', 'admin Login Successful', 1, '::1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_lokasi`
+-- Table structure for table `tbl_lokasi`
 --
 
 CREATE TABLE `tbl_lokasi` (
   `id` int(11) UNSIGNED NOT NULL,
   `id_region` int(11) NOT NULL,
-  `nama` VARCHAR(250) NOT NULL,
+  `nama` varchar(250) NOT NULL,
   `tipe` mediumtext DEFAULT NULL,
   `alamat` mediumtext DEFAULT NULL,
   `status` mediumtext DEFAULT NULL,
@@ -135,7 +146,7 @@ CREATE TABLE `tbl_lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_lokasi`
+-- Dumping data for table `tbl_lokasi`
 --
 
 INSERT INTO `tbl_lokasi` (`id`, `id_region`, `nama`, `tipe`, `alamat`, `status`, `homepass`, `occupancy`) VALUES
@@ -180,7 +191,7 @@ INSERT INTO `tbl_lokasi` (`id`, `id_region`, `nama`, `tipe`, `alamat`, `status`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_message`
+-- Table structure for table `tbl_message`
 --
 
 CREATE TABLE `tbl_message` (
@@ -196,7 +207,7 @@ CREATE TABLE `tbl_message` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_odc`
+-- Table structure for table `tbl_odc`
 --
 
 CREATE TABLE `tbl_odc` (
@@ -209,7 +220,7 @@ CREATE TABLE `tbl_odc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_odc`
+-- Dumping data for table `tbl_odc`
 --
 
 INSERT INTO `tbl_odc` (`id`, `nama`, `lat`, `lon`, `jumlah_splitter`, `kapasitas`) VALUES
@@ -221,7 +232,7 @@ INSERT INTO `tbl_odc` (`id`, `nama`, `lat`, `lon`, `jumlah_splitter`, `kapasitas
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_odc_lokasi`
+-- Table structure for table `tbl_odc_lokasi`
 --
 
 CREATE TABLE `tbl_odc_lokasi` (
@@ -231,7 +242,7 @@ CREATE TABLE `tbl_odc_lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_odc_lokasi`
+-- Dumping data for table `tbl_odc_lokasi`
 --
 
 INSERT INTO `tbl_odc_lokasi` (`id`, `id_odc`, `id_lokasi`) VALUES
@@ -243,7 +254,7 @@ INSERT INTO `tbl_odc_lokasi` (`id`, `id_odc`, `id_lokasi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_odp`
+-- Table structure for table `tbl_odp`
 --
 
 CREATE TABLE `tbl_odp` (
@@ -258,7 +269,7 @@ CREATE TABLE `tbl_odp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_odp`
+-- Dumping data for table `tbl_odp`
 --
 
 INSERT INTO `tbl_odp` (`id`, `nama`, `id_odc`, `port_odc`, `status_port_odc`, `kapasitas`, `lat`, `lon`) VALUES
@@ -302,7 +313,7 @@ INSERT INTO `tbl_odp` (`id`, `nama`, `id_odc`, `port_odc`, `status_port_odc`, `k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_odp_sub_lokasi`
+-- Table structure for table `tbl_odp_sub_lokasi`
 --
 
 CREATE TABLE `tbl_odp_sub_lokasi` (
@@ -312,7 +323,7 @@ CREATE TABLE `tbl_odp_sub_lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_odp_sub_lokasi`
+-- Dumping data for table `tbl_odp_sub_lokasi`
 --
 
 INSERT INTO `tbl_odp_sub_lokasi` (`id`, `id_odp`, `id_sub_lokasi`) VALUES
@@ -334,7 +345,7 @@ INSERT INTO `tbl_odp_sub_lokasi` (`id`, `id_odp`, `id_sub_lokasi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pelanggan`
+-- Table structure for table `tbl_pelanggan`
 --
 
 CREATE TABLE `tbl_pelanggan` (
@@ -346,7 +357,7 @@ CREATE TABLE `tbl_pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_pelanggan`
+-- Dumping data for table `tbl_pelanggan`
 --
 
 INSERT INTO `tbl_pelanggan` (`id`, `nama`, `alamat`, `no_telp`, `status`) VALUES
@@ -524,7 +535,7 @@ INSERT INTO `tbl_pelanggan` (`id`, `nama`, `alamat`, `no_telp`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_port_odp`
+-- Table structure for table `tbl_port_odp`
 --
 
 CREATE TABLE `tbl_port_odp` (
@@ -540,109 +551,109 @@ CREATE TABLE `tbl_port_odp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_port_odp`
+-- Dumping data for table `tbl_port_odp`
 --
 
 INSERT INTO `tbl_port_odp` (`id`, `id_odp`, `port_odp`, `id_pelanggan`, `no_inet`, `status_port_odp`, `lat`, `lon`, `revenue`) VALUES
-(5, 1, 3, 4, '232', 'ACTIVE', '2.533430', '234.233400', '100.00'),
-(7, 1, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(9, 1, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(11, 1, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(13, 1, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(15, 1, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(17, 2, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(19, 2, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(21, 2, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(23, 2, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(25, 2, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(27, 2, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(29, 2, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(31, 2, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(33, 3, 1, 2, '3242342423', 'ACTIVE', '100.110000', '300.222000', '0.00'),
-(35, 3, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(37, 3, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(39, 3, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(43, 3, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(45, 3, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(47, 3, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(49, 4, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(51, 4, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(53, 4, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(55, 4, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(57, 4, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(59, 4, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(61, 4, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(63, 4, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(65, 5, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(67, 5, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(69, 5, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(71, 5, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(73, 5, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(75, 5, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(77, 5, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(79, 5, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(81, 6, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(83, 6, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(87, 6, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(89, 6, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(91, 6, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(93, 6, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(97, 18, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(99, 18, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(101, 18, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(103, 18, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(105, 18, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(107, 18, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(109, 18, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(111, 18, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(113, 19, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(115, 19, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(117, 19, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(119, 19, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(121, 19, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(123, 19, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(125, 19, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(127, 19, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(129, 20, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(131, 20, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(133, 20, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(135, 20, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(137, 20, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(139, 20, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(141, 20, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(143, 20, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(145, 21, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(147, 21, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(149, 21, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(151, 21, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(153, 21, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(155, 21, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(157, 21, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(159, 21, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(161, 22, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(163, 22, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(165, 22, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(167, 22, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(169, 22, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(171, 22, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(173, 22, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(175, 22, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(177, 23, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(179, 23, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(181, 23, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(183, 23, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(185, 23, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(187, 23, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(189, 23, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(191, 23, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(193, 24, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(195, 24, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(197, 24, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(199, 24, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(201, 24, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(203, 24, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(205, 24, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(207, 24, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
+(5, 1, 3, 4, '232', 'ACTIVE', '2.533430', '234.233400', '259705.89'),
+(7, 1, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(9, 1, 5, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(11, 1, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(13, 1, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(15, 1, 8, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(17, 2, 1, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(19, 2, 2, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(21, 2, 3, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(23, 2, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(25, 2, 5, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(27, 2, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(29, 2, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(31, 2, 8, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(33, 3, 1, 2, '3242342423', 'ACTIVE', '100.110000', '300.222000', '259705.89'),
+(35, 3, 2, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(37, 3, 3, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(39, 3, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(43, 3, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(45, 3, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(47, 3, 8, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(49, 4, 1, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(51, 4, 2, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(53, 4, 3, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(55, 4, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(57, 4, 5, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(59, 4, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(61, 4, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(63, 4, 8, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(65, 5, 1, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(67, 5, 2, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(69, 5, 3, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(71, 5, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(73, 5, 5, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(75, 5, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(77, 5, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(79, 5, 8, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(81, 6, 1, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(83, 6, 2, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(87, 6, 4, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(89, 6, 5, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(91, 6, 6, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(93, 6, 7, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(97, 18, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(99, 18, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(101, 18, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(103, 18, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(105, 18, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(107, 18, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(109, 18, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(111, 18, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(113, 19, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(115, 19, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(117, 19, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(119, 19, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(121, 19, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(123, 19, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(125, 19, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(127, 19, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(129, 20, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(131, 20, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(133, 20, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(135, 20, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(137, 20, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(139, 20, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(141, 20, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(143, 20, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(145, 21, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(147, 21, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(149, 21, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(151, 21, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(153, 21, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(155, 21, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(157, 21, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(159, 21, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(161, 22, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(163, 22, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(165, 22, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(167, 22, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(169, 22, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(171, 22, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(173, 22, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(175, 22, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(177, 23, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(179, 23, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(181, 23, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(183, 23, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(185, 23, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(187, 23, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(189, 23, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(191, 23, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(193, 24, 1, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(195, 24, 2, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(197, 24, 3, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(199, 24, 4, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(201, 24, 5, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(203, 24, 6, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(205, 24, 7, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
+(207, 24, 8, NULL, NULL, 'IDLE', NULL, NULL, '204314.93'),
 (208, 36, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
 (209, 36, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
 (210, 36, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
@@ -651,39 +662,40 @@ INSERT INTO `tbl_port_odp` (`id`, `id_odp`, `port_odp`, `id_pelanggan`, `no_inet
 (213, 36, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
 (214, 36, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
 (215, 36, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(222, 1, 2, 4, '2', 'ACTIVE', NULL, NULL, '0.00'),
-(225, 1, 1, 6, NULL, 'ACTIVE', '111234.456633', '1123.120000', '100.00'),
-(226, 3, 5, 8, '5345345', 'ACTIVE', '123.000000', '233.233333', '0.00'),
-(227, 37, 1, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(228, 37, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(229, 37, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(230, 37, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(231, 37, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(232, 37, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(233, 37, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(234, 37, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(235, 37, 9, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(236, 37, 10, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(237, 37, 11, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(238, 37, 12, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(239, 37, 13, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(240, 37, 14, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(241, 37, 15, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(242, 37, 16, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(243, 38, 1, 11, '1231', 'ACTIVE', '12.343242', '34.000000', '0.00'),
-(244, 38, 2, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(245, 38, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(246, 38, 4, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(247, 38, 5, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(248, 38, 6, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(249, 38, 7, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(251, 38, 8, NULL, NULL, 'IDLE', NULL, NULL, '0.00'),
-(252, 7, 3, NULL, NULL, 'IDLE', NULL, NULL, '0.00');
+(222, 1, 2, 4, '2', 'ACTIVE', NULL, NULL, '259705.89'),
+(225, 1, 1, 6, NULL, 'ACTIVE', '111234.456633', '1123.120000', '259705.89'),
+(226, 3, 5, 8, '5345345', 'ACTIVE', '123.000000', '233.233333', '259705.89'),
+(227, 37, 1, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(228, 37, 2, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(229, 37, 3, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(230, 37, 4, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(231, 37, 5, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(232, 37, 6, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(233, 37, 7, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(234, 37, 8, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(235, 37, 9, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(236, 37, 10, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(237, 37, 11, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(238, 37, 12, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(239, 37, 13, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(240, 37, 14, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(241, 37, 15, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(242, 37, 16, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(243, 38, 1, 11, '1231', 'ACTIVE', '12.343242', '34.000000', '341258.36'),
+(244, 38, 2, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(245, 38, 3, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(246, 38, 4, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(247, 38, 5, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(248, 38, 6, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(249, 38, 7, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(251, 38, 8, NULL, NULL, 'IDLE', NULL, NULL, '341258.36'),
+(252, 7, 3, NULL, NULL, 'IDLE', NULL, NULL, '259705.89'),
+(253, 6, 8, 5, '23423423', 'ACTIVE', '23.000000', '12.000000', '259705.89');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_region`
+-- Table structure for table `tbl_region`
 --
 
 CREATE TABLE `tbl_region` (
@@ -692,7 +704,7 @@ CREATE TABLE `tbl_region` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_region`
+-- Dumping data for table `tbl_region`
 --
 
 INSERT INTO `tbl_region` (`id`, `nama`) VALUES
@@ -708,7 +720,36 @@ INSERT INTO `tbl_region` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_sub_lokasi`
+-- Table structure for table `tbl_revenue_port`
+--
+
+CREATE TABLE `tbl_revenue_port` (
+  `id` int(11) NOT NULL,
+  `id_odp` int(11) DEFAULT NULL,
+  `port_odp` int(11) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `revenue` decimal(10,4) NOT NULL,
+  `no_inet` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_revenue_port`
+--
+
+INSERT INTO `tbl_revenue_port` (`id`, `id_odp`, `port_odp`, `tanggal`, `revenue`, `no_inet`) VALUES
+(1, 1, 1, '2018-12-31', '100000.0000', ''),
+(2, 1, 2, '2018-12-31', '100000.0000', ''),
+(3, 1, 3, '2018-12-31', '100000.0000', ''),
+(4, 1, 4, '2018-12-31', '100000.0000', ''),
+(5, 1, 5, '2018-12-31', '100000.0000', ''),
+(6, 1, 6, '2018-12-31', '100000.0000', ''),
+(7, 1, 7, '2018-12-31', '100000.0000', ''),
+(8, 1, 8, '2018-12-31', '100000.0000', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_sub_lokasi`
 --
 
 CREATE TABLE `tbl_sub_lokasi` (
@@ -721,7 +762,7 @@ CREATE TABLE `tbl_sub_lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_sub_lokasi`
+-- Dumping data for table `tbl_sub_lokasi`
 --
 
 INSERT INTO `tbl_sub_lokasi` (`id`, `id_lokasi`, `nama`, `status`, `homepass`, `occupancy`) VALUES
@@ -744,13 +785,13 @@ INSERT INTO `tbl_sub_lokasi` (`id`, `id_lokasi`, `nama`, `status`, `homepass`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users`
+-- Table structure for table `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
   `id` int(11) UNSIGNED NOT NULL,
-  `username` varchar(45) DEFAULT NUll,
-  `fullname` varchar(45) DEFAULT NUll,
+  `username` varchar(45) DEFAULT NULL,
+  `fullname` varchar(45) DEFAULT NULL,
   `password` mediumtext NOT NULL,
   `user_type` enum('Admin','Sales') NOT NULL,
   `status` enum('Active','INACTIVE') NOT NULL DEFAULT 'INACTIVE',
@@ -759,18 +800,18 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_users`
+-- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `fullname`, `password`, `user_type`, `status`, `last_login`, `creationdate`) VALUES
-(1, 'admin', 'Administrator', '$1$QxwXAsJO$fVc7H06d/LkRlVTxxZx70/', 'Admin', 'Active', '2022-05-09 10:16:50', '2014-06-23 01:43:07'),
+(1, 'admin', 'Administrator', '$1$QxwXAsJO$fVc7H06d/LkRlVTxxZx70/', 'Admin', 'Active', '2022-05-25 07:53:19', '2014-06-23 01:43:07'),
 (2, 'amirhamzah', 'Amir Hamzah', '$1$wzOOTJ8D$mqaP0/h3evW8yc82sM5ev1', 'Sales', 'Active', '2021-09-17 12:29:31', '2021-09-17 11:36:47');
 
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_002_port_odp`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_002_port_odp`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_002_port_odp` (
 `id` int(11) unsigned
@@ -789,25 +830,40 @@ CREATE TABLE `v_002_port_odp` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_loc_subloc`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_loc_subloc`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_loc_subloc` (
 `id_lokasi` int(11)
 ,`nama_sub_loc` mediumtext
 ,`id` int(11) unsigned
-,`nama_loc` mediumtext
+,`nama_loc` varchar(250)
 );
 
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_reg_loc`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_port_revenue`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_port_revenue` (
+`port_odp` int(11)
+,`id_odp` int(11) unsigned
+,`id_odc` int(11) unsigned
+,`id_lokasi` int(11)
+,`nama` varchar(250)
+,`revenue` decimal(16,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_reg_loc`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_reg_loc` (
 `id_region` int(11)
-,`nama_loc` mediumtext
+,`nama_loc` varchar(250)
 ,`id` int(11) unsigned
 ,`nama_reg` mediumtext
 );
@@ -815,14 +871,14 @@ CREATE TABLE `v_reg_loc` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_reg_loc_subloc`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_reg_loc_subloc`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_reg_loc_subloc` (
 `id_sub_loc` int(11) unsigned
 ,`nama_sub_loc` mediumtext
 ,`id_loc` int(11) unsigned
-,`nama_loc` mediumtext
+,`nama_loc` varchar(250)
 ,`id_reg` int(11) unsigned
 ,`nama_reg` mediumtext
 );
@@ -830,22 +886,45 @@ CREATE TABLE `v_reg_loc_subloc` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_tbl_odc_lokasi`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_revenue_detail`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_revenue_detail` (
+`id_region` int(11) unsigned
+,`nama_region` mediumtext
+,`id_lokasi` int(11) unsigned
+,`nama_lokasi` varchar(250)
+,`id_sub_lokasi` int(11) unsigned
+,`nama_sub_lokasi` mediumtext
+,`id_odc` int(11) unsigned
+,`nama_odc` mediumtext
+,`id_odp` int(11) unsigned
+,`nama_odp` mediumtext
+,`port_odp` int(11)
+,`tanggal` date
+,`revenue` decimal(10,4)
+,`nama_pelanggan` mediumtext
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_tbl_odc_lokasi`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_tbl_odc_lokasi` (
 `id` int(11) unsigned
 ,`id_odc` int(11)
 ,`nama_odc` mediumtext
 ,`id_lokasi` int(11)
-,`nama_lokasi` mediumtext
+,`nama_lokasi` varchar(250)
 );
 
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_tbl_odp_sub_lokasi`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_tbl_odp_sub_lokasi`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_tbl_odp_sub_lokasi` (
 `id` int(11) unsigned
@@ -858,8 +937,8 @@ CREATE TABLE `v_tbl_odp_sub_lokasi` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_tipe_tbl_lokasi`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_tipe_tbl_lokasi`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_tipe_tbl_lokasi` (
 `tipe` mediumtext
@@ -868,12 +947,12 @@ CREATE TABLE `v_tipe_tbl_lokasi` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `v_total_data_bf`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `v_total_data_bf`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_total_data_bf` (
 `nama_reg` mediumtext
-,`nama_lok` mediumtext
+,`nama_lok` varchar(250)
 ,`nama_sub_lok` mediumtext
 ,`id_odc` int(11)
 ,`id_odp` int(11)
@@ -884,247 +963,277 @@ CREATE TABLE `v_total_data_bf` (
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_002_port_odp`
+-- Structure for view `v_002_port_odp`
 --
 DROP TABLE IF EXISTS `v_002_port_odp`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_002_port_odp`  AS SELECT `a`.`id` AS `id`, `a`.`id_odp` AS `id_odp`, `a`.`port_odp` AS `port_odp`, `a`.`id_pelanggan` AS `id_pelanggan`, `a`.`no_inet` AS `no_inet`, `a`.`status_port_odp` AS `status_port_odp`, `a`.`revenue` AS `revenue`, `a`.`lat` AS `lat`, `a`.`lon` AS `lon`, `b`.`nama` AS `nama`, `b`.`alamat` AS `alamat` FROM (`tbl_port_odp` `a` left join `tbl_pelanggan` `b` on(`a`.`id_pelanggan` = `b`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_002_port_odp`  AS SELECT `a`.`id` AS `id`, `a`.`id_odp` AS `id_odp`, `a`.`port_odp` AS `port_odp`, `a`.`id_pelanggan` AS `id_pelanggan`, `a`.`no_inet` AS `no_inet`, `a`.`status_port_odp` AS `status_port_odp`, `a`.`revenue` AS `revenue`, `a`.`lat` AS `lat`, `a`.`lon` AS `lon`, `b`.`nama` AS `nama`, `b`.`alamat` AS `alamat` FROM (`tbl_port_odp` `a` left join `tbl_pelanggan` `b` on(`a`.`id_pelanggan` = `b`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_loc_subloc`
+-- Structure for view `v_loc_subloc`
 --
 DROP TABLE IF EXISTS `v_loc_subloc`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loc_subloc`  AS SELECT `a`.`id_lokasi` AS `id_lokasi`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_loc` FROM (`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_loc_subloc`  AS SELECT `a`.`id_lokasi` AS `id_lokasi`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_loc` FROM (`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_reg_loc`
+-- Structure for view `v_port_revenue`
+--
+DROP TABLE IF EXISTS `v_port_revenue`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_port_revenue`  AS SELECT `tbl_port_odp`.`port_odp` AS `port_odp`, `tbl_odp`.`id` AS `id_odp`, `tbl_odc`.`id` AS `id_odc`, `tbl_odc_lokasi`.`id_lokasi` AS `id_lokasi`, `tbl_lokasi`.`nama` AS `nama`, `tbl_port_odp`.`revenue` AS `revenue` FROM ((((`tbl_port_odp` join `tbl_odp` on(`tbl_port_odp`.`id_odp` = `tbl_odp`.`id`)) join `tbl_odc` on(`tbl_odp`.`id_odc` = `tbl_odc`.`id`)) join `tbl_odc_lokasi` on(`tbl_odc`.`id` = `tbl_odc_lokasi`.`id_odc`)) join `tbl_lokasi` on(`tbl_odc_lokasi`.`id_lokasi` = `tbl_lokasi`.`id`))  ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_reg_loc`
 --
 DROP TABLE IF EXISTS `v_reg_loc`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc`  AS SELECT `a`.`id_region` AS `id_region`, `a`.`nama` AS `nama_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_reg` FROM (`tbl_lokasi` `a` join `tbl_region` `b` on(`a`.`id_region` = `b`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc`  AS SELECT `a`.`id_region` AS `id_region`, `a`.`nama` AS `nama_loc`, `b`.`id` AS `id`, `b`.`nama` AS `nama_reg` FROM (`tbl_lokasi` `a` join `tbl_region` `b` on(`a`.`id_region` = `b`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_reg_loc_subloc`
+-- Structure for view `v_reg_loc_subloc`
 --
 DROP TABLE IF EXISTS `v_reg_loc_subloc`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc_subloc`  AS SELECT `a`.`id` AS `id_sub_loc`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id_loc`, `b`.`nama` AS `nama_loc`, `c`.`id` AS `id_reg`, `c`.`nama` AS `nama_reg` FROM ((`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`)) join `tbl_region` `c` on(`b`.`id_region` = `c`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_reg_loc_subloc`  AS SELECT `a`.`id` AS `id_sub_loc`, `a`.`nama` AS `nama_sub_loc`, `b`.`id` AS `id_loc`, `b`.`nama` AS `nama_loc`, `c`.`id` AS `id_reg`, `c`.`nama` AS `nama_reg` FROM ((`tbl_sub_lokasi` `a` join `tbl_lokasi` `b` on(`a`.`id_lokasi` = `b`.`id`)) join `tbl_region` `c` on(`b`.`id_region` = `c`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_tbl_odc_lokasi`
+-- Structure for view `v_revenue_detail`
+--
+DROP TABLE IF EXISTS `v_revenue_detail`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_revenue_detail`  AS SELECT `tbl_region`.`id` AS `id_region`, `tbl_region`.`nama` AS `nama_region`, `tbl_lokasi`.`id` AS `id_lokasi`, `tbl_lokasi`.`nama` AS `nama_lokasi`, `tbl_sub_lokasi`.`id` AS `id_sub_lokasi`, `tbl_sub_lokasi`.`nama` AS `nama_sub_lokasi`, `tbl_odc`.`id` AS `id_odc`, `tbl_odc`.`nama` AS `nama_odc`, `tbl_odp`.`id` AS `id_odp`, `tbl_odp`.`nama` AS `nama_odp`, `tbl_revenue_port`.`port_odp` AS `port_odp`, `tbl_revenue_port`.`tanggal` AS `tanggal`, `tbl_revenue_port`.`revenue` AS `revenue`, `tbl_pelanggan`.`nama` AS `nama_pelanggan` FROM (`tbl_region` left join (`tbl_lokasi` left join (`tbl_odc_lokasi` left join (`tbl_odc` left join (`tbl_sub_lokasi` left join (`tbl_odp_sub_lokasi` left join (`tbl_odp` left join ((`tbl_port_odp` left join `tbl_revenue_port` on(`tbl_revenue_port`.`id_odp` = `tbl_port_odp`.`id_odp` and `tbl_revenue_port`.`port_odp` = `tbl_port_odp`.`port_odp`)) left join `tbl_pelanggan` on(`tbl_port_odp`.`id_pelanggan` = `tbl_pelanggan`.`id`)) on(`tbl_port_odp`.`id_odp` = `tbl_odp`.`id`)) on(`tbl_odp`.`id` = `tbl_odp_sub_lokasi`.`id_odp`)) on(`tbl_odp_sub_lokasi`.`id_sub_lokasi` = `tbl_sub_lokasi`.`id`)) on(`tbl_odp`.`id_odc` = `tbl_odc`.`id`)) on(`tbl_odc`.`id` = `tbl_odc_lokasi`.`id_odc`)) on(`tbl_odc_lokasi`.`id_lokasi` = `tbl_lokasi`.`id`)) on(`tbl_lokasi`.`id_region` = `tbl_region`.`id`))  ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_tbl_odc_lokasi`
 --
 DROP TABLE IF EXISTS `v_tbl_odc_lokasi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_odc_lokasi`  AS SELECT `tbl_odc_lokasi`.`id` AS `id`, `tbl_odc_lokasi`.`id_odc` AS `id_odc`, `tbl_odc`.`nama` AS `nama_odc`, `tbl_odc_lokasi`.`id_lokasi` AS `id_lokasi`, `tbl_lokasi`.`nama` AS `nama_lokasi` FROM ((`tbl_odc_lokasi` join `tbl_lokasi` on(`tbl_odc_lokasi`.`id_lokasi` = `tbl_lokasi`.`id`)) join `tbl_odc` on(`tbl_odc_lokasi`.`id_odc` = `tbl_odc`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_odc_lokasi`  AS SELECT `tbl_odc_lokasi`.`id` AS `id`, `tbl_odc_lokasi`.`id_odc` AS `id_odc`, `tbl_odc`.`nama` AS `nama_odc`, `tbl_odc_lokasi`.`id_lokasi` AS `id_lokasi`, `tbl_lokasi`.`nama` AS `nama_lokasi` FROM ((`tbl_odc_lokasi` join `tbl_lokasi` on(`tbl_odc_lokasi`.`id_lokasi` = `tbl_lokasi`.`id`)) join `tbl_odc` on(`tbl_odc_lokasi`.`id_odc` = `tbl_odc`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_tbl_odp_sub_lokasi`
+-- Structure for view `v_tbl_odp_sub_lokasi`
 --
 DROP TABLE IF EXISTS `v_tbl_odp_sub_lokasi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_odp_sub_lokasi`  AS SELECT `tbl_odp_sub_lokasi`.`id` AS `id`, `tbl_odp_sub_lokasi`.`id_odp` AS `id_odp`, `tbl_odp`.`nama` AS `nama_odp`, `tbl_odp_sub_lokasi`.`id_sub_lokasi` AS `id_sub_lokasi`, `tbl_sub_lokasi`.`nama` AS `nama_sub_lokasi` FROM ((`tbl_odp_sub_lokasi` join `tbl_sub_lokasi` on(`tbl_odp_sub_lokasi`.`id_sub_lokasi` = `tbl_sub_lokasi`.`id`)) join `tbl_odp` on(`tbl_odp_sub_lokasi`.`id_odp` = `tbl_odp`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_odp_sub_lokasi`  AS SELECT `tbl_odp_sub_lokasi`.`id` AS `id`, `tbl_odp_sub_lokasi`.`id_odp` AS `id_odp`, `tbl_odp`.`nama` AS `nama_odp`, `tbl_odp_sub_lokasi`.`id_sub_lokasi` AS `id_sub_lokasi`, `tbl_sub_lokasi`.`nama` AS `nama_sub_lokasi` FROM ((`tbl_odp_sub_lokasi` join `tbl_sub_lokasi` on(`tbl_odp_sub_lokasi`.`id_sub_lokasi` = `tbl_sub_lokasi`.`id`)) join `tbl_odp` on(`tbl_odp_sub_lokasi`.`id_odp` = `tbl_odp`.`id`))  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_tipe_tbl_lokasi`
+-- Structure for view `v_tipe_tbl_lokasi`
 --
 DROP TABLE IF EXISTS `v_tipe_tbl_lokasi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tipe_tbl_lokasi`  AS SELECT DISTINCT `tbl_lokasi`.`tipe` AS `tipe` FROM `tbl_lokasi` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tipe_tbl_lokasi`  AS SELECT DISTINCT `tbl_lokasi`.`tipe` AS `tipe` FROM `tbl_lokasi``tbl_lokasi`  ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `v_total_data_bf`
+-- Structure for view `v_total_data_bf`
 --
 DROP TABLE IF EXISTS `v_total_data_bf`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_total_data_bf`  AS SELECT `a`.`nama` AS `nama_reg`, `b`.`nama` AS `nama_lok`, `c`.`nama` AS `nama_sub_lok`, `d`.`id_odc` AS `id_odc`, `e`.`id_odp` AS `id_odp`, `f`.`port_odp` AS `port_odp`, `g`.`nama` AS `nama` FROM ((((((`tbl_region` `a` join `tbl_lokasi` `b` on(`a`.`id` = `b`.`id_region`)) left join `tbl_sub_lokasi` `c` on(`b`.`id` = `c`.`id_lokasi`)) join `tbl_odc_lokasi` `d` on(`b`.`id` = `d`.`id_lokasi`)) left join `tbl_odp_sub_lokasi` `e` on(`c`.`id` = `e`.`id_sub_lokasi`)) left join `tbl_port_odp` `f` on(`e`.`id_odp` = `f`.`id_odp`)) left join `tbl_pelanggan` `g` on(`f`.`id_pelanggan` = `g`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_total_data_bf`  AS SELECT `a`.`nama` AS `nama_reg`, `b`.`nama` AS `nama_lok`, `c`.`nama` AS `nama_sub_lok`, `d`.`id_odc` AS `id_odc`, `e`.`id_odp` AS `id_odp`, `f`.`port_odp` AS `port_odp`, `g`.`nama` AS `nama` FROM ((((((`tbl_region` `a` join `tbl_lokasi` `b` on(`a`.`id` = `b`.`id_region`)) left join `tbl_sub_lokasi` `c` on(`b`.`id` = `c`.`id_lokasi`)) join `tbl_odc_lokasi` `d` on(`b`.`id` = `d`.`id_lokasi`)) left join `tbl_odp_sub_lokasi` `e` on(`c`.`id` = `e`.`id_sub_lokasi`)) left join `tbl_port_odp` `f` on(`e`.`id_odp` = `f`.`id_odp`)) left join `tbl_pelanggan` `g` on(`f`.`id_pelanggan` = `g`.`id`))  ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tbl_appconfig`
+-- Indexes for table `tbl_appconfig`
 --
 ALTER TABLE `tbl_appconfig`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_language`
+-- Indexes for table `tbl_language`
 --
 ALTER TABLE `tbl_language`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_logs`
+-- Indexes for table `tbl_logs`
 --
 ALTER TABLE `tbl_logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_lokasi`
+-- Indexes for table `tbl_lokasi`
 --
 ALTER TABLE `tbl_lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_message`
+-- Indexes for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_odc`
+-- Indexes for table `tbl_odc`
 --
 ALTER TABLE `tbl_odc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_odc_lokasi`
+-- Indexes for table `tbl_odc_lokasi`
 --
 ALTER TABLE `tbl_odc_lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_odp`
+-- Indexes for table `tbl_odp`
 --
 ALTER TABLE `tbl_odp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_odp_sub_lokasi`
+-- Indexes for table `tbl_odp_sub_lokasi`
 --
 ALTER TABLE `tbl_odp_sub_lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_pelanggan`
+-- Indexes for table `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_port_odp`
+-- Indexes for table `tbl_port_odp`
 --
 ALTER TABLE `tbl_port_odp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_region`
+-- Indexes for table `tbl_region`
 --
 ALTER TABLE `tbl_region`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_sub_lokasi`
+-- Indexes for table `tbl_revenue_port`
+--
+ALTER TABLE `tbl_revenue_port`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_sub_lokasi`
 --
 ALTER TABLE `tbl_sub_lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_users`
+-- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_appconfig`
+-- AUTO_INCREMENT for table `tbl_appconfig`
 --
 ALTER TABLE `tbl_appconfig`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_language`
+-- AUTO_INCREMENT for table `tbl_language`
 --
 ALTER TABLE `tbl_language`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_logs`
+-- AUTO_INCREMENT for table `tbl_logs`
 --
 ALTER TABLE `tbl_logs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_lokasi`
+-- AUTO_INCREMENT for table `tbl_lokasi`
 --
 ALTER TABLE `tbl_lokasi`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_message`
+-- AUTO_INCREMENT for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_odc`
+-- AUTO_INCREMENT for table `tbl_odc`
 --
 ALTER TABLE `tbl_odc`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_odc_lokasi`
+-- AUTO_INCREMENT for table `tbl_odc_lokasi`
 --
 ALTER TABLE `tbl_odc_lokasi`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_odp`
+-- AUTO_INCREMENT for table `tbl_odp`
 --
 ALTER TABLE `tbl_odp`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_odp_sub_lokasi`
+-- AUTO_INCREMENT for table `tbl_odp_sub_lokasi`
 --
 ALTER TABLE `tbl_odp_sub_lokasi`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_pelanggan`
+-- AUTO_INCREMENT for table `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_port_odp`
+-- AUTO_INCREMENT for table `tbl_port_odp`
 --
 ALTER TABLE `tbl_port_odp`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_region`
+-- AUTO_INCREMENT for table `tbl_region`
 --
 ALTER TABLE `tbl_region`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_sub_lokasi`
+-- AUTO_INCREMENT for table `tbl_revenue_port`
+--
+ALTER TABLE `tbl_revenue_port`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `tbl_sub_lokasi`
 --
 ALTER TABLE `tbl_sub_lokasi`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_users`
+-- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
