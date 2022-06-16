@@ -10,7 +10,7 @@ const tabelData = divData.querySelector("table#assetTotal");
 
 const xhr = new XMLHttpRequest();
 var myChart = ``;
-var myBarChart = ``;
+var myChart = ``;
 
 xhr.open("POST", hostloc + region.id);
 // xhr.open('POST' , hostserv+region.id);
@@ -96,16 +96,16 @@ xhr.addEventListener("load", function () {
           {
             label: "Total",
             backgroundColor: [
-              "rgb(255, 99, 132)",
-              "rgb(75, 192, 192)",
-              "rgb(255, 205, 86)",
-              "rgb(54, 162, 235)",
+              "rgb(88, 151, 252)",
+              "rgb(47, 93, 237)",
+              "rgb(11, 51, 176)",
+              "rgb(50, 77, 161)",
             ],
             borderColor: [
-              "rgb(255, 99, 132)",
-              "rgb(75, 192, 192)",
-              "rgb(255, 205, 86)",
-              "rgb(54, 162, 235)",
+              "rgb(88, 151, 252)",
+              "rgb(47, 93, 237)",
+              "rgb(11, 51, 176)",
+              "rgb(50, 77, 161)",
             ],
             borderWidth: 1,
             data: [
