@@ -12,7 +12,7 @@ const xhr = new XMLHttpRequest();
 var myChart = ``;
 var myChart = ``;
 
-xhr.open("POST", hostloc + region.id);
+xhr.open("POST", hostserv + region.id);
 // xhr.open('POST' , hostserv+region.id);
 xhr.send();
 xhr.addEventListener("load", function () {
@@ -145,7 +145,7 @@ region.addEventListener("change", function () {
   const val = this.value;
   const xhr = new XMLHttpRequest();
 
-  xhr.open("POST", hostloc + loc.id);
+  xhr.open("POST", hostserv + loc.id);
   // xhr.open('POST' , hostserv+loc.id);
 
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -210,7 +210,7 @@ loc.addEventListener("change", function () {
   const regVal = region.value;
   const val = this.value;
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", hostloc + subloc.id);
+  xhr.open("POST", hostserv + subloc.id);
   // xhr.open('POST' , hostserv+subloc.id);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send("reg=" + regVal + "&lok=" + val);
@@ -272,7 +272,7 @@ subloc.addEventListener("change", function () {
 
   const xhr = new XMLHttpRequest();
 
-  xhr.open("POST", hostloc + "subloc_end");
+  xhr.open("POST", hostserv + "subloc_end");
   // xhr.open('POST' , hostserv+'subloc_end');
 
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
