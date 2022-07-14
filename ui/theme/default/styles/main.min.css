@@ -6240,6 +6240,11 @@ button.md-no-style {
   display: flex !important;
 }
 
+.dflex-col {
+  display: flex !important;
+  flex-direction: column;
+}
+
 .tableInput tr,
 .tableInput td {
   padding: 14px;

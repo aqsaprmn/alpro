@@ -21,6 +21,7 @@ if (file_exists('system/config.php')) {
 function rupiah($total)
 {
     $revenue = explode('.', $total);
+
     $prefix = 'Rp. ';
     $sisa = strlen($revenue[0]) % 3;
     $rupiah = substr($revenue[0], 0, $sisa);
@@ -31,8 +32,13 @@ function rupiah($total)
         $rupiah .= $separator . join('.', $ribuan[0]);
     }
 
-    $rupiah = ($revenue[1] != '' && $rupiah != 0) ? $rupiah . ',' . $revenue[1] : $rupiah;
-    $rupiah = $prefix . $rupiah;
+    if (isset($revenue[1])) {
+        $rupiah = ($revenue[1] != '' && $rupiah != 0) ? $rupiah . ',' . $revenue[1] : $rupiah;
+        $rupiah = $prefix . $rupiah;
+    } else {
+        $rupiah = ($rupiah != 0) ? $rupiah . ',' : $rupiah;
+        $rupiah = $prefix . $rupiah;
+    }
 
     return $rupiah;
 }

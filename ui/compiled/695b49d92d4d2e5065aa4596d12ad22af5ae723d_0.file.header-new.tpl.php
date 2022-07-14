@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-13 15:26:18
+/* Smarty version 3.1.39, created on 2022-07-13 10:16:52
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\header-new.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_627e162a853874_20077853',
+  'unifunc' => 'content_62ce392448b747_91818296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '695b49d92d4d2e5065aa4596d12ad22af5ae723d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\header-new.tpl',
-      1 => 1652430282,
+      1 => 1657682210,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_627e162a853874_20077853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62ce392448b747_91818296 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +52,8 @@ function content_627e162a853874_20077853 (Smarty_Internal_Template $_smarty_tpl)
 /styles/plugins/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /styles/plugins/summernote.css">
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
+/styles/plugins/yearpicker.css">
 
 	<!-- Css/Less Stylesheets -->
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>

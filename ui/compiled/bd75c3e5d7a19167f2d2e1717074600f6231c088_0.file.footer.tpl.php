@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-05-30 08:15:29
+/* Smarty version 3.1.39, created on 2022-07-13 10:16:52
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62941ab15551d4_29075494',
+  'unifunc' => 'content_62ce39244fa042_08672854',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bd75c3e5d7a19167f2d2e1717074600f6231c088' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\footer.tpl',
-      1 => 1653873312,
+      1 => 1657682197,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62941ab15551d4_29075494 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62ce39244fa042_08672854 (Smarty_Internal_Template $_smarty_tpl) {
 ?>			</div>
 		</div>
 	</div>
@@ -67,6 +67,14 @@ function content_62941ab15551d4_29075494 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /scripts/vendors.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
+/scripts/jquery.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
+/scripts/plugins/yearpicker.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
@@ -123,15 +131,20 @@ function content_62941ab15551d4_29075494 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /scripts/plugins/chart.min.js"><?php echo '</script'; ?>
 >
+	<?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"><?php echo '</script'; ?>
+>
+	<?php if ((isset($_smarty_tpl->tpl_vars['xfooter']->value))) {?>
+		<?php echo $_smarty_tpl->tpl_vars['xfooter']->value;?>
 
-<?php if ((isset($_smarty_tpl->tpl_vars['xfooter']->value))) {?>
-	<?php echo $_smarty_tpl->tpl_vars['xfooter']->value;?>
+	<?php }?>
+	<?php if ((isset($_smarty_tpl->tpl_vars['fetchApi']->value))) {?>
+		<?php echo $_smarty_tpl->tpl_vars['fetchApi']->value;?>
 
-<?php }
-if ((isset($_smarty_tpl->tpl_vars['fetchApi']->value))) {?>
-	<?php echo $_smarty_tpl->tpl_vars['fetchApi']->value;?>
-
-<?php }?>
+	<?php }?>
 		
 </body>
 </html><?php }

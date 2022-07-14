@@ -60,7 +60,7 @@ for (let i = 0; i < divInput.length; i++) {
         const button = dataTable.querySelector('button');
        
 
-        fetch(hostserv+idInputDivIn)
+        fetch(hostloc+idInputDivIn)
         // fetch(hostserv+idInputDivIn)
             .then( response => {
                 response.json().then( (response) => {
@@ -105,7 +105,7 @@ for (let i = 0; i < divInput.length; i++) {
                                             }
                                         }
                         
-                                        xhttp.open('GET' , hostserv+idInputDivIn+'/'+val);
+                                        xhttp.open('GET' , hostloc+idInputDivIn+'/'+val);
                                         // xhttp.open('GET' , hostserv+idInputDivIn+'/'+val);
                                         xhttp.send();
                                     }
@@ -149,7 +149,7 @@ for (let j = 0; j < divInput.length; j++) {
                 const idSelect = select.id;
                 const valInputDiv = inputDivIn.value;
                 if (valInputDiv != '') {
-                        fetch(hostserv + idSelect + '/' + valInputDiv+'/'+ idodp)
+                        fetch(hostloc + idSelect + '/' + valInputDiv+'/'+ idodp)
                         // fetch(hostserv + idSelect + '/' + valInputDiv+'/'+ idodp)
                         .then(response => { 
                             response.json().then(response => {

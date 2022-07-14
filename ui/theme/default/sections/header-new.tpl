@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/bootstrap-slider.css">
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/summernote.css">
+	<link rel="stylesheet" href="{$_theme}/styles/plugins/yearpicker.css">
 
 	<!-- Css/Less Stylesheets -->
 	<link rel="stylesheet" href="{$_theme}/styles/bootstrap.min.css">

@@ -214,7 +214,7 @@ switch ($action) {
 
         $reg = _post('name');
 
-        if ($reg == 'All') {
+        if ($reg == 'all') {
             $data['total'] = ORM::for_table('v_total_data_bf')->select_expr('COUNT(DISTINCT id_odc)', 'total_odc')->select_expr('COUNT(DISTINCT id_odp)', 'total_odp')->select_expr('COUNT(port_odp)', 'total_port')->select_expr('COUNT(nama)', 'total_pelanggan')->find_array();
         } else {
             $data['loc'] = ORM::for_table('v_reg_loc')->where('nama_reg', $reg)->find_array();
@@ -257,6 +257,41 @@ switch ($action) {
 
 
         echo json_encode($data);
+        break;
+
+    case 'revenue_month':
+
+        $year = _post('year');
+
+        $data['data'] = ORM::for_table('tbl_revenue_port')->select('month')->select('year')->select_expr('SUM(revenue)', 'total_rev')->where('year', $year)->group_by('month')->find_array();
+
+        echo json_encode($data);
+
+        break;
+
+    case 'revenue_day':
+
+        $date = _post('month');
+        $date = explode('-', $date);
+
+        $ydate = $date[0];
+        $mdate = (int)$date[1];
+
+        $data['data'] = ORM::for_table('tbl_revenue_port')->select('tanggal')->select('month')->select('year')->select_expr('SUM(revenue)', 'total_rev')->where('year', $ydate)->where('month', $mdate)->group_by('tanggal')->find_array();
+
+        echo json_encode($data);
+
+        break;
+
+    case 'revenue_between':
+
+        $start = _post('start');
+        $end =  _post('end');
+
+        $data['data'] = ORM::for_table('tbl_revenue_port')->raw_query("SELECT tanggal, year, sum(revenue) AS total_rev FROM tbl_revenue_port WHERE year BETWEEN $start AND $end GROUP BY year")->find_array();
+
+        echo json_encode($data);
+
         break;
 
     default:

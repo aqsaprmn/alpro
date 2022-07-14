@@ -74,52 +74,91 @@
           </div>
         </div>
       </div>
-      <div class="row ml0 mr0" id="dataTotal">
-        <div class="col-lg-6 col-md-12 mb15">
-          <div class="h-100 panel panel-default mini-box panel-hovered">
-            <div class="panel-body">
-              <div class="clearfix">
-                <div class="row ml0 mr0 mb20">
-                  <div class="col-lg-6 col-xs-6 p-0">
-                    <h3 class="text-bold mt0 mb0 text-left">Asset Location</h3>
+      <div class="row ml0 mr0 px-3 pb-3" id="dataTotal">
+        <div class="panel panel-default mini-box panel-hovered">
+          <div class="panel-body">
+            <div class="clearfix">
+              <div style="height: 50vh" class="col-lg-6 col-md-12 mb30">
+                <div class="mb20">
+                  <h3 class="text-bold mt0 mb0 text-left">Total Asset /Location</h3>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row mb10">
+                      <div class="col-lg-4">
+                        <div class="row">
+                          <div class="col-lg-12 px-3 mb5">
+                            <select class="form-select form-select-lg" name="region" id="region">
+                              
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="row">
+                          <div class="col-lg-12 px-3 mb5">
+                          <select class="form-select form-select-lg" name="location" id="location">
+                            
+                          </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="row">
+                          <div class="col-lg-12 px-3 mb5">
+                          <select class="form-select form-select-lg" name="subloc" id="subloc">
+                          
+                          </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
                   </div>
                 </div>
-                <div class="row mb10">
-                 <div class="col-lg-4">
-                    <div class="row">
-                      <div class="col-lg-12 px-3 mb5">
-                        <select class="form-select form-select-lg" name="region" id="region">
-                          
-                        </select>
-                       </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="" style="">
+                      <canvas id="myDonatChart"></canvas>
                     </div>
                   </div>
-                  <div class="col-lg-4">
-                    <div class="row">
-                      <div class="col-lg-12 px-3 mb5">
-                      <select class="form-select form-select-lg" name="location" id="location">
-                        
-                      </select>
-                       </div>
-                    </div>
+                </div>
+              </div>
+              <div style="height: 50vh" class="col-md-12 col-lg-6 dflex justify-content-center">
+                <table id="dataAsset" class="table">
+                  
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;" class="row ml0 mr0 py-3">
+        <div class="col-lg-12">
+          <div class="panel panel-default mini-box panel-hovered">
+            <div class="panel-body">
+              <div class="clearfix">
+                <div class="row ml0 mb5">
+                  <div class="col-xs-6 text-left">
+                    <h3 class="text-bold mt0 mb0">Revenue</h3>
                   </div>
-                  <div class="col-lg-4">
-                    <div class="row">
-                      <div class="col-lg-12 px-3 mb5">
-                      <select class="form-select form-select-lg" name="subloc" id="subloc">
-                       
-                      </select>
-                       </div>
+                  <div class="col-xs-6">
+                    <div id="between" class="row hidden">
+                      <div class="col-xs-6">
+                        <input class="yearpicker form-control" id="start" type="number">
+                      </div>
+                      <div class="col-xs-6">
+                        <input class="yearpicker form-control" id="end" type="number">
+                      </div>
                     </div>
+                    <input class="yearpicker form-control" id="periode" type="number">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="card">
-                      <div class="card-header col-12 text-center pb-4"></div>
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div style="width:240px">
+                      <div class="row" style="display: flex; flex-wrap: wrap;">
+                        <div class="col-lg-12 chart-area">
+                          <div style="position: relative; height:60vh; margin: auto; overflow: auto">
                             <canvas id="myBarChart"></canvas>
                           </div>
                         </div>
@@ -127,38 +166,10 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12 mb15">
-          <div class="h-100 panel panel-default mini-box panel-hovered">
-            <div class="panel-body">
-              <div class="clearfix">
                 <div class="row ml0">
-                  <div class="col-lg-6 col-xs-6 p-0">
-                    <h3 class="text-bold mt0 mb0 text-left">Revenue</h3>
-                  </div>
-                  <div class="col-lg-6 col-xs-6 p-0">
-                  <select class="form-select form-select-lg" name="revTime">
-                    <option value="month">Bulan Ini</option>
-                    <option value="year">Tahun Ini</option>
-                  </select>
-                  </div>
-                </div>
-                <div class="row mb20">
-                </div>
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="card">
-                      <div class="card-header col-12 text-center pb-4"></div>
-                      <div class="row">
-                        <div class="col-lg-12 chart-area">
-                          <canvas id="myBarChart"></canvas>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button id="tahun" class="btn btn-primary">Tahun</button>
+                  <button id="bulan" class="btn btn-primary">Bulan</button>
+                  <button id="hari" class="btn btn-primary">Hari</button>
                 </div>
               </div>
             </div>
