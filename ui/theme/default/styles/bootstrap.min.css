@@ -23,7 +23,6 @@ summary {
   display: block;
 }
 audio,
-canvas,
 progress,
 video {
   display: inline-block;
@@ -833,10 +832,10 @@ pre code {
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
-  position: relative;
-  min-height: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* position: relative; */
+  /* min-height: 1px; */
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
 }
 .col-xs-1,
 .col-xs-2,
@@ -1359,6 +1358,7 @@ pre code {
     float: left;
   }
   .col-lg-12 {
+    flex: 0 0 auto;
     width: 100%;
   }
   .col-lg-11 {

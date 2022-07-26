@@ -445,7 +445,7 @@ const myBarChart = new Chart(
                   anchor: 'end',
                   align: 'end',
                   rotation: -90,
-                  display: true,
+                  display: false,
                   offset: 10,
                   // labels: datelabel,
                   formatter: function(value, context) {
@@ -559,11 +559,13 @@ function updateDataBarChart(chart, data, unit="month") {
   if (unit == 'day') {
     chart.options.plugins.datalabels.font.size = 10;
     chart.options.plugins.datalabels.rotation = -80;
-    chart.options.plugins.datalabels.osset = 0;
+    chart.options.plugins.datalabels.ofset = 0;
+    chart.options.plugins.datalabels.display = true;
   } else {
     chart.options.plugins.datalabels.font.size = 16;
     chart.options.plugins.datalabels.rotation = -90;
-    chart.options.plugins.datalabels.osset = 10;
+    chart.options.plugins.datalabels.ofset = 10;
+    chart.options.plugins.datalabels.display = false;
   }
   chart.update();
 }
@@ -659,3 +661,8 @@ function xhrMonth() {
     }
   });
 }
+
+// Table All Asset
+  $('#allAsset').DataTable();
+
+

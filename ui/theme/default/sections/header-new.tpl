@@ -19,10 +19,14 @@
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/summernote.css">
 	<link rel="stylesheet" href="{$_theme}/styles/plugins/yearpicker.css">
+	<link rel="stylesheet" href="{$_theme}/styles/plugins/jquery.dataTables.css">
 
 	<!-- Css/Less Stylesheets -->
 	<link rel="stylesheet" href="{$_theme}/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="{$_theme}/styles/main.min.css">
+
+
+  
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 

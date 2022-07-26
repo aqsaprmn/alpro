@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      <div class="row ml0 mr0 px-3 pb-3" id="dataTotal">
+      <div class="row ml0 mr0 pb-3" id="dataTotal">
         <div class="panel panel-default mini-box panel-hovered">
           <div class="panel-body">
             <div class="clearfix">
@@ -82,7 +82,7 @@
                 <div class="mb20">
                   <h3 class="text-bold mt0 mb0 text-left">Total Asset /Location</h3>
                 </div>
-                <div class="row">
+                <div class="row px-4">
                   <div class="col-lg-12">
                     <div class="row mb10">
                       <div class="col-lg-4">
@@ -153,15 +153,11 @@
                     <input class="yearpicker form-control" id="periode" type="number">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="card">
-                      <div class="row" style="display: flex; flex-wrap: wrap;">
-                        <div class="col-lg-12 chart-area">
-                          <div style="position: relative; height:60vh; margin: auto; overflow: auto">
-                            <canvas id="myBarChart"></canvas>
-                          </div>
-                        </div>
+                <div class="row mb15" style="display: flex; flex-wrap: wrap; position:relative;">
+                  <div class="col-lg-12" style="position: relative; margin: auto; overflow: auto !important;>
+                    <div class="">
+                      <div class="" style="height:50vh;">
+                        <canvas id="myBarChart"></canvas>
                       </div>
                     </div>
                   </div>
@@ -181,101 +177,34 @@
           <div class="panel panel-default mini-box panel-hovered">
             <div class="panel-body">
               <div class="clearfix">
-                <h3 class="text-bold mt0 mb0 text-left">
-                  Recently Tagged Assets
+                <h3 class="text-bold mt0 mb15 text-left">
+                  List All Asset
                 </h3>
-                <div class="row ml0 mr0 mt15 mb15">
-                  <div class="col-lg-3 col-sm-3">
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search for..."
-                      />
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          Go!
-                        </button>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-lg-1 col-sm-1">
-                    <h5 class="text-bold">Filter by:</h5>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Location
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Categori
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Entity
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <button class="btn btn-primary w100">Add Asset</button>
-                  </div>
-                </div>
                 <div class="row ml0 mr0">
-                  <div class="panel panel-default overflow-auto">
-                    <div class="panel-heading">List Assets</div>
-                    <table class="table">
-                      <tr class="text-center">
-                        <th class="text-center">Code</th>
-                        <th class="text-center">Asset Name</th>
-                        <th class="text-center">Location</th>
-                        <th class="text-center">Category</th>
-                      </tr>
-                      <tr class="text-center">
-                        <td>1234</td>
-                        <td>AC</td>
-                        <td>Jakarta</td>
-                        <td>Elektronik</td>
-                      </tr>
+                  <div class="overflow-auto">
+                    <table id="allAsset" class="cell-border hover">
+                      <thead>
+                        <tr class="text-center">
+                          <th class="text-center">No</th>
+                          <th class="text-center">Asset Name</th>
+                          <th class="text-center">Type</th>
+                          <th class="text-center">Lat</th>
+                          <th class="text-center">Lon</th>
+                          <th class="text-center">Kapasitas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {foreach $asset as $a}
+                        <tr class="text-center">
+                          <td>{$no++}</td>
+                          <td>{$a['nama']}</td>
+                          <td>{$a['type']}</td>
+                          <td>{$a['lat']}</td>
+                          <td>{$a['lon']}</td>
+                          <td>{$a['kapasitas']}</td>
+                        </tr>
+                        {/foreach}
+                      </tbody>
                     </table>
                   </div>
                 </div>

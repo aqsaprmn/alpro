@@ -58,6 +58,7 @@
 	<script src="{$_theme}/scripts/customAqsha.js"></script>
 	<script src="{$_theme}/scripts/form-elements.init.js"></script>
 	<script src="{$_theme}/scripts/plugins/chart.min.js"></script>
+	<script src="{$_theme}/scripts/plugins/jquery.dataTables.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 	{if isset($xfooter)}

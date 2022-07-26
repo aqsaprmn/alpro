@@ -33,6 +33,10 @@ $cus = ORM::for_table('tbl_pelanggan')->find_many()->count();
 // Region
 $reg = ORM::for_table('tbl_region')->find_many();
 
+//Table
+$asset = ORM::for_table('v_all_asset')->find_many();
+
+$no = 1;
 
 $ui->assign('fetchApi', '<script src="' . $_theme . '/scripts/dashAqsha.js"></script><script src="ui/lib/js/chart/package/dist/chart.min.js"');
 $ui->assign('reg', $reg);
@@ -40,6 +44,8 @@ $ui->assign('rev', $rev);
 $ui->assign('odc', $odc);
 $ui->assign('odp', $odp);
 $ui->assign('cus', $cus);
+$ui->assign('no', $no);
+$ui->assign('asset', $asset);
 
 // $ui->assign('stocks', $stocks);
 // $ui->assign('plans', $plans);

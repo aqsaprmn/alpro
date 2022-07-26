@@ -29,7 +29,7 @@ if (isset($routes['3']) && $routes['3'] != '') {
 
     if ($keyword != '') {
         $odc = ORM::for_table('tbl_odc')->where_id_is($odp['id_odc'])->find_one();
-        $port = ORM::for_table('v_002_port_odp')->where('id_odp', $idodp)->where_any_is(array(
+        $port = ORM::for_table('v_port_odp')->where('id_odp', $idodp)->where_any_is(array(
             array('port_odp' => '%' . $keyword . '%'),
             array('nama' => '%' . $keyword . '%'),
             array('no_inet' => '%' . $keyword . '%'),
@@ -251,9 +251,8 @@ if (isset($routes['3']) && $routes['3'] != '') {
         } else {
         }
     } else {
-
         $odc = ORM::for_table('tbl_odc')->where_id_is($odp['id_odc'])->find_one();
-        $port = ORM::for_table('v_002_port_odp')->where('id_odp', $idodp)->order_by_asc('port_odp')->find_many();
+        $port = ORM::for_table('v_port_odp')->where('id_odp', $idodp)->order_by_asc('port_odp')->find_many();
 
         $ui->assign('title', $title['nama'] . ' - ' . $loc['nama'] . ' - ' . $odc['nama'] . ' - ' . $odp['nama']);
         $ui->assign('port', $port);

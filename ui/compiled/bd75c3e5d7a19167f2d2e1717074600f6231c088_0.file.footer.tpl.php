@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-07-13 10:16:52
+/* Smarty version 3.1.39, created on 2022-07-14 17:09:03
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62ce39244fa042_08672854',
+  'unifunc' => 'content_62cfeb3fc02c86_53625578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bd75c3e5d7a19167f2d2e1717074600f6231c088' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\footer.tpl',
-      1 => 1657682197,
+      1 => 1657793307,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62ce39244fa042_08672854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62cfeb3fc02c86_53625578 (Smarty_Internal_Template $_smarty_tpl) {
 ?>			</div>
 		</div>
 	</div>
@@ -130,6 +130,10 @@ function content_62ce39244fa042_08672854 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /scripts/plugins/chart.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
+/scripts/plugins/jquery.dataTables.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"><?php echo '</script'; ?>

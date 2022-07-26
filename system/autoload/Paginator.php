@@ -7,7 +7,7 @@ class Paginator
         global $routes;
         global $_L;
 
-        $url = U . $routes['0'] . '/' . $routes['1'] . '/';
+        $url = isset($routes['1']) ? U . $routes['0'] . '/' . $routes['1'] . '/' : U . $routes['0'] . '/';
         $page = (int)(!isset($routes['2']) ? 1 : $routes['2']);
 
         $adjacents = "2";

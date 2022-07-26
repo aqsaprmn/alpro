@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-07-13 17:05:56
+/* Smarty version 3.1.39, created on 2022-07-15 17:19:06
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62ce9904013007_96150618',
+  'unifunc' => 'content_62d13f1a7dd081_52310009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1657706745,
+      1 => 1657880345,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_62ce9904013007_96150618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62d13f1a7dd081_52310009 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -116,7 +116,7 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
           </div>
         </div>
       </div>
-      <div class="row ml0 mr0 px-3 pb-3" id="dataTotal">
+      <div class="row ml0 mr0 pb-3" id="dataTotal">
         <div class="panel panel-default mini-box panel-hovered">
           <div class="panel-body">
             <div class="clearfix">
@@ -124,7 +124,7 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                 <div class="mb20">
                   <h3 class="text-bold mt0 mb0 text-left">Total Asset /Location</h3>
                 </div>
-                <div class="row">
+                <div class="row px-4">
                   <div class="col-lg-12">
                     <div class="row mb10">
                       <div class="col-lg-4">
@@ -195,15 +195,11 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
                     <input class="yearpicker form-control" id="periode" type="number">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="card">
-                      <div class="row" style="display: flex; flex-wrap: wrap;">
-                        <div class="col-lg-12 chart-area">
-                          <div style="position: relative; height:60vh; margin: auto; overflow: auto">
-                            <canvas id="myBarChart"></canvas>
-                          </div>
-                        </div>
+                <div class="row mb15" style="display: flex; flex-wrap: wrap; position:relative;">
+                  <div class="col-lg-12" style="position: relative; margin: auto; overflow: auto !important;>
+                    <div class="">
+                      <div class="" style="height:50vh;">
+                        <canvas id="myBarChart"></canvas>
                       </div>
                     </div>
                   </div>
@@ -223,101 +219,47 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
           <div class="panel panel-default mini-box panel-hovered">
             <div class="panel-body">
               <div class="clearfix">
-                <h3 class="text-bold mt0 mb0 text-left">
-                  Recently Tagged Assets
+                <h3 class="text-bold mt0 mb15 text-left">
+                  List All Asset
                 </h3>
-                <div class="row ml0 mr0 mt15 mb15">
-                  <div class="col-lg-3 col-sm-3">
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search for..."
-                      />
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          Go!
-                        </button>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-lg-1 col-sm-1">
-                    <h5 class="text-bold">Filter by:</h5>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Location
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Categori
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle w100"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        Entity
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Indonesia</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-sm-2">
-                    <button class="btn btn-primary w100">Add Asset</button>
-                  </div>
-                </div>
                 <div class="row ml0 mr0">
-                  <div class="panel panel-default overflow-auto">
-                    <div class="panel-heading">List Assets</div>
-                    <table class="table">
-                      <tr class="text-center">
-                        <th class="text-center">Code</th>
-                        <th class="text-center">Asset Name</th>
-                        <th class="text-center">Location</th>
-                        <th class="text-center">Category</th>
-                      </tr>
-                      <tr class="text-center">
-                        <td>1234</td>
-                        <td>AC</td>
-                        <td>Jakarta</td>
-                        <td>Elektronik</td>
-                      </tr>
+                  <div class="overflow-auto">
+                    <table id="allAsset" class="cell-border hover">
+                      <thead>
+                        <tr class="text-center">
+                          <th class="text-center">No</th>
+                          <th class="text-center">Asset Name</th>
+                          <th class="text-center">Type</th>
+                          <th class="text-center">Lat</th>
+                          <th class="text-center">Lon</th>
+                          <th class="text-center">Kapasitas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['asset']->value, 'a');
+$_smarty_tpl->tpl_vars['a']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['a']->value) {
+$_smarty_tpl->tpl_vars['a']->do_else = false;
+?>
+                        <tr class="text-center">
+                          <td><?php echo $_smarty_tpl->tpl_vars['no']->value++;?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['nama'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['type'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lat'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lon'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['kapasitas'];?>
+</td>
+                        </tr>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                      </tbody>
                     </table>
                   </div>
                 </div>

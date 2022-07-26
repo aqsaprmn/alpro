@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-07-13 10:16:52
+/* Smarty version 3.1.39, created on 2022-07-14 17:09:03
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\header-new.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62ce392448b747_91818296',
+  'unifunc' => 'content_62cfeb3faa4e63_72193379',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '695b49d92d4d2e5065aa4596d12ad22af5ae723d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\header-new.tpl',
-      1 => 1657682210,
+      1 => 1657793341,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62ce392448b747_91818296 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62cfeb3faa4e63_72193379 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -54,12 +54,17 @@ function content_62ce392448b747_91818296 (Smarty_Internal_Template $_smarty_tpl)
 /styles/plugins/summernote.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /styles/plugins/yearpicker.css">
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
+/styles/plugins/jquery.dataTables.css">
 
 	<!-- Css/Less Stylesheets -->
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /styles/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /styles/main.min.css">
+
+
+  
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 
