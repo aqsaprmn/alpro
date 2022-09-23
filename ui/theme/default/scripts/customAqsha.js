@@ -64,7 +64,7 @@ for (let i = 0; i < inputDecimal.length; i++) {
     var key = String.fromCharCode(e.keyCode);
     // console.log(key);
     const valid = /(?=[^\0])(?=^([0-9]{0,6})(\.[0-9]{0,6}){0,1}$)/.test(
-      this.value
+      this.value,
     );
     // console.log(valid);
     let decVal = this.value;

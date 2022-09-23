@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-03-08 09:09:15
+/* Smarty version 3.1.39, created on 2022-09-05 14:59:57
   from 'C:\xampp\htdocs\alpro\ui\theme\default\master-add-location.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6226bacb5c3477_01882093',
+  'unifunc' => 'content_6315ac7dcf2fe3_53847267',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '630fd3af7573955ffa73d4ed755c93657348510b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\master-add-location.tpl',
-      1 => 1646411329,
+      1 => 1662364795,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6226bacb5c3477_01882093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6315ac7dcf2fe3_53847267 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	
@@ -71,7 +71,7 @@ echo $_smarty_tpl->tpl_vars['idreg']->value;
 /images/spinner.gif" class="loader" alt="">
 													</div>
 													<div class="col-sm-12 dataTable table-responsive h90 overflow-y" >
-														<table class="table table-collapse tableInput" style="font-size:1.2rem;">
+														<table class="table table-collapse table-bordered tableInput" style="font-size:1.2rem;">
 															<tbody>
 
 															</tbody>

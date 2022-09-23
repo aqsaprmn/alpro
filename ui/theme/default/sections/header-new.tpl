@@ -24,10 +24,6 @@
 	<!-- Css/Less Stylesheets -->
 	<link rel="stylesheet" href="{$_theme}/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="{$_theme}/styles/main.min.css">
-
-
-  
-
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 
 	<!-- Match Media polyfill for IE9 -->
@@ -127,26 +123,12 @@
 					</div>
 				</div>
 			{/if}
-
 				<ul id="leftMenu" class="list-unstyled clearfix nav-list mb15">
 					<li {if $_system_menu eq 'dashboard'}class="active"{/if}>
 						<a href="{$_url}dashboard">
 							<i class="ion ion-monitor"></i>
 							<span class="text">{$_L['Dashboard']}</span>
 						</a>
-					</li>
-					<!-- Message on progress, hide it  -->
-					<li class="hidden {if $_system_menu eq 'message'}open{/if}">
-						<a href="#" onClick="toggleDropdownMobile(this)">
-							<i class="ion ion-email"></i>
-							<span class="text">{$_L['Private_Message']}</span>
-							<i class="arrow ion-chevron-left"></i>
-						</a>
-						<ul class="inner-drop list-unstyled">
-							<li {if $_system_menu eq 'message'}class="active"{/if}><a href="{$_url}message/inbox">{$_L['Inbox']}</a></li>
-							<li {if $_system_menu eq 'message'}class="active"{/if}><a href="{$_url}message/outbox">{$_L['Outbox']}</a></li>
-							<li {if $_system_menu eq 'message'}class="active"{/if}><a href="{$_url}message/compose">{$_L['Compose']}</a></li>
-						</ul>
 					</li>
 				{if $_admin['user_type'] eq 'Admin' || $_admin['user_type'] eq 'Sales'}
 					<li {if $_system_menu eq 'master'}class="open"{/if}>
@@ -173,6 +155,17 @@
 						<ul class="inner-drop list-unstyled">
 							<li {if $_system_menu eq 'pairing'}class="active"{/if}><a href="{$_url}pairing/location-odc">{$_L['Location']} - ODC</a></li>
 							<li {if $_system_menu eq 'pairing'}class="active"{/if}><a href="{$_url}pairing/subloc-odp">{$_L['SubLoc']} - ODP</a></li>
+						</ul>
+					</li>
+					<li {if $_system_menu eq 'earnings'}class="open"{/if}>
+						<a href="#" onClick="toggleDropdownMobile(this)">
+							<i class="ion ion ion-cash"></i>
+							<span class="text">Earnings</span>
+							<i class="arrow ion-chevron-left"></i>
+						</a>
+						<ul class="inner-drop list-unstyled">
+							<li {if $_system_menu eq 'earnings'}class="active"{/if}><a href="{$_url}earnings/transaction">Transaction</a></li>
+							<li {if $_system_menu eq 'earnings'}class="active"{/if}><a href="{$_url}earnings/list">List Earnings</a></li>
 						</ul>
 					</li>
 					<li class="title-divider"><hr>Region</li>

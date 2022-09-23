@@ -56,7 +56,6 @@
 													<th class="text-center">No</th>
 													<th class="text-center">{$_L['SubLoc']}</th>
 													<th class="text-center">Revenue</th>
-													<th class="text-center">{$_L['Action']}</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -65,9 +64,6 @@
 														<td class="text-center">{$i++}</td>
 														<td>{$sl['nama']}</td>
 														<td>Rp. 1.000.000.000</td>
-														<td style="width:160px;" class="text-center">
-															<a href="{$_url}revenue/sublok/{$sl['id']}" class="btn btn-primary btn-sm" data-id=""><i class="fa fa-eye" aria-hidden="true"></i> {$_L['View']}</a>
-														</td>
 													</tr>
 												{/foreach}
 											</tbody>

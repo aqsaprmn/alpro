@@ -45,12 +45,12 @@
 						<div class="form-container">
 							<form class="form-horizontal" action="{$_url}login/post" method="post">
 								<div class="md-input-container md-float-label">
-									<input type="text" name="username" placeholder="{$_L['Phone_Number']}" class="md-input">
+									<input type="text" name="username" id="username" placeholder="{$_L['Username']}" class="md-input">
 									<label>{$_L['Username']}</label>
 								</div>
 
 								<div class="md-input-container md-float-label">
-									<input type="password" name="password" placeholder="{$_L['Password']}" class="md-input">
+									<input type="password" name="password" id="password" placeholder="{$_L['Password']}" class="md-input">
 									<label>{$_L['Password']}</label>
 								</div>
 

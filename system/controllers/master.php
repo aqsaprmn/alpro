@@ -191,7 +191,6 @@ if (strpos($act, ' ') !== false) {
 
             $ui->assign('xfooter', '<script type="text/javascript" src="ui/lib/c/master.js"></script>');
 
-
             $paginator = Paginator::bootstrap('tbl_odc', 'nama', '%' . $keyword . '%');
 
             if ($paginator == null) {
@@ -1217,6 +1216,7 @@ if (strpos($act, ' ') !== false) {
             break;
 
         default:
-            echo 'Fitur belum tersedia';
+            $ui->assign('404.tpl');
+            break;
     }
 }

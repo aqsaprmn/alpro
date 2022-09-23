@@ -832,10 +832,10 @@ pre code {
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
-  /* position: relative; */
-  /* min-height: 1px; */
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -1893,6 +1893,7 @@ input[type="search"] {
 .form-group {
   margin-bottom: 15px;
 }
+
 .radio,
 .checkbox {
   position: relative;

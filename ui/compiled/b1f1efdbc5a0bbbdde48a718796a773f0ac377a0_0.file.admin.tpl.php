@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-02-18 07:56:35
+/* Smarty version 3.1.39, created on 2022-08-08 15:24:30
   from 'C:\xampp\htdocs\alpro\ui\theme\default\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_620eeec30e4386_12087633',
+  'unifunc' => 'content_62f0c83e7554f1_00059759',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b1f1efdbc5a0bbbdde48a718796a773f0ac377a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\admin.tpl',
-      1 => 1632901526,
+      1 => 1659947067,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_620eeec30e4386_12087633 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62f0c83e7554f1_00059759 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -77,14 +77,14 @@ function content_620eeec30e4386_12087633 (Smarty_Internal_Template $_smarty_tpl)
 						<form class="form-horizontal" action="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
 admin/post" method="post">
 							<div class="md-input-container md-float-label">
-								<input type="text" name="username" class="md-input">
-								<label><?php echo $_smarty_tpl->tpl_vars['_L']->value['Username'];?>
+								<input id="username" type="text" name="username" class="md-input">
+								<label id="l_username"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Username'];?>
 </label>
 							</div>
 
 							<div class="md-input-container md-float-label">
-								<input type="password" name="password" class="md-input">
-								<label><?php echo $_smarty_tpl->tpl_vars['_L']->value['Password'];?>
+								<input id="password" type="password" name="password" class="md-input">
+								<label id="l_password"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Password'];?>
 </label>
 							</div>
 
@@ -116,6 +116,9 @@ register" class="btn btn-success"><?php echo $_smarty_tpl->tpl_vars['_L']->value
 	</div>
 	<?php echo '<script'; ?>
  src="scripts/vendors.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="ui/theme/default/scripts/login.js"><?php echo '</script'; ?>
 >
 </body>
 </html><?php }

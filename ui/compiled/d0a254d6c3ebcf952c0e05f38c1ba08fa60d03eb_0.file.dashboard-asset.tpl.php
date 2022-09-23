@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-07-15 17:19:06
+/* Smarty version 3.1.39, created on 2022-09-05 11:29:50
   from 'C:\xampp\htdocs\alpro\ui\theme\default\dashboard-asset.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62d13f1a7dd081_52310009',
+  'unifunc' => 'content_63157b3eb44600_62416285',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0a254d6c3ebcf952c0e05f38c1ba08fa60d03eb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\dashboard-asset.tpl',
-      1 => 1657880345,
+      1 => 1662112345,
       2 => 'file',
     ),
   ),
@@ -22,28 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:sections/footer.tpl' => 1,
   ),
 ),false)) {
-function content_62d13f1a7dd081_52310009 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63157b3eb44600_62416285 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:sections/header-new.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <?php if (($_smarty_tpl->tpl_vars['_admin']->value['user_type']) == 'Admin' || ($_smarty_tpl->tpl_vars['_admin']->value['user_type']) == 'Sales') {?>
 	<div class="contaier-fluid">
       <div class="">
-        <div class="ml10
-        ">
-          <h2 class="text-bold">Dasboard</h2>
+        <div style="margin-left:2px" class="">
+          <h2 class="text-bold mt0">Dasboard</h2>
         </div>
         <div class="row ml0 mr0">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-6 px-1">
             <div class="panel panel-default mb20 mini-box panel-hovered">
               <div class="panel-body">
                 <div class="clearfix">
                   <div class="info left">
-                    <h4 class="mt0 text-primary text-bold"><?php echo $_smarty_tpl->tpl_vars['rev']->value;?>
-</h4>
+                    <h4 class="mt0 text-primary text-bold">Rp. 100.000.000</h4>
                     <h5 class="text-light mb0">Total Revenue</h5>
                   </div>
-                  <div class="right ion ion-ios-pricetags-outline icon"></div>
+                  <div class="right ion ion-social-usd icon"></div>
                 </div>
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
@@ -53,7 +51,7 @@ revenue/treg_"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Details'];?>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-6 px-1">
             <div class="panel panel-default mb20 mini-box panel-hovered">
               <div class="panel-body">
                 <div class="clearfix">
@@ -63,17 +61,17 @@ revenue/treg_"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Details'];?>
                     <h5 class="text-light mb0"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Number_Of'];?>
  ODCs</h5>
                   </div>
-                  <div class="right ion ion-social-usd icon"></div>
+                  <div class="right ion ion-ios-pricetags-outline icon"></div>
                 </div>
               </div>
               <div class="panel-footer clearfix panel-footer-sm panel-footer-success">
                 <p class="mt0 mb0 right"><a class="text-putih" href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-reports/by-period"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_Reports'];?>
+reports/by-period"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
 </a></p>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-6 px-1">
             <div class="panel panel-default mb20 mini-box panel-hovered">
               <div class="panel-body">
                 <div class="clearfix">
@@ -93,7 +91,7 @@ prepaid/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-6 px-1">
             <div class="panel panel-default mb20 mini-box panel-hovered">
               <div class="panel-body">
                 <div class="clearfix">
@@ -116,153 +114,151 @@ customers/list"><?php echo $_smarty_tpl->tpl_vars['_L']->value['View_All'];?>
           </div>
         </div>
       </div>
-      <div class="row ml0 mr0 pb-3" id="dataTotal">
-        <div class="panel panel-default mini-box panel-hovered">
-          <div class="panel-body">
-            <div class="clearfix">
-              <div style="height: 50vh" class="col-lg-6 col-md-12 mb30">
-                <div class="mb20">
-                  <h3 class="text-bold mt0 mb0 text-left">Total Asset /Location</h3>
-                </div>
-                <div class="row px-4">
-                  <div class="col-lg-12">
-                    <div class="row mb10">
-                      <div class="col-lg-4">
-                        <div class="row">
-                          <div class="col-lg-12 px-3 mb5">
-                            <select class="form-select form-select-lg" name="region" id="region">
-                              
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        <div class="row">
-                          <div class="col-lg-12 px-3 mb5">
-                          <select class="form-select form-select-lg" name="location" id="location">
+      <div class="row ml0 mr0 relative mb15" id="dataTotal">
+        <div class="col-md-4 mb15 px-1">
+          <div class="panel panel-default mini-box panel-hovered p-4">
+            <div class="row ml0 mr0 mb15 relative">
+              <h3 class="text-bold mt0 mb0 text-left">Total Asset /Location</h3>
+            </div>
+            <div class="row ml0 mr0 relative">
+              <div class="col-lg-4 px-1 mb5">
+                <select class="form-select form-select-lg mr" name="region" id="region">
                             
-                          </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        <div class="row">
-                          <div class="col-lg-12 px-3 mb5">
-                          <select class="form-select form-select-lg" name="subloc" id="subloc">
+                </select>
+              </div>
+              <div class="col-lg-4 px-1 mb5">
+                <select class="form-select form-select-lg" name="location" id="location">
+                            
+                </select>
+              </div>
+              <div class="col-lg-4 px-1 mb5">
+                <select class="form-select form-select-lg" name="subloc" id="subloc">
                           
-                          </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div> 
-                  </div>
+                </select>
+              </div>
+            </div>
+            <div class="row ml0 mr0 relative">
+              <div class="" style="">
+                <canvas id="myDonatChart"></canvas>
+              </div>
+            </div>
+            <div class="row ml0 mr0 relative">
+              <table id="dataAsset" class="table mb0">
+                    
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 px-1">
+          <div class="row mr0 ml0 relative mb5">
+            <div class="col-lg-12 panel panel-default mini-box panel-hovered p-4">
+              <div class="row ml0 mr0 relative">
+                <div class="col-md-3">
+                  <h3 class="text-bold mt0 mb0">Revenue</h3>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="" style="">
-                      <canvas id="myDonatChart"></canvas>
+                <div class="col-md-9 px-5">
+                  <div id="between" class="row hidden">
+                    <div class="col-xs-6">
+                      <input class="yearpicker form-control" id="start" type="number">
+                    </div>
+                    <div class="col-xs-6 px-4">
+                      <input class="yearpicker form-control" id="end" type="number">
                     </div>
                   </div>
+                  <input class="yearpicker form-control" id="periode" type="number">
                 </div>
               </div>
-              <div style="height: 50vh" class="col-md-12 col-lg-6 dflex justify-content-center">
-                <table id="dataAsset" class="table">
-                  
-                </table>
+              <div class="row ml0 mr0 relative">
+                <div class="" style="height:50vh;">
+                  <canvas id="myBarChart"></canvas>
+                </div>
+              </div>
+              <div class="row ml mr0 px-4 relative">
+                <button id="tahun" class="btn btn-primary">Tahun</button>
+                <button id="bulan" class="btn btn-primary">Bulan</button>
+                <button id="hari" class="btn btn-primary">Hari</button>
+              </div>
+            </div>
+          </div>
+          <div class="row ml0 mr0 relative">
+            <div class="col-lg-12 panel panel-default mini-box panel-hovered p-4">
+              <div class="row ml0 mr0 relative">
+                <div class="col-lg-12 mb15">
+                  <h3 class="text-bold mt0 mb0">Expense
+                  </h3>
+                </div>
+              </div>
+              <div class="row ml0 mr0 relative">
+                <div class="col-lg-4 px-1 mb5">
+                  <select class="form-select form-select-lg mr" name="region" id="">
+                              
+                  </select>
+                </div>
+                <div class="col-lg-4 px-1 mb5">
+                  <select class="form-select form-select-lg" name="location" id="">
+                              
+                  </select>
+                </div>
+                <div class="col-lg-4 px-1 mb5">
+                  <select class="form-select form-select-lg" name="subloc" id="">
+                            
+                  </select>
+                </div>
+              </div>
+              <div class="row ml0 mr0 relative">
+                <div class="" style="height:10vh;">
+                  <canvas id="myExpChart"></canvas>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div style="position:relative;" class="row ml0 mr0 py-3">
-        <div class="col-lg-12">
-          <div class="panel panel-default mini-box panel-hovered">
-            <div class="panel-body">
-              <div class="clearfix">
-                <div class="row ml0 mb5">
-                  <div class="col-xs-6 text-left">
-                    <h3 class="text-bold mt0 mb0">Revenue</h3>
-                  </div>
-                  <div class="col-xs-6">
-                    <div id="between" class="row hidden">
-                      <div class="col-xs-6">
-                        <input class="yearpicker form-control" id="start" type="number">
-                      </div>
-                      <div class="col-xs-6">
-                        <input class="yearpicker form-control" id="end" type="number">
-                      </div>
-                    </div>
-                    <input class="yearpicker form-control" id="periode" type="number">
-                  </div>
-                </div>
-                <div class="row mb15" style="display: flex; flex-wrap: wrap; position:relative;">
-                  <div class="col-lg-12" style="position: relative; margin: auto; overflow: auto !important;>
-                    <div class="">
-                      <div class="" style="height:50vh;">
-                        <canvas id="myBarChart"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row ml0">
-                  <button id="tahun" class="btn btn-primary">Tahun</button>
-                  <button id="bulan" class="btn btn-primary">Bulan</button>
-                  <button id="hari" class="btn btn-primary">Hari</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row ml0 mr0 py-3">
-        <div class="col-md-12 col-xs-12">
-          <div class="panel panel-default mini-box panel-hovered">
-            <div class="panel-body">
-              <div class="clearfix">
-                <h3 class="text-bold mt0 mb15 text-left">
-                  List All Asset
-                </h3>
-                <div class="row ml0 mr0">
-                  <div class="overflow-auto">
-                    <table id="allAsset" class="cell-border hover">
-                      <thead>
-                        <tr class="text-center">
-                          <th class="text-center">No</th>
-                          <th class="text-center">Asset Name</th>
-                          <th class="text-center">Type</th>
-                          <th class="text-center">Lat</th>
-                          <th class="text-center">Lon</th>
-                          <th class="text-center">Kapasitas</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
+      <div class="row ml0 mr0 py-1">
+        <div class="col-md-12 col-xs-12 px-1">
+          <div class="panel panel-default mini-box panel-hovered p-4">
+            <h3 class="text-bold mt0 mb15 text-left">
+              List All Asset
+            </h3>
+            <div class="row ml0 mr0">
+              <div class="overflow-auto">
+                <table id="allAsset" class="cell-border hover">
+                  <thead>
+                    <tr class="text-center">
+                      <th class="text-center">No</th>
+                      <th class="text-center">Asset Name</th>
+                      <th class="text-center">Type</th>
+                      <th class="text-center">Lat</th>
+                      <th class="text-center">Lon</th>
+                      <th class="text-center">Kapasitas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['asset']->value, 'a');
 $_smarty_tpl->tpl_vars['a']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['a']->value) {
 $_smarty_tpl->tpl_vars['a']->do_else = false;
 ?>
-                        <tr class="text-center">
-                          <td><?php echo $_smarty_tpl->tpl_vars['no']->value++;?>
+                      <tr class="text-center">
+                        <td><?php echo $_smarty_tpl->tpl_vars['no']->value++;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['nama'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['a']->value['nama'];?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['type'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['a']->value['type'];?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lat'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lat'];?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lon'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['a']->value['lon'];?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['a']->value['kapasitas'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['a']->value['kapasitas'];?>
 </td>
-                        </tr>
-                        <?php
+                      </tr>
+                    <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>

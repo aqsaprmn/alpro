@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-07-14 17:09:03
+/* Smarty version 3.1.39, created on 2022-08-11 15:16:41
   from 'C:\xampp\htdocs\alpro\ui\theme\default\sections\header-new.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_62cfeb3faa4e63_72193379',
+  'unifunc' => 'content_62f4bae9eb80c5_72342305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '695b49d92d4d2e5065aa4596d12ad22af5ae723d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\alpro\\ui\\theme\\default\\sections\\header-new.tpl',
-      1 => 1657793341,
+      1 => 1660040656,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62cfeb3faa4e63_72193379 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62f4bae9eb80c5_72342305 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -62,10 +62,6 @@ function content_62cfeb3faa4e63_72193379 (Smarty_Internal_Template $_smarty_tpl)
 /styles/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_theme']->value;?>
 /styles/main.min.css">
-
-
-  
-
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 
 	<!-- Match Media polyfill for IE9 -->
@@ -197,7 +193,6 @@ logout"><i class="ion ion-power"></i> <?php echo $_smarty_tpl->tpl_vars['_L']->v
 					</div>
 				</div>
 			<?php }?>
-
 				<ul id="leftMenu" class="list-unstyled clearfix nav-list mb15">
 					<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'dashboard') {?>class="active"<?php }?>>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
@@ -206,26 +201,6 @@ dashboard">
 							<span class="text"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Dashboard'];?>
 </span>
 						</a>
-					</li>
-					<!-- Message on progress, hide it  -->
-					<li class="hidden <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'message') {?>open<?php }?>">
-						<a href="#" onClick="toggleDropdownMobile(this)">
-							<i class="ion ion-email"></i>
-							<span class="text"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Private_Message'];?>
-</span>
-							<i class="arrow ion-chevron-left"></i>
-						</a>
-						<ul class="inner-drop list-unstyled">
-							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'message') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-message/inbox"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Inbox'];?>
-</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'message') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-message/outbox"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Outbox'];?>
-</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'message') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
-message/compose"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Compose'];?>
-</a></li>
-						</ul>
 					</li>
 				<?php if ($_smarty_tpl->tpl_vars['_admin']->value['user_type'] == 'Admin' || $_smarty_tpl->tpl_vars['_admin']->value['user_type'] == 'Sales') {?>
 					<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'master') {?>class="open"<?php }?>>
@@ -266,6 +241,19 @@ pairing/location-odc"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Location']
 							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'pairing') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
 pairing/subloc-odp"><?php echo $_smarty_tpl->tpl_vars['_L']->value['SubLoc'];?>
  - ODP</a></li>
+						</ul>
+					</li>
+					<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'earnings') {?>class="open"<?php }?>>
+						<a href="#" onClick="toggleDropdownMobile(this)">
+							<i class="ion ion ion-cash"></i>
+							<span class="text">Earnings</span>
+							<i class="arrow ion-chevron-left"></i>
+						</a>
+						<ul class="inner-drop list-unstyled">
+							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'earnings') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
+earnings/transaction">Transaction</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['_system_menu']->value == 'earnings') {?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['_url']->value;?>
+earnings/list">List Earnings</a></li>
 						</ul>
 					</li>
 					<li class="title-divider"><hr>Region</li>

@@ -200,6 +200,38 @@ switch ($action) {
 
         break;
 
+    case 'noinet':
+        if (isset($routes['2']) && $routes['2'] != '') {
+            $keyword = $routes['2'];
+            $data = ORM::for_table('v_inet_pelanggan')->select('no_inet')->select('nama')->where_any_is(array(
+                array('no_inet' => '%' . $keyword . '%'),
+                array('nama' => '%' . $keyword . '%')
+            ), 'LIKE')->find_array();
+
+            $count = count($data);
+            $rows = array();
+
+            for ($i = 0; $i < $count; $i++) {
+                $rows[] = $data[$i];
+            }
+
+            echo json_encode($rows);
+        } else {
+            $data = ORM::for_table('v_inet_pelanggan')->select('no_inet')->select('nama')->find_array();
+
+            $count = count($data);
+            $rows = array();
+
+            for ($i = 0; $i < $count; $i++) {
+                $rows[] = $data[$i];
+            }
+
+            echo json_encode($rows);
+        }
+
+
+        break;
+
     case 'region':
 
         $data['reg'] = ORM::for_table('tbl_region')->find_array();

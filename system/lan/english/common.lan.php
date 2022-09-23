@@ -265,6 +265,7 @@ $_L['Add_ODP_Success'] = 'Add ODP Successfull!';
 $_L['Add_Region_Success'] = 'Add Region Successfull!';
 $_L['Add_Customer_Success'] = 'Add Customer Successfull!';
 $_L['Add_Port_Success'] = 'Add Port Successfull!';
+$_L['Add_Trans_Success'] = 'Add Transaction Successfull!';
 $_L['Add'] = 'Add';
 $_L['Edit'] = 'Edit';
 $_L['Edit_Loc_Success'] = 'Edit Location Successfull!';

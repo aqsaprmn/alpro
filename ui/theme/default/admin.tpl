@@ -38,13 +38,13 @@
 					<div class="form-container">
 						<form class="form-horizontal" action="{$_url}admin/post" method="post">
 							<div class="md-input-container md-float-label">
-								<input type="text" name="username" class="md-input">
-								<label>{$_L['Username']}</label>
+								<input id="username" type="text" name="username" class="md-input">
+								<label id="l_username">{$_L['Username']}</label>
 							</div>
 
 							<div class="md-input-container md-float-label">
-								<input type="password" name="password" class="md-input">
-								<label>{$_L['Password']}</label>
+								<input id="password" type="password" name="password" class="md-input">
+								<label id="l_password">{$_L['Password']}</label>
 							</div>
 
 							<div class="clearfix">
@@ -71,5 +71,6 @@
 		</div> 
 	</div>
 	<script src="scripts/vendors.js"></script>
+	<script src="ui/theme/default/scripts/login.js"></script>
 </body>
 </html>

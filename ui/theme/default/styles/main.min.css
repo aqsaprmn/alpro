@@ -6296,4 +6296,26 @@ button.md-no-style {
   align-items: center;
 }
 
+.content-center {
+  justify-content: center;
+}
+
+.content-end {
+  justify-content: end;
+}
+
+.pair {
+  /* position: relative; */
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 /* En d Aqsha */

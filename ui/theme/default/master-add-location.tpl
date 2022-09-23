@@ -33,7 +33,7 @@
 														<img style="width:50px" src="{$_theme}/images/spinner.gif" class="loader" alt="">
 													</div>
 													<div class="col-sm-12 dataTable table-responsive h90 overflow-y" >
-														<table class="table table-collapse tableInput" style="font-size:1.2rem;">
+														<table class="table table-collapse table-bordered tableInput" style="font-size:1.2rem;">
 															<tbody>
 
 															</tbody>
