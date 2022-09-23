@@ -620,7 +620,6 @@ function xhrYear() {
           y: val["total_rev"],
         });
       });
-      console.log(dataBulan);
       updateDataBarChart(myBarChart, dataBulan);
     } else {
       console.log(xhr.response);
